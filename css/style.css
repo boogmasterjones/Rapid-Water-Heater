@@ -334,9 +334,10 @@ nav.main-nav a[aria-current="page"] { color: var(--gold-800); background: var(--
   position: relative;
   background:
     radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,210,0,0.22), transparent 60%),
-    linear-gradient(160deg, var(--navy-900) 0%, var(--blue-700) 40%, var(--blue-500) 100%);
-  background-size: 26px 26px, auto, auto;
+    radial-gradient(ellipse 120% 90% at 105% 110%, rgba(255,100,10,0.62), transparent 52%),
+    radial-gradient(ellipse 75% 65% at 100% 100%, rgba(210,50,0,0.38), transparent 48%),
+    linear-gradient(150deg, var(--navy-950) 0%, var(--navy-900) 45%, var(--navy-800) 100%);
+  background-size: 26px 26px, auto, auto, auto;
   color: var(--text-on-dark);
   overflow: hidden;
   padding: 88px 0 84px;
