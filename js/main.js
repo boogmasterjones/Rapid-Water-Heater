@@ -126,6 +126,29 @@ document.addEventListener("DOMContentLoaded", function () {
       phoneInput.addEventListener("input", clearContactValidity);
       emailInput.addEventListener("input", clearContactValidity);
     }
+
+    // Mobile: the rest of the form stays collapsed until name + contact are filled (CSS only collapses it on mobile)
+    var nameInput = quoteForm.querySelector('input[name="name"]');
+    var continueBtn = quoteForm.querySelector(".form-continue");
+    if (quoteForm.querySelector("[data-form-more]") && nameInput && phoneInput) {
+      var expandForm = function () { quoteForm.classList.add("is-expanded"); };
+      var checkReady = function () {
+        if (nameInput.value.trim().length > 1 && phoneInput.value.replace(/\D/g, "").length >= 10) expandForm();
+      };
+      nameInput.addEventListener("input", checkReady);
+      phoneInput.addEventListener("input", checkReady);
+      phoneInput.addEventListener("blur", function () {
+        if (nameInput.value.trim() && phoneInput.value.trim()) expandForm();
+      });
+      quoteForm.addEventListener("invalid", expandForm, true);
+      if (continueBtn) {
+        continueBtn.addEventListener("click", function () {
+          if (!nameInput.value.trim()) { nameInput.reportValidity(); return; }
+          expandForm();
+          if (!phoneInput.value.trim() && emailInput) setTimeout(function () { emailInput.focus(); }, 300);
+        });
+      }
+    }
   }
 
   // ---- Review carousel ----
