@@ -105,6 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
     el.textContent = new Date().getFullYear();
   });
 
+  // ---- Mobile sticky call bar: slides in once the user scrolls past the hero's own buttons ----
+  if (document.querySelector(".sticky-call-mobile")) {
+    var heroEl = document.querySelector(".hero, .page-hero");
+    var updateStickyBar = function () {
+      var threshold = heroEl ? heroEl.offsetHeight * 0.5 : 300;
+      document.body.classList.toggle("sticky-bar-visible", window.scrollY > threshold);
+    };
+    window.addEventListener("scroll", updateStickyBar, { passive: true });
+    updateStickyBar();
+  }
+
   // ---- Quote form: require phone OR email, not both ----
   var quoteForm = document.querySelector(".quote-form");
   if (quoteForm) {

@@ -356,11 +356,11 @@ nav.main-nav a[aria-current="page"] { color: var(--gold-800); background: var(--
 /* Homepage: two-column hero with service panel */
 body.home .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 56px;
   align-items: center;
-  max-width: none;
-  margin: 0;
+  max-width: var(--container);
+  margin: 0 auto;
 }
 body.home .hero-grid > div:first-child { text-align: left; }
 body.home .hero h1 { font-size: clamp(1.9rem, 1.3rem + 2vw, 2.65rem); }
@@ -1173,6 +1173,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero { min-height: 86vh; }
 .page-hero { min-height: 68vh; }
 
+/* Interior heroes: centered on desktop so wide screens don't leave an empty right side */
+@media (min-width: 761px) {
+  .page-hero .container { text-align: center; }
+  .page-hero .breadcrumbs, .page-hero .hero-actions { justify-content: center; }
+  .page-hero h1 { max-width: 22ch; margin-left: auto; margin-right: auto; }
+  .page-hero p { margin-left: auto; margin-right: auto; }
+}
+
 /* =====================================================================
    Mobile refinements (≤760px). Desktop is untouched by everything below.
    ===================================================================== */
@@ -1259,6 +1267,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .chatbot-input-row { padding: 10px; }
   .chatbot-input-row input { padding: 8px 14px; font-size: 16px; }
   .chatbot-send { width: 36px; height: 36px; }
+
+  /* Sticky call bar stays tucked away until the user scrolls down */
+  .sticky-call-mobile { transform: translateY(110%); transition: transform 0.3s ease; }
+  body.sticky-bar-visible .sticky-call-mobile { transform: translateY(0); }
+  .chatbot-toggle { transition: transform 0.2s ease, box-shadow 0.2s ease, bottom 0.3s ease; }
+  body:not(.sticky-bar-visible) .chatbot-toggle { bottom: 20px; }
+  body:not(.sticky-bar-visible) .chatbot-panel { bottom: 86px; }
 
   /* Decorative art panels just push content down on a phone */
   .split > .art-panel { display: none; }
