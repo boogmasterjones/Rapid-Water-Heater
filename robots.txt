@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rapidwaterheater.co/sitemap.xml
+Sitemap: https://rapidwaterheater.co/sitemap.xml
