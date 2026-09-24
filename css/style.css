@@ -237,7 +237,7 @@ body.home .site-header.header-visible { transform: translateY(0); }
   font-size: 1.28rem;
   letter-spacing: -0.01em;
 }
-.logo .logo-mark { width: 40px; height: 40px; flex-shrink: 0; filter: drop-shadow(0 3px 6px rgba(10,22,38,0.15)); }
+.logo .logo-mark { width: 40px; height: 40px; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 3px 6px rgba(10,22,38,0.15)); }
 .logo small { display: block; font-family: var(--font-body); font-weight: 500; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-600); margin-top: 1px; }
 
 .header-cta { display: flex; align-items: center; gap: 14px; }
