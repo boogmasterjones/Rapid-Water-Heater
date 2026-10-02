@@ -28,6 +28,43 @@ function goToQuoteForm(prefillMessage) {
   }
 }
 
+var THANKS_URL = "/thanks";
+var THANKS_FLAG = "rwhFormSubmitted";
+
+// Sends the estimate form to FormSubmit in the background so the visitor never leaves
+// our domain, then lands on /thanks only after a confirmed success. If the background
+// request fails for any reason, fall back to a normal form post (its _next field also
+// returns to /thanks) so a lead is never lost.
+function submitQuoteForm(form) {
+  var btn = form.querySelector('button[type="submit"]');
+  var label = btn ? btn.textContent : "";
+  if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+
+  function markSubmitted() {
+    try { sessionStorage.setItem(THANKS_FLAG, "1"); sessionStorage.removeItem("rwhFormTracked"); } catch (err) { /* storage unavailable */ }
+  }
+  function fallback() {
+    markSubmitted();
+    form.submit();
+  }
+
+  var endpoint = form.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
+  fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+    .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+    .then(function (r) {
+      if (r.ok && String(r.data && r.data.success) === "true") {
+        markSubmitted();
+        window.location.assign(THANKS_URL);
+      } else {
+        fallback();
+      }
+    })
+    .catch(function () {
+      fallback();
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
@@ -127,12 +164,14 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInput.setCustomValidity("");
       };
       quoteForm.addEventListener("submit", function (e) {
+        e.preventDefault();
         if (!phoneInput.value.trim() && !emailInput.value.trim()) {
-          e.preventDefault();
           var msg = "Please enter a phone number or an email so we can reach you.";
           phoneInput.setCustomValidity(msg);
           phoneInput.reportValidity();
+          return;
         }
+        submitQuoteForm(quoteForm);
       });
       phoneInput.addEventListener("input", clearContactValidity);
       emailInput.addEventListener("input", clearContactValidity);

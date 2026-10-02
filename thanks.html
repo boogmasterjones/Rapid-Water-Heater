@@ -8,6 +8,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KD5Q9SWT');</script>
 <!-- End Google Tag Manager -->
+<script>
+  // Only show this page after a real form submission; push the conversion event once per submission.
+  (function () {
+    var shouldTrack = false;
+    try {
+      if (sessionStorage.getItem("rwhFormSubmitted") !== "1") { window.location.replace("/contact.html"); return; }
+      if (!sessionStorage.getItem("rwhFormTracked")) { sessionStorage.setItem("rwhFormTracked", "1"); shouldTrack = true; }
+    } catch (e) { /* storage unavailable: cannot verify, so just show the page */ }
+    window.dataLayer = window.dataLayer || [];
+    if (shouldTrack) window.dataLayer.push({ event: "form_submission_success", form_name: "estimate_request" });
+    window.__rwhTrack = shouldTrack;
+  })();
+</script>
 
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="x5_xWRJjIJG3T50rla-DtQR5Wrz4yMaF4-iUxrNq9GU" />
@@ -15,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Thank You | Rapid Water Heater LLC, Sarasota FL</title>
 <meta name="description" content="Thanks for reaching out to Rapid Water Heater LLC. We've received your request and will be in touch shortly.">
 <meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://rapidwaterheater.co/thank-you.html">
+<link rel="canonical" href="https://rapidwaterheater.co/thanks">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="Rapid Water Heater LLC">
 <meta property="og:title" content="Thank You | Rapid Water Heater LLC, Sarasota FL">
 <meta property="og:description" content="Thanks for reaching out to Rapid Water Heater LLC. We've received your request and will be in touch shortly.">
-<meta property="og:url" content="https://rapidwaterheater.co/thank-you.html">
+<meta property="og:url" content="https://rapidwaterheater.co/thanks">
 <meta property="og:image" content="https://rapidwaterheater.co/images/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Thank You | Rapid Water Heater LLC, Sarasota FL">
@@ -193,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX'); /* TODO: replace with client's real GA4 Measurement ID */
-  gtag('event', 'generate_lead', {'event_category':'engagement','event_label':'contact_form_submit'});
+  if (window.__rwhTrack) gtag('event', 'generate_lead', {'event_category':'engagement','event_label':'contact_form_submit'});
 </script>
 <script src="/js/main.js"></script>
 </body>
