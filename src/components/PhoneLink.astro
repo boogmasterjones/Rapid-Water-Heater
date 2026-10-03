@@ -1,0 +1,18 @@
+---
+import { phoneHref, site } from '../lib/site';
+
+// Every phone link fires a GA4 call_click event with a label that says where on the page it was.
+interface Props {
+  label: string;
+  class?: string;
+  text?: string;
+}
+
+const { label, class: className, text } = Astro.props;
+const safeLabel = label.replace(/[^a-z0-9_]/gi, '_');
+const onclick = site.site.gaMeasurementId
+  ? `typeof gtag==='function'&&gtag('event','call_click',{'event_category':'engagement','event_label':'${safeLabel}'})`
+  : undefined;
+---
+
+<a href={phoneHref(site.business.phone)} class={className} onclick={onclick}>{text ?? site.business.phone}</a>

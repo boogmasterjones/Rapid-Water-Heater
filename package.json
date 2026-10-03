@@ -1,0 +1,30 @@
+{
+  "name": "biggify-site-template",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "prebuild": "node scripts/optimize-images.mjs",
+    "audit": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "sharp@0.35.5": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^24.13.5",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  }
+}

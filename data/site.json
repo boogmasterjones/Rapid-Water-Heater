@@ -1,0 +1,69 @@
+{
+  "site": {
+    "url": "https://rapidwaterheater.co",
+    "locale": "en-US",
+    "calendlyUrl": "",
+    "formAction": "https://formsubmit.co/joshkwekel@gmail.com",
+    "defaultOgImage": "/images/og-cover.png",
+    "gaMeasurementId": "",
+    "googleSiteVerification": "x5_xWRJjIJG3T50rla-DtQR5Wrz4yMaF4-iUxrNq9GU"
+  },
+  "business": {
+    "name": "Rapid Water Heater LLC",
+    "kind": "operating",
+    "schemaType": "Plumber",
+    "tagline": "Same-day water heater installation and plumbing in Sarasota and Southwest Florida.",
+    "description": "Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (License #CFC1434490) providing same-day water heater installation, tankless water heaters, drain cleaning and emergency plumbing across Sarasota and Southwest Florida.",
+    "phone": "(941) 876-5900",
+    "email": "",
+    "regionLabel": "Sarasota & Southwest Florida",
+    "alsoServing": [
+      "Wellen Park",
+      "Englewood",
+      "Nokomis",
+      "Rotonda West",
+      "Arcadia",
+      "Palmetto",
+      "Parrish"
+    ],
+    "address": {
+      "street": "",
+      "city": "Sarasota",
+      "region": "FL",
+      "postalCode": "",
+      "showOnSite": false
+    },
+    "hours": [],
+    "sameAs": [],
+    "googleMapsUrl": "https://maps.app.goo.gl/d3PUDCn4VZAFe1tb9",
+    "rating": null
+  },
+  "brand": {
+    "logoText": "Rapid Water Heater",
+    "colors": {
+      "primary": "#0a1630",
+      "primaryAlt": "#112241",
+      "action": "#cc9010",
+      "accent": "#f5b300",
+      "surface": "#ffffff",
+      "surfaceAlt": "#fefdf9",
+      "ink": "#080c10",
+      "body": "#4a535c"
+    },
+    "fonts": {
+      "heading": "Fraunces",
+      "body": "Inter",
+      "googleFontsUrl": ""
+    }
+  },
+  "trustBadges": [
+    "Licensed Florida Plumber",
+    "Family-Owned",
+    "Same-Day Service"
+  ],
+  "stats": [],
+  "cta": {
+    "label": "Free Estimate",
+    "href": "/#quote"
+  }
+}
