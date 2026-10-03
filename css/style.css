@@ -1192,6 +1192,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   /* Homepage hero */
   .hero { padding: 40px 0 36px; }
+  body.home .hero { min-height: 100vh; min-height: 100svh; }
   body.home .hero-grid > div:first-child { text-align: left; }
   body.home .hero-grid > .hero-card { display: none; }
   .hero .eyebrow {
@@ -1200,11 +1201,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     border-radius: 4px;
     font-size: 0.68rem;
     letter-spacing: 0.12em;
-    padding: 7px 11px;
-    margin-bottom: 16px;
+    padding: 6px 10px;
+    margin-bottom: 18px;
+    opacity: 0.65;
   }
-  .hero h1, body.home .hero h1 { font-size: 2.2rem; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 14px; }
-  .hero .lede, body.home .hero .lede { font-size: 0.98rem; line-height: 1.55; margin: 0; max-width: none; }
+  .hero h1, body.home .hero h1 { font-size: 2.7rem; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 16px; }
+  .hero .lede, body.home .hero .lede { font-size: 0.88rem; line-height: 1.5; margin: 0; max-width: none; opacity: 0.7; }
   .hero-actions, body.home .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; margin: 24px 0 0; }
   .hero-actions .btn { width: 100%; padding: 18px 20px; font-size: 0.9rem; }
   body.home .hero-grid > div:first-child { display: flex; flex-direction: column; align-items: flex-start; }
