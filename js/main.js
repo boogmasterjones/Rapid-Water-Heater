@@ -31,9 +31,9 @@ function goToQuoteForm(prefillMessage) {
 var THANKS_URL = "/thanks";
 var THANKS_FLAG = "rwhFormSubmitted";
 
-// Sends the estimate form to FormSubmit in the background so the visitor never leaves
-// our domain, then lands on /thanks only after a confirmed success. If the background
-// request fails for any reason, fall back to a normal form post (its _next field also
+// Sends the estimate form two ways in the background so the visitor never leaves our domain:
+// the email copy (FormSubmit) and the lead for Jobber (our Netlify function). If either one
+// succeeds we go to /thanks; if both fail, fall back to a normal form post (its _next field also
 // returns to /thanks) so a lead is never lost.
 function submitQuoteForm(form) {
   var btn = form.querySelector('button[type="submit"]');
@@ -43,26 +43,32 @@ function submitQuoteForm(form) {
   function markSubmitted() {
     try { sessionStorage.setItem(THANKS_FLAG, "1"); sessionStorage.removeItem("rwhFormTracked"); } catch (err) { /* storage unavailable */ }
   }
-  function fallback() {
-    markSubmitted();
-    form.submit();
-  }
 
-  var endpoint = form.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
-  fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-    .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
-    .then(function (r) {
-      if (r.ok && String(r.data && r.data.success) === "true") {
-        markSubmitted();
-        window.location.assign(THANKS_URL);
-      } else {
-        fallback();
-      }
-    })
-    .catch(function () {
-      fallback();
+  var data = new FormData(form);
+  var lead = { services: data.getAll("service[]") };
+  data.forEach(function (value, key) { if (key !== "service[]" && key !== "_next") lead[key] = value; });
+
+  var emailSent = fetch(form.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+    method: "POST", body: data, headers: { Accept: "application/json" }
+  })
+    .then(function (res) { return res.json().then(function (body) { return res.ok && String(body && body.success) === "true"; }); })
+    .catch(function () { return false; });
+
+  var jobberSent = fetch("/.netlify/functions/jobber-lead", {
+    method: "POST", body: JSON.stringify(lead), headers: { "Content-Type": "application/json" }
+  })
+    .then(function (res) { return res.ok; })
+    .catch(function () { return false; });
+
+  Promise.all([emailSent, jobberSent]).then(function (sent) {
+    markSubmitted();
+    if (sent[0] || sent[1]) {
+      window.location.assign(THANKS_URL);
+    } else {
+      form.submit();
       if (btn) { btn.disabled = false; btn.textContent = label; }
-    });
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
