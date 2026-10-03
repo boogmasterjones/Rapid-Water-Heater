@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { getPages } from '../lib/content';
+import { breadcrumbSchema, faqSchema } from '../lib/schema';
+
+export async function getStaticPaths() {
+  const pages = await getPages();
+  return pages.map((page) => ({ params: { path: page.data.path.replace(/^\//, '') }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const jsonLd = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: page.data.heading.replace(/\*/g, ''), path: page.data.path }]), ...(page.data.faqs.length > 0 ? [faqSchema(page.data.faqs)] : [])];
+---
+
+<Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass}>
+  <Content />
+</Base>

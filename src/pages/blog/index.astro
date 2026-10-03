@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formatDate, getPosts, readingTime } from '../../lib/content';
+import { breadcrumbSchema } from '../../lib/schema';
+import { site } from '../../lib/site';
+
+const posts = await getPosts();
+const jsonLd = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }])];
+const title = "Plumbing & Water Heater Blog | Rapid Water Heater LLC";
+const description = "Practical, honest advice from Rapid Water Heater LLC on keeping your hot water reliable, written for Sarasota-area homeowners.";
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+<section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="/">Home</a><span class="sep">/</span><span aria-current="page">Blog</span></div>
+      <h1>Plumbing &amp; Water Heater Tips</h1>
+      <p>Practical, honest advice from Rapid Water Heater LLC on keeping your hot water reliable — written for Sarasota-area homeowners, not search engines.</p>
+    </div>
+  </section>
+  <section class="section-blue-tint">
+    <div class="container">
+      <div class="grid grid-3">
+      {posts.length === 0 && <p>New articles are coming soon.</p>}
+      {posts.map((p) => (
+        <article class="card"><p class="blog-meta">{p.data.category ? p.data.category + ' · ' : ''}{readingTime(p.body ?? '')}</p><h3><a href={`/blog/${p.id}`} style="color:inherit;">{p.data.title}</a></h3><p>{p.data.description}</p><a class="card-link" href={`/blog/${p.id}`}>Read the article</a></article>
+      ))}
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Have a Question We Didn't Cover?</h2>
+          <p>Call or text us directly — we're happy to talk through your specific situation before you book anything.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'blog_hub_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

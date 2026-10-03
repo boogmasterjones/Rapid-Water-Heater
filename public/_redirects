@@ -1,0 +1,36 @@
+# Old addresses permanently redirect to the new clean addresses.
+/about.html                                                  /about                                             301!
+/blog/7-signs-its-time-to-replace-your-water-heater.html     /blog/7-signs-its-time-to-replace-your-water-heater 301!
+/blog/tank-vs-tankless-water-heater-sarasota.html            /blog/tank-vs-tankless-water-heater-sarasota       301!
+/blog/why-does-my-water-heater-keep-running-out-of-hot-water.html /blog/why-does-my-water-heater-keep-running-out-of-hot-water 301!
+/contact.html                                                /contact                                           301!
+/index.html                                                  /                                                  301!
+/index                                                       /                                                  301!
+/reviews.html                                                /reviews                                           301!
+/service-areas.html                                          /locations                                         301!
+/service-areas                                               /locations                                         301!
+/service-areas/bradenton.html                                /locations/bradenton                               301!
+/service-areas/bradenton                                     /locations/bradenton                               301!
+/service-areas/lakewood-ranch.html                           /locations/lakewood-ranch                          301!
+/service-areas/lakewood-ranch                                /locations/lakewood-ranch                          301!
+/service-areas/north-port.html                               /locations/north-port                              301!
+/service-areas/north-port                                    /locations/north-port                              301!
+/service-areas/port-charlotte.html                           /locations/port-charlotte                          301!
+/service-areas/port-charlotte                                /locations/port-charlotte                          301!
+/service-areas/punta-gorda.html                              /locations/punta-gorda                             301!
+/service-areas/punta-gorda                                   /locations/punta-gorda                             301!
+/service-areas/venice.html                                   /locations/venice                                  301!
+/service-areas/venice                                        /locations/venice                                  301!
+/services.html                                               /services                                          301!
+/services/drain-cleaning.html                                /services/drain-cleaning                           301!
+/services/emergency-plumbing.html                            /services/emergency-plumbing                       301!
+/services/same-day-water-heaters.html                        /services/same-day-water-heaters                   301!
+/services/tankless-water-heater-installation.html            /services/tankless-water-heater-installation       301!
+/services/water-heater-installation.html                     /services/water-heater-installation                301!
+/thanks.html                                                 /thanks                                            301!
+/blog.html                                                   /blog                                              301!
+/thank-you.html                                              /thanks                                            301!
+
+# Keep project notes/tooling files from being publicly readable.
+/CLAUDE.md      /404  404!
+/.claude/*      /404  404!

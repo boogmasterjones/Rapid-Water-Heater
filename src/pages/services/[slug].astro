@@ -1,0 +1,21 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getServices } from '../../lib/content';
+import { areaSchema, breadcrumbSchema, faqSchema, serviceSchema } from '../../lib/schema';
+import { site } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const entries = await getServices();
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const path = `/services/${entry.id}`;
+const jsonLd = [serviceSchema(entry.data.name, entry.data.description, path, `${site.business.address.city}, ${site.business.address.region}`), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }, { name: entry.data.name, path }]), ...(entry.data.faqs.length > 0 ? [faqSchema(entry.data.faqs)] : [])];
+---
+
+<Base title={entry.data.title} description={entry.data.description} image={entry.data.image} jsonLd={jsonLd}>
+  <Content />
+</Base>
