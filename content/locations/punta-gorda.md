@@ -1,6 +1,6 @@
 ---
-title: "Water Heater Installation in Punta Gorda, FL | Rapid Water Heater LLC"
-description: "Same-day water heater installation & plumbing in Punta Gorda, FL — historic downtown to PGI. Licensed & family-owned. Call 941-876-5900."
+title: "Water Heater Installation & Replacement in Punta Gorda, FL"
+description: "Same-day water heater quotes and installation in Punta Gorda when possible. Replacement units typically in stock, free 1-year maintenance visit. (941) 876-5900"
 name: "Punta Gorda, FL"
 heading: "Water Heater Installation & Plumbing in Punta Gorda, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters throughout Punta Gorda, from the historic downtown near Fishermen's Village to the canal-front homes of Punta Gorda Isles."
@@ -141,3 +141,15 @@ region: "FL"
       </div>
     </div>
   </section>
+
+## Water Heater Replacement in Punta Gorda
+
+When your old water heater gives out, we can replace it with a new gas or electric tank, tankless or heat pump (hybrid) unit. Replacement units are typically kept in stock, and we offer [same-day water heater quotes and installation](/services/same-day-water-heaters) whenever possible. We install Bradford White, Rheem, A.O. Smith and Halo products, following manufacturer specifications and Florida plumbing code. We also remove and dispose of your old water heater, and every new installation includes a free 1-year maintenance visit.
+
+## Tankless Water Heater Installation
+
+We install gas and electric tankless water heaters for Punta Gorda homes that want space-saving, on-demand hot water. A free consultation with upfront pricing helps you decide whether tankless is the right fit for your home. [Learn more about tankless water heater installation](/services/tankless-water-heater-installation).
+
+## Emergency Plumbing in Punta Gorda
+
+Plumbing problems rarely happen at a convenient time. We offer flexible hours and emergency service for Punta Gorda homeowners, along with drain cleaning, main sewer line clog diagnosis and clearing, and camera inspection of drain lines. When you call (941) 876-5900, you talk directly with our team, not a call center. See our [emergency plumbing services](/services/emergency-plumbing) for more details.
