@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation | Lakewood Ranch, FL"
-description: "Water heater installation sized for Lakewood Ranch's larger homes. Tank, tankless & heat pump systems. Licensed & family-owned. Call 941-876-5900."
+description: "Water heater installation and drain cleaning in Lakewood Ranch, FL. Tank, tankless and heat pump systems, clog removal and camera inspection. Call 941-876-5900."
 name: "Lakewood Ranch, FL"
 heading: "Water Heater Installation & Plumbing in Lakewood Ranch, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters for homeowners throughout Lakewood Ranch — one of the fastest-growing communities in Southwest Florida."
@@ -141,3 +141,11 @@ region: "FL"
       </div>
     </div>
   </section>
+
+## Drain Line Cleaning in Lakewood Ranch
+
+Along with water heaters, Rapid Water Heater LLC offers [drain line cleaning](/services/drain-cleaning) for Lakewood Ranch homeowners. That includes drain cleaning and clog removal, diagnosing and clearing main sewer line clogs, and camera inspection of drain lines so we can see what is causing the problem before we recommend a fix.
+
+As with every job, you get a free estimate and upfront pricing before any work begins, and you talk directly with our team, not a call center. If a backup can't wait, our [emergency plumbing](/services/emergency-plumbing) service and flexible hours are there to help.
+
+We also provide drain cleaning and water heater installation in Parrish and [Bradenton](/locations/bradenton). Call 941-876-5900 to schedule a visit.
