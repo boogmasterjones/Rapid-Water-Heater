@@ -51,7 +51,7 @@ bodyClass: "home"
           </div>
           <div class="hero-panel-text">
             <strong>Drain Cleaning</strong>
-            <span>Clears any clog, any pipe size</span>
+            <span>Clog removal &amp; main sewer line clearing</span>
           </div>
         </div>
         <div class="hero-panel-row">
@@ -59,8 +59,8 @@ bodyClass: "home"
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg>
           </div>
           <div class="hero-panel-text">
-            <strong>Licensed &amp; Insured</strong>
-            <span>Florida certified, family-owned</span>
+            <strong>Licensed &amp; Family-Owned</strong>
+            <span>Florida License #CFC1434490</span>
           </div>
         </div>
       </div>
