@@ -1,0 +1,34 @@
+---
+// Real-people photo strip shown above the footer. Photos and per-page copy live in data/photos.json,
+// keyed by page path, so content rewrites never touch them.
+import photos from '../../data/photos.json';
+import Picture from './Picture.astro';
+
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1').replace(/^\/index$/, '/');
+const band = (photos.pages as Record<string, typeof photos.fallback>)[path] ?? (path.startsWith('/blog/') ? photos.fallback : null);
+---
+
+{
+  band && (
+    <section class="photo-band">
+      <div class="container">
+        <div class="section-head center">
+          <h2>{band.title}</h2>
+          <p>{band.lede}</p>
+        </div>
+        <div class="photo-band-grid">
+          {band.images.map((image) => (
+            <figure>
+              <Picture src={image.src} alt={image.alt} sizes="(max-width: 900px) 50vw, 25vw" />
+            </figure>
+          ))}
+        </div>
+        {band.link && (
+          <p class="photo-band-link">
+            <a class="btn btn-navy" href="/family">Meet the Rapid Water Heater Family</a>
+          </p>
+        )}
+      </div>
+    </section>
+  )
+}

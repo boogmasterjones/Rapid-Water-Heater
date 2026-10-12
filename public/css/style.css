@@ -1251,3 +1251,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .header-cta { gap: 8px; }
 }
 
+/* ---------- Meet the family page ---------- */
+.family-feature { max-width: 900px; margin: 0 auto 40px; }
+.family-feature img { width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: center 20%; border-radius: 14px; display: block; box-shadow: 0 10px 30px rgba(5,9,26,0.18); }
+.family-card { margin: 0; background: var(--white); border: 1px solid #e3e8ef; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(5,9,26,0.08); }
+.family-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block; }
+.family-card figcaption { padding: 18px 20px 22px; }
+.family-card h3 { margin: 0 0 6px; }
+.family-card p { margin: 0; }
+.family-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.family-duo img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; border-radius: 14px; display: block; }
+.family-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.family-gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; display: block; }
+@media (max-width: 900px) { .family-gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .family-feature img { max-height: 340px; } .family-duo img { min-height: 200px; } }
+
+.family-role { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-600, #a8832f); margin-bottom: 4px; }
+
+/* ---------- Photo bands (real-people photos on every page) ---------- */
+.photo-band { padding-top: 0; }
+.photo-band-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.photo-band-grid figure { margin: 0; }
+.photo-band-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; border-radius: 12px; display: block; box-shadow: 0 6px 18px rgba(5,9,26,0.12); }
+.photo-band-link { text-align: center; margin: 26px 0 0; }
+.art-panel.art-photo { padding: 0; overflow: hidden; }
+.art-panel.art-photo > img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; min-height: 300px; }
+@media (max-width: 900px) { .photo-band-grid { grid-template-columns: repeat(2, 1fr); } }

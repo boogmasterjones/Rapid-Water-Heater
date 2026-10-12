@@ -27,3 +27,8 @@ pnpm-debug.log*
 public/apple-touch-icon.png
 # generated webp siblings
 public/images/**/*.webp
+
+# Local-only files and full-size photoshoot originals
+/images/
+LAUNCH_TODO.md
+social-import/

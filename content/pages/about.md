@@ -22,25 +22,10 @@ path: "/about"
         <p>As a licensed Florida plumbing contractor, we hold ourselves to a high standard of professionalism on every project we take on. We work with trusted manufacturers such as Bradford White, Rheem, A.O. Smith, and Halo to provide products known for reliability, performance, and long-term value — because pairing quality equipment with professional installation is how homeowners get the most out of their investment.</p>
         <p>We know that inviting a contractor into your home requires confidence and trust. Our team works to earn that trust through transparent pricing, honest recommendations, and dependable workmanship. That commitment is what our slogan is all about: <strong>Hot water now. No monkey business!</strong></p>
       </div>
-      <div class="art-panel">
-        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <radialGradient id="ga1" cx="20%" cy="10%" r="80%">
-              <stop offset="0%" stop-color="#c6a15a" stop-opacity="0.3"></stop>
-              <stop offset="100%" stop-color="#c6a15a" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-          <rect width="400" height="340" fill="url(#ga1)"></rect>
-          <circle cx="90" cy="270" r="120" fill="#ffffff" opacity="0.05"></circle>
-          <circle cx="200" cy="160" r="70" fill="#2868a3" opacity="0.85"></circle>
-          <path d="M200 122c-1.6 2-2.4 3.2-2.4 4.6a2.4 2.4 0 0 0 4.8 0" fill="none"></path>
-          <path d="M200 130c-14 18-22 30-22 43a22 22 0 0 0 44 0c0-9-4-16-9-24-8-14-1-26 13-39 3 14 10 27 21 36 8 6 13 15 13 26a40 40 0 1 1-80 0c0-10 4-18 9-25Z" fill="#c6a15a"></path>
-        </svg>
-        <div class="art-badge">
+      <div class="art-panel art-photo"><img src="/images/photos/150-whole-family-team-in-front-of-van.jpg" alt="The whole Rapid Water Heater family and team in front of the company van" width="1600" height="1067" loading="lazy" decoding="async"><div class="art-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg>
           <div><strong>Licensed Florida Plumbing Contractor</strong><span>Serving Sarasota &amp; Southwest Florida</span></div>
-        </div>
-      </div>
+        </div></div>
     </div>
   </section>
   <section class="section-yellow-tint">

@@ -2,6 +2,7 @@
 import Analytics from '../components/Analytics.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PhotoBand from '../components/PhotoBand.astro';
 import { canonicalUrl, site } from '../lib/site';
 import { serializeJsonLd } from '../lib/schema';
 
@@ -49,6 +50,7 @@ const fonts = site.brand.fonts.googleFontsUrl;
     <Header />
     <main>
       <slot />
+      <PhotoBand />
     </main>
     <Footer />
     <script is:inline src="/js/main.js"></script>

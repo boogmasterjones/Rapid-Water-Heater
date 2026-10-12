@@ -1,0 +1,510 @@
+{
+  "fallback": {
+    "title": "Real People, Local Family",
+    "lede": "The plumbers behind every article are the same family that shows up at your door.",
+    "link": true,
+    "images": [
+      {
+        "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+        "alt": "Josh and pat water heater install | Rapid Water Heater"
+      },
+      {
+        "src": "/images/photos/112-portrait-pat.jpg",
+        "alt": "Portrait pat | Rapid Water Heater"
+      },
+      {
+        "src": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+        "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+      },
+      {
+        "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+        "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+      }
+    ]
+  },
+  "pages": {
+    "/": {
+      "title": "Real People. Local Family.",
+      "lede": "Every Rapid Water Heater job is handled by the people whose name is on the van. Come meet the family.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/107-josh-customer-handshake-kitchen.jpg",
+          "alt": "Josh customer handshake kitchen | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+        }
+      ]
+    },
+    "/about": {
+      "title": "The Faces Behind the Name",
+      "lede": "A small, local, family-run team that treats your home like our own.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/113-josh-and-pat-arms-crossed.jpg",
+          "alt": "Josh and pat arms crossed | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/062-josh-drain-machine-with-son-kitchen.jpg",
+          "alt": "Josh drain machine with son kitchen | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/156-josh-hauling-water-heater-dolly.jpg",
+          "alt": "Josh hauling water heater dolly | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services": {
+      "title": "Our Team at Work",
+      "lede": "Hands-on plumbers who show up on time, explain your options, and do the job right.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/041-josh-and-pat-tub-camera-inspection.jpg",
+          "alt": "Josh and pat tub camera inspection | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services/water-heater-installation": {
+      "title": "Water Heater Installs, Done Right",
+      "lede": "Josh and Pat installing and testing a tank water heater, start to finish.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/155-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying water heater garage | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/140-josh-and-pat-water-heater-testing.jpg",
+          "alt": "Josh and pat water heater testing | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services/tankless-water-heater-installation": {
+      "title": "Careful, Code-Compliant Installs",
+      "lede": "Our team sizes, installs, and tests every system before we leave.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/130-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/132-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/138-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/156-josh-hauling-water-heater-dolly.jpg",
+          "alt": "Josh hauling water heater dolly | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services/same-day-water-heaters": {
+      "title": "Fast Response, Same-Day Installs",
+      "lede": "We load the van and get your hot water running again as quickly as we can.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/156-josh-hauling-water-heater-dolly.jpg",
+          "alt": "Josh hauling water heater dolly | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/159-company-van-closeup.jpg",
+          "alt": "Company van closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/127-van-loading-equipment.jpg",
+          "alt": "Van loading equipment | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/184-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services/drain-cleaning": {
+      "title": "Drain Cleaning in Action",
+      "lede": "Professional drain machines and camera inspections to clear and diagnose stubborn clogs.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/167-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/062-josh-drain-machine-with-son-kitchen.jpg",
+          "alt": "Josh drain machine with son kitchen | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/172-drain-cleanout-closeup.jpg",
+          "alt": "Drain cleanout closeup | Rapid Water Heater"
+        }
+      ]
+    },
+    "/services/emergency-plumbing": {
+      "title": "Here When You Need Us",
+      "lede": "A real local family that picks up the phone and shows up when something goes wrong.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/159-company-van-closeup.jpg",
+          "alt": "Company van closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/128-van-loading-equipment.jpg",
+          "alt": "Van loading equipment | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/041-josh-and-pat-tub-camera-inspection.jpg",
+          "alt": "Josh and pat tub camera inspection | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/183-josh-by-company-van.jpg",
+          "alt": "Josh by company van | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations": {
+      "title": "Your Local Sarasota Family Plumbers",
+      "lede": "We live and work in the communities we serve across Southwest Florida.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/184-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/150-whole-family-team-in-front-of-van.jpg",
+          "alt": "Whole family team in front of van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/107-josh-customer-handshake-kitchen.jpg",
+          "alt": "Josh customer handshake kitchen | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/176-portrait-josh-by-van.jpg",
+          "alt": "Portrait josh by van | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/bradenton": {
+      "title": "Serving Bradenton Families",
+      "lede": "Local, family-owned, and ready to help Bradenton homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/185-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/150-whole-family-team-in-front-of-van.jpg",
+          "alt": "Whole family team in front of van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/156-josh-hauling-water-heater-dolly.jpg",
+          "alt": "Josh hauling water heater dolly | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/107-josh-customer-handshake-kitchen.jpg",
+          "alt": "Josh customer handshake kitchen | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/lakewood-ranch": {
+      "title": "Serving Lakewood Ranch Families",
+      "lede": "Local, family-owned, and ready to help Lakewood Ranch homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/186-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/113-josh-and-pat-arms-crossed.jpg",
+          "alt": "Josh and pat arms crossed | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/north-port": {
+      "title": "Serving North Port Families",
+      "lede": "Local, family-owned, and ready to help North Port homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/187-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/176-portrait-josh-by-van.jpg",
+          "alt": "Portrait josh by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh outdoor drain cleaning machine | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/076-josh-and-son-kitchen-counter-fun.jpg",
+          "alt": "Josh and son kitchen counter fun | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/port-charlotte": {
+      "title": "Serving Port Charlotte Families",
+      "lede": "Local, family-owned, and ready to help Port Charlotte homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/188-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/175-portrait-pat-by-van.jpg",
+          "alt": "Portrait pat by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/155-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying water heater garage | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/062-josh-drain-machine-with-son-kitchen.jpg",
+          "alt": "Josh drain machine with son kitchen | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/punta-gorda": {
+      "title": "Serving Punta Gorda Families",
+      "lede": "Local, family-owned, and ready to help Punta Gorda homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/184-company-van-exterior.jpg",
+          "alt": "Company van exterior | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/174-portrait-catherine-by-van.jpg",
+          "alt": "Portrait catherine by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/014-josh-toilet-tank-repair-with-son.jpg",
+          "alt": "Josh toilet tank repair with son | Rapid Water Heater"
+        }
+      ]
+    },
+    "/locations/venice": {
+      "title": "Serving Venice Families",
+      "lede": "Local, family-owned, and ready to help Venice homeowners.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/183-josh-by-company-van.jpg",
+          "alt": "Josh by company van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/112-portrait-pat.jpg",
+          "alt": "Portrait pat | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/140-josh-and-pat-water-heater-testing.jpg",
+          "alt": "Josh and pat water heater testing | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+        }
+      ]
+    },
+    "/reviews": {
+      "title": "Happy Homeowners, Real People",
+      "lede": "Reviews mean the most when you know who is behind them.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/107-josh-customer-handshake-kitchen.jpg",
+          "alt": "Josh customer handshake kitchen | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/174-portrait-catherine-by-van.jpg",
+          "alt": "Portrait catherine by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/175-portrait-pat-by-van.jpg",
+          "alt": "Portrait pat by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/176-portrait-josh-by-van.jpg",
+          "alt": "Portrait josh by van | Rapid Water Heater"
+        }
+      ]
+    },
+    "/contact": {
+      "title": "Talk to a Real Person",
+      "lede": "Catherine, Josh, and Pat are the ones who answer, schedule, and show up.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/174-portrait-catherine-by-van.jpg",
+          "alt": "Portrait catherine by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/176-portrait-josh-by-van.jpg",
+          "alt": "Portrait josh by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/175-portrait-pat-by-van.jpg",
+          "alt": "Portrait pat by van | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/150-whole-family-team-in-front-of-van.jpg",
+          "alt": "Whole family team in front of van | Rapid Water Heater"
+        }
+      ]
+    },
+    "/blog": {
+      "title": "Advice From the Team",
+      "lede": "Straight answers from the plumbers who do this every day.",
+      "link": true,
+      "images": [
+        {
+          "src": "/images/photos/060-josh-drain-machine-kitchen-closeup.jpg",
+          "alt": "Josh drain machine kitchen closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/038-josh-and-pat-tub-camera-inspection.jpg",
+          "alt": "Josh and pat tub camera inspection | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/155-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying water heater garage | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Boys portrait yellow shirts | Rapid Water Heater"
+        }
+      ]
+    },
+    "/blog/7-signs-its-time-to-replace-your-water-heater": {
+      "title": "Water Heater Checkups, Done by Pros",
+      "lede": "Josh and Pat inspecting and testing a water heater on the job.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/154-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying water heater garage | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/140-josh-and-pat-water-heater-testing.jpg",
+          "alt": "Josh and pat water heater testing | Rapid Water Heater"
+        }
+      ]
+    },
+    "/blog/tank-vs-tankless-water-heater-sarasota": {
+      "title": "Tank or Tankless? We Install Both",
+      "lede": "Our team handles both types of water heaters, start to finish.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/130-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/156-josh-hauling-water-heater-dolly.jpg",
+          "alt": "Josh hauling water heater dolly | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/134-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/143-josh-and-pat-water-heater-testing.jpg",
+          "alt": "Josh and pat water heater testing | Rapid Water Heater"
+        }
+      ]
+    },
+    "/blog/why-does-my-water-heater-keep-running-out-of-hot-water": {
+      "title": "Troubleshooting Hot Water Problems",
+      "lede": "Testing, diagnosing, and fixing water heaters is what we do every day.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/133-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and pat water heater install | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/138-multimeter-water-heater-closeup.jpg",
+          "alt": "Multimeter water heater closeup | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/155-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying water heater garage | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/127-van-loading-equipment.jpg",
+          "alt": "Van loading equipment | Rapid Water Heater"
+        }
+      ]
+    }
+  }
+}

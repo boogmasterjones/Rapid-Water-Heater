@@ -7,7 +7,7 @@ summary: "Running out of hot water is never convenient. We offer same-day quotes
 order: 3
 faqs:
  - question: "My insurance or home sale needs the water heater replaced soon – can you help?"
- answer: "Yes. We offer free estimates with upfront pricing, and same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and every installation follows manufacturer specifications and Florida plumbing code. Call (941) 876-5900 to talk directly with our team."
+   answer: "Yes. We offer free estimates with upfront pricing, and same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and every installation follows manufacturer specifications and Florida plumbing code. Call (941) 876-5900 to talk directly with our team."
 ---
 
 <section class="page-hero">
