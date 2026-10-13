@@ -22,7 +22,7 @@ bodyClass: "home"
         </div>
         <div class="hero-trust">
           <div class="hero-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg> Licensed &amp; Family-Owned</div>
-          <div class="hero-trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg> 5.0 Rating on Google</div>
+          <div class="hero-trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg> Reviewed by Local Homeowners</div>
           <div class="hero-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg> Same-Day Appointments</div>
         </div>
       </div>
@@ -70,7 +70,7 @@ bodyClass: "home"
     <div class="container">
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg><span><strong>Licensed</strong>FL License #CFC1434490</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span><strong>Family-Owned</strong>Founded in Sarasota, 2025</span></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg><span><strong>5.0 Rating</strong>On Google Reviews</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg><span><strong>Reviewed</strong>By Homeowners on Google</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><span><strong>Same-Day</strong>Quotes &amp; Installation</span></div>
     </div>
   </div>
@@ -85,13 +85,9 @@ bodyClass: "home"
         <div class="rating-badge">
           <div class="stars">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
           </div>
-          <strong>5.0 out of 5</strong>
-          <span>on Google</span>
+          <strong>Reviews on Google</strong>
+          <span>from local homeowners</span>
         </div>
       </div>
       <div class="review-carousel" data-carousel="">
@@ -205,7 +201,7 @@ bodyClass: "home"
           <div class="quote-trust">
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg> Licensed &amp; Family-Owned</span>
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Free, No-Obligation Estimates</span>
-            <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L6 21l1.7-7L2.3 9.2l7.1-.6z"></path></svg> 5.0 Rating on Google</span>
+            <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L6 21l1.7-7L2.3 9.2l7.1-.6z"></path></svg> Reviews From Local Homeowners</span>
           </div>
         </div>
       </div>
@@ -228,7 +224,7 @@ bodyClass: "home"
         <div class="card service-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
           <h3>Tankless Water Heaters</h3>
-          <p>Endless hot water on demand with a space-saving, energy-efficient tankless system.</p>
+          <p>Hot water heated on demand by a space-saving, energy-efficient tankless system.</p>
           <a class="card-link" href="/services/tankless-water-heater-installation">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
         </div>
         <div class="card service-card">
@@ -240,7 +236,7 @@ bodyClass: "home"
         <div class="card service-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 9 9M12 21a9 9 0 0 1-9-9M7 12a5 5 0 0 1 5-5M17 12a5 5 0 0 1-5 5"></path></svg></div>
           <h3>Drain Cleaning</h3>
-          <p>Slow or clogged drains cleared fast, with lasting solutions instead of a temporary fix.</p>
+          <p>Slow or clogged drains cleared fast, with a look at the cause instead of a temporary fix.</p>
           <a class="card-link" href="/services/drain-cleaning">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
         </div>
       </div>
@@ -322,7 +318,7 @@ bodyClass: "home"
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How do you help homeowners make informed decisions?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>We walk you through the tank, tankless, and heat pump options available for your home, explain the tradeoffs in plain language, and give you an upfront quote before any work begins — no pressure, no surprise charges.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>We walk you through the tank, tankless, and heat pump options available for your home, explain the tradeoffs in plain language, and give you an upfront quote before any work begins — no pressure, and you approve the price first.</p></div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What can homeowners expect during the service process?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
