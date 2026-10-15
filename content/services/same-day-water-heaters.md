@@ -29,7 +29,6 @@ faqs:
  <p>A cold shower on a Tuesday morning doesn't wait for a convenient time. When your water heater fails, our goal is to minimize disruption to your daily routine and get your household back to normal as soon as possible — with a same-day quote and installation whenever our schedule allows.</p>
  <p>Same-day service doesn't mean rushed work. We still explain pricing upfront and install to the same code-compliant standard as any scheduled job — we just prioritize getting to you fast.</p>
  <ul class="icon-list">
- 
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Upfront pricing before any work begins</li>
  <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Replacement units typically in stock, ready to install</li>
  </ul>
