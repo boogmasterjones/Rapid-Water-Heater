@@ -12,7 +12,9 @@ export const GET: APIRoute = async () => {
   const body = [
     `# ${business.name}`,
     `> ${business.description}`,
-    `Phone: ${business.phone}\nEmail: ${business.email}\nService region: ${business.regionLabel}`,
+    [`Website: ${site.site.url}/`, `Phone: ${business.phone}`, business.email && `Email: ${business.email}`, `Service region: ${business.regionLabel}`, business.alsoServing.length > 0 && `Also serving: ${business.alsoServing.join(', ')}`]
+      .filter(Boolean)
+      .join('\n'),
     `## Services\n${list(services.map((s) => ({ path: `/services/${s.id}`, name: s.data.name, text: s.data.summary })))}`,
     `## Service Areas\n${list(locations.map((l) => ({ path: `/locations/${l.id}`, name: l.data.name, text: l.data.summary })))}`,
     `## Articles\n${list(posts.map((p) => ({ path: `/blog/${p.id}`, name: p.data.title, text: p.data.description })))}`,

@@ -34,3 +34,17 @@
 # Keep project notes/tooling files from being publicly readable.
 /CLAUDE.md      /404  404!
 /.claude/*      /404  404!
+
+# Newer pages: their .html twins (which Netlify also serves) point to the clean address too.
+/family.html                                                 /family                                            301!
+/locations.html                                              /locations                                         301!
+/locations/venice.html                                       /locations/venice                                  301!
+/locations/bradenton.html                                    /locations/bradenton                               301!
+/locations/lakewood-ranch.html                               /locations/lakewood-ranch                          301!
+/locations/north-port.html                                   /locations/north-port                              301!
+/locations/port-charlotte.html                               /locations/port-charlotte                          301!
+/locations/punta-gorda.html                                  /locations/punta-gorda                             301!
+/blog/failed-4-point-inspection-water-heater-sarasota.html   /blog/failed-4-point-inspection-water-heater-sarasota 301!
+/blog/florida-4-point-inspection-water-heater.html           /blog/florida-4-point-inspection-water-heater      301!
+/blog/hybrid-heat-pump-water-heater-sarasota.html            /blog/hybrid-heat-pump-water-heater-sarasota       301!
+/blog/water-heater-age-florida-home-insurance.html           /blog/water-heater-age-florida-home-insurance      301!
