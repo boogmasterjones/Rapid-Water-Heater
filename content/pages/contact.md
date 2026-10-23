@@ -1,6 +1,6 @@
 ---
 title: "Contact Us | Rapid Water Heater LLC | Sarasota, FL Plumbing"
-description: "Contact Rapid Water Heater LLC for a free estimate on water heater installation or plumbing service in Sarasota, Venice, Bradenton &amp; Southwest Florida."
+description: "Contact Rapid Water Heater LLC for a free estimate on water heater installation or plumbing service in Sarasota, Venice, Bradenton & Southwest Florida."
 heading: "Contact Rapid Water Heater LLC"
 subheading: "Call, text, or send us a message — we'll get back to you fast with an honest, upfront quote."
 path: "/contact"
