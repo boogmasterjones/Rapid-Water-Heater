@@ -1,9 +1,8 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { getLocations } from '../../lib/content';
-import { areaSchema, breadcrumbSchema, faqSchema, serviceSchema } from '../../lib/schema';
-import { site } from '../../lib/site';
+import { getLocations, getServices } from '../../lib/content';
+import { areaSchema, breadcrumbSchema, businessSchema, faqSchema } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const entries = await getLocations();
@@ -13,7 +12,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const path = `/locations/${entry.id}`;
-const jsonLd = [areaSchema(entry.data.city, path), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/locations' }, { name: entry.data.name, path }]), ...(entry.data.faqs.length > 0 ? [faqSchema(entry.data.faqs)] : [])];
+const [services, locations] = await Promise.all([getServices(), getLocations()]);
+const business = businessSchema(locations.map((l) => l.data.city), services.map((s) => s.data.name));
+const jsonLd = [business, areaSchema(entry.data.city, entry.data.heading, entry.data.description, path), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Service Areas', path: '/locations' }, { name: entry.data.name, path }]), ...(entry.data.faqs.length > 0 ? [faqSchema(entry.data.faqs)] : [])];
 ---
 
 <Base title={entry.data.title} description={entry.data.description} image={entry.data.image} jsonLd={jsonLd}>

@@ -22,8 +22,9 @@ export function businessSchema(cities: string[], serviceNames: string[]): JsonLd
     description: business.description,
     url: `${site.site.url}/`,
     telephone: phoneHref(business.phone).replace('tel:', ''),
-    email: business.email,
+    ...(business.email && { email: business.email }),
     image: `${site.site.url}${site.site.defaultOgImage}`,
+    logo: `${site.site.url}/images/mascot-logo.png`,
     address: {
       '@type': 'PostalAddress',
       ...(address.street && { streetAddress: address.street }),
@@ -32,17 +33,20 @@ export function businessSchema(cities: string[], serviceNames: string[]): JsonLd
       ...(address.postalCode && { postalCode: address.postalCode }),
       addressCountry: 'US',
     },
-    areaServed: [...cities, ...business.alsoServing].map((name) => ({ '@type': 'City', name })),
+    // "Venice" alone is ambiguous (Italy, California), so every city carries the state.
+    areaServed: [...new Set([address.city, ...cities, ...business.alsoServing])].map((name) => ({ '@type': 'City', name: `${name}, ${address.region}` })),
     makesOffer: serviceNames.map((name) => ({
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name },
     })),
-    openingHoursSpecification: business.hours.map((h) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: h.days,
-      opens: h.opens,
-      closes: h.closes,
-    })),
+    ...(business.hours.length > 0 && {
+      openingHoursSpecification: business.hours.map((h) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: h.days,
+        opens: h.opens,
+        closes: h.closes,
+      })),
+    }),
     ...(business.sameAs.length > 0 && { sameAs: business.sameAs }),
     ...(business.googleMapsUrl && { hasMap: business.googleMapsUrl }),
     ...(business.rating && {
@@ -68,15 +72,17 @@ export function breadcrumbSchema(crumbs: Crumb[]): JsonLd {
   };
 }
 
-export function serviceSchema(name: string, description: string, path: string, areaName: string): JsonLd {
+// A service, provided by the business node (businessSchema is emitted on the same page so the @id resolves).
+export function serviceSchema(name: string, description: string, path: string, areas: string[]): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
+    serviceType: name,
     description,
     url: canonicalUrl(path),
     provider: { '@id': businessId },
-    areaServed: areaName,
+    areaServed: areas.map((a) => ({ '@type': 'City', name: `${a}, ${site.business.address.region}` })),
   };
 }
 
@@ -116,14 +122,17 @@ export function blogPostingSchema(post: {
   };
 }
 
-export function areaSchema(city: string, path: string): JsonLd {
+// A location page: the business's services in one city. Replaces a second, address-less Plumber node that Google's
+// LocalBusiness rules flag (a LocalBusiness needs an address); the one real business node is referenced by @id.
+export function areaSchema(city: string, name: string, description: string, path: string): JsonLd {
   return {
     '@context': 'https://schema.org',
-    '@type': site.business.schemaType,
-    name: site.business.name,
-    telephone: phoneHref(site.business.phone).replace('tel:', ''),
+    '@type': 'Service',
+    name,
+    serviceType: 'Water heater installation and plumbing',
+    description,
     url: canonicalUrl(path),
+    provider: { '@id': businessId },
     areaServed: { '@type': 'City', name: `${city}, ${site.business.address.region}` },
-    parentOrganization: { '@id': businessId },
   };
 }
