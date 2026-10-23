@@ -1,0 +1,21 @@
+---
+// Netlify serves dist/404.html for any address that does not exist. Not indexed, not in the sitemap.
+import Base from '../layouts/Base.astro';
+import { phoneHref, site } from '../lib/site';
+import { callClick } from '../lib/track';
+---
+
+<Base title={`Page Not Found | ${site.brand.logoText}`} description="That page could not be found. Head back to the homepage, browse our plumbing services or call us for same-day help." noindex photoBand={false}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Error 404</span>
+      <h1>This Page Has Gone Down the Drain</h1>
+      <p>The address may have changed or never existed. Everything else is still flowing: try the homepage, our services, or give us a call.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href={phoneHref(site.business.phone)} onclick={callClick('404_phone_button')}>Call {site.business.phone}</a>
+        <a class="btn btn-outline-light" href="/">Back to the Homepage</a>
+        <a class="btn btn-outline-light" href="/services">See Our Services</a>
+      </div>
+    </div>
+  </section>
+</Base>
