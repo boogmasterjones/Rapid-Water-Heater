@@ -1,0 +1,102 @@
+{
+  "_note": "Copy and photo picks for the Glass Rain homepage pieces (hero and the team-to-work gallery). Every line is a fact the site already states. The rating is the Google listing read on rating.asOf; update both together, never estimate. It is display only: business.rating in site.json stays null so the structured data is unchanged.",
+  "rating": {
+    "value": "5.0",
+    "count": 17,
+    "source": "Google",
+    "asOf": "2026-10-22"
+  },
+  "hero": {
+    "eyebrow": "Licensed Florida Plumbing Contractor",
+    "shimmer": "Sarasota, FL",
+    "photo": "/images/photos/130-josh-and-pat-water-heater-install.jpg",
+    "photoAlt": "Josh and Pat of Rapid Water Heater checking a newly installed water heater",
+    "photoPosition": "58% 50%",
+    "chips": [
+      "Same-day when possible",
+      "Licensed & family-owned"
+    ],
+    "primaryLabel": "Call for Same-Day Service",
+    "secondaryLabel": "Request a Free Estimate"
+  },
+  "gallery": {
+    "team": {
+      "kicker": "Meet the team",
+      "heading": "The family behind Rapid Water Heater",
+      "text": "When you call, you get the people whose name is on the van.",
+      "link": {
+        "href": "/family",
+        "label": "Meet the Rapid Water Heater Family"
+      },
+      "photos": [
+        {
+          "photo": "/images/photos/150-whole-family-team-in-front-of-van.jpg",
+          "alt": "The whole Rapid Water Heater family and team in yellow shirts in front of the company van",
+          "caption": "The Rapid Water Heater family"
+        },
+        {
+          "photo": "/images/photos/110-portrait-josh.jpg",
+          "alt": "Portrait of Josh Kwekel, plumber and owner of Rapid Water Heater LLC",
+          "caption": "Josh · Plumber & Owner"
+        },
+        {
+          "photo": "/images/photos/112-portrait-pat.jpg",
+          "alt": "Portrait of Pat, master plumber with 47 years of experience at Rapid Water Heater",
+          "caption": "Pat · Master Plumber"
+        },
+        {
+          "photo": "/images/photos/111-portrait-catherine.jpg",
+          "alt": "Portrait of Catherine, office manager and call taker at Rapid Water Heater",
+          "caption": "Catherine · Office Manager"
+        },
+        {
+          "photo": "/images/photos/118-boys-portrait-yellow-shirts.jpg",
+          "alt": "Callahan and Lewis, future plumbers, wearing Rapid Water Heater yellow shirts with arms crossed",
+          "caption": "Callahan & Lewis · Future Plumbers"
+        }
+      ]
+    },
+    "work": {
+      "kicker": "Our work",
+      "heading": "On the job, start to finish",
+      "text": "Water heaters, drains and plumbing repairs across Sarasota and Southwest Florida.",
+      "photos": [
+        {
+          "photo": "/images/photos/130-josh-and-pat-water-heater-install.jpg",
+          "alt": "Josh and Pat installing a tank water heater",
+          "caption": "Water heater installation"
+        },
+        {
+          "photo": "/images/photos/154-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying a new water heater through a garage",
+          "caption": "Bringing in the new unit"
+        },
+        {
+          "photo": "/images/photos/163-josh-outdoor-drain-cleaning-machine.jpg",
+          "alt": "Josh clearing an outdoor drain line with a drain cleaning machine",
+          "caption": "Drain cleaning"
+        },
+        {
+          "photo": "/images/photos/038-josh-and-pat-tub-camera-inspection.jpg",
+          "alt": "Josh and Pat inspecting a drain with a camera next to a bathtub",
+          "caption": "Drain camera inspection"
+        },
+        {
+          "photo": "/images/work photos/4EDD35E9-045E-487E-930A-6A89CE1FF085.png",
+          "alt": "Josh and Pat of Rapid Water Heater on an outdoor plumbing job",
+          "caption": "Out on a job"
+        },
+        {
+          "photo": "/images/work photos/Screenshot 2026-09-19 113034.png",
+          "alt": "Josh working on a shower in a tiled bathroom",
+          "caption": "Shower plumbing"
+        },
+        {
+          "photo": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Testing a water heater with a multimeter",
+          "caption": "Testing before we leave"
+        }
+      ]
+    }
+  }
+}
