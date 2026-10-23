@@ -20,7 +20,7 @@ import { callClick } from '../lib/track';
           </div>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="fh">Services</h2>
           <ul>
             <li><a href="/services/water-heater-installation">Water Heater Installation</a></li>
             <li><a href="/services/tankless-water-heater-installation">Tankless Water Heaters</a></li>
@@ -30,7 +30,7 @@ import { callClick } from '../lib/track';
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h2 class="fh">Company</h2>
           <ul>
             <li><a href="/about">About Us</a></li>
             <li><a href="/family">Meet the Family</a></li>
@@ -40,7 +40,7 @@ import { callClick } from '../lib/track';
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h2 class="fh">Contact</h2>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><a href={phoneHref(site.business.phone)} onclick={callClick('footer_phone_button')}>{site.business.phone}</a></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>{site.business.address.city}, {site.business.address.region} &amp; Southwest Florida</span></li>
@@ -76,7 +76,7 @@ import { callClick } from '../lib/track';
   }
   .footer-social a:hover { border-color: var(--gold); color: var(--gold-hi); }
   .footer-social svg { width: 17px; height: 17px; }
-  h4 { margin: 0 0 14px; font: 700 0.8rem var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-hi); }
+  .fh { margin: 0 0 14px; font: 700 0.8rem/1.3 var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-hi); }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
   li { margin: 0; }
   .footer-col a { display: inline-flex; align-items: center; min-height: 40px; color: var(--text); text-decoration: none; }
