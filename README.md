@@ -14,11 +14,11 @@ Built to be lifted into the shared template with only the client colours changin
 | Base elements, buttons, glass, reveals, reduced motion | `src/styles/base.css` |
 | The ported page vocabulary (page-hero, card, grid, cta-band, quote form, content-block, FAQ, family, photo band) | `src/styles/content.css` |
 | Site-wide water-drop background (worker canvas with main-thread fallback), header pill, footer, phone bar | `src/components/glass/Backdrop.astro`, `src/components/Header.astro`, `src/components/Footer.astro`, `src/components/glass/CallBar.astro` |
-| Homepage hero and the team-to-work gallery | `src/components/glass/GlassHero.astro`, `src/components/glass/TeamGallery.astro` |
+| Homepage hero, the work-then-family photo carousel and the "How it works" water heater | `src/components/glass/GlassHero.astro`, `src/components/glass/PhotoCarousel.astro`, `src/components/glass/HowItWorks.astro` |
 | Their copy, photo picks and the displayed Google rating | `data/glass.json` |
 | Scripts (reveals, loop pausing, tilt, rain engine) | `src/scripts/glass/` |
 
-The homepage copy stays in `content/pages/home.md`; `<!-- glass:hero -->` and `<!-- glass:gallery -->` mark where the components go. Reduced motion turns off the drops and every loop and shows the gallery as a plain swipe strip. `?shot` on any address shows every reveal finished (for screenshots).
+The homepage copy stays in `content/pages/home.md`; `<!-- glass:hero -->`, `<!-- glass:gallery -->` and `<!-- glass:how -->` mark where the components go. Reduced motion turns off the drops, every loop and the carousel autoplay (arrows and swipe still work), and shows the tank already full and hot. Photos in content Markdown (plain `<img>` tags) are given WebP srcsets at build time by `responsiveImages()` in `src/lib/images.ts`; an img can name its slot with `sizes=""`. `?shot` on any address shows every reveal finished (for screenshots).
 
 ## What makes each site unique
 
