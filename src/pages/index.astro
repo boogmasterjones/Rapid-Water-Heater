@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GlassHero from '../components/glass/GlassHero.astro';
 import PhotoCarousel from '../components/glass/PhotoCarousel.astro';
+import HowItWorks from '../components/glass/HowItWorks.astro';
 import glass from '../../data/glass.json';
 import { getHome, getLocations, getServices } from '../lib/content';
 import { businessSchema, faqSchema } from '../lib/schema';
@@ -13,10 +14,10 @@ const [services, locations] = await Promise.all([getServices(), getLocations()])
 const jsonLd = [businessSchema(locations.map((l) => l.data.city), services.map((s) => s.data.name)), ...(page.data.faqs.length > 0 ? [faqSchema(page.data.faqs)] : [])];
 
 // content/pages/home.md stays the source of the homepage copy. Comment markers in it (<!-- glass:hero -->,
-// <!-- glass:gallery -->) say where the design components go; everything between them is rendered as written.
+// <!-- glass:gallery -->, <!-- glass:how -->) say where the design components go; everything between them is rendered as written.
 const html = page.rendered?.html ?? '';
 const parts = html ? html.split(/<!--\s*glass:([a-z-]+)\s*-->/) : [];
-const { hero, gallery, rating } = glass;
+const { hero, gallery, how, rating } = glass;
 ---
 
 <Base title={page.data.title} description={page.data.description} image={page.data.image} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref="#quote" photoBand={false}>
@@ -24,6 +25,7 @@ const { hero, gallery, rating } = glass;
     if (i % 2 === 0) return <Fragment set:html={part} />;
     if (part === 'hero') return <GlassHero heading={page.data.heading} lede={page.data.subheading} {...hero} rating={rating} />;
     if (part === 'gallery') return <PhotoCarousel {...gallery} />;
+    if (part === 'how') return <HowItWorks {...how} />;
     return null;
   }) : <Content />}
 </Base>

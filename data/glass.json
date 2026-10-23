@@ -1,5 +1,5 @@
 {
-  "_note": "Copy and photo picks for the Glass Rain homepage pieces (hero and the work-then-family photo carousel). Every line is a fact the site already states. The rating is the Google listing read on rating.asOf; update both together, never estimate. It is display only: business.rating in site.json stays null so the structured data is unchanged.",
+  "_note": "Copy and photo picks for the Glass Rain homepage pieces (hero and the work-then-family photo carousel and the water heater \"how it works\" section). Every line is a fact the site already states. The rating is the Google listing read on rating.asOf; update both together, never estimate. It is display only: business.rating in site.json stays null so the structured data is unchanged.",
   "rating": {
     "value": "5.0",
     "count": 17,
@@ -97,6 +97,43 @@
             "caption": "Callahan & Lewis · Future Plumbers"
           }
         ]
+      }
+    ]
+  },
+  "how": {
+    "kicker": "How it works",
+    "heading": "Cold shower? Let's fix that.",
+    "text": "Five steps from your call to hot water.",
+    "steps": [
+      {
+        "title": "You call.",
+        "text": "Call {phone} or send a request. Same-day appointments are available.",
+        "photo": "/images/photos/127-van-loading-equipment.jpg",
+        "alt": "A Rapid Water Heater plumber loading equipment at the back of the yellow company van"
+      },
+      {
+        "title": "We come out.",
+        "text": "Same-day quotes and installs whenever possible. Replacement units are typically kept in stock.",
+        "photo": "/images/photos/038-josh-and-pat-tub-camera-inspection.jpg",
+        "alt": "Josh and Pat inspecting a drain with a camera next to a bathtub"
+      },
+      {
+        "title": "A free estimate, upfront.",
+        "text": "Free estimates with upfront pricing, so you know the cost before any work begins.",
+        "photo": "/images/photos/107-josh-customer-handshake-kitchen.jpg",
+        "alt": "Josh shaking hands with a homeowner in her kitchen"
+      },
+      {
+        "title": "Installed right.",
+        "text": "Every install follows manufacturer specifications and Florida plumbing code.",
+        "photo": "/images/photos/131-josh-and-pat-water-heater-install.jpg",
+        "alt": "Josh and Pat installing a tank water heater"
+      },
+      {
+        "title": "Hot water's back.",
+        "text": "Licensed, family-owned, and done. Your home goes back to normal.",
+        "photo": "/images/photos/113-josh-and-pat-arms-crossed.jpg",
+        "alt": "Josh and Pat of Rapid Water Heater in yellow shirts, arms crossed"
       }
     ]
   }

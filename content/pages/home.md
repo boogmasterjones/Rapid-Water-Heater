@@ -80,6 +80,7 @@ bodyClass: "home"
       </div>
     </div>
   </section>
+<!-- glass:how -->
   <section class="section-yellow-tint">
     <div class="container split">
       <div class="art-panel">
