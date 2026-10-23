@@ -44,7 +44,7 @@
 .page-hero .blog-meta { color: var(--gold-hi); margin-top: 6px; }
 @media (min-width: 761px) {
   .page-hero .container { text-align: center; }
-  .page-hero .breadcrumbs, .page-hero .hero-actions { justify-content: center; }
+  .page-hero .breadcrumbs, .page-hero .hero-actions, .page-hero .cta-row { justify-content: center; }
   .page-hero h1 { max-width: 22ch; margin-left: auto; margin-right: auto; }
   .page-hero p { margin-left: auto; margin-right: auto; }
 }
@@ -377,3 +377,12 @@ iframe { max-width: 100%; border-radius: var(--r-lg); }
 
 /* Phones: the ported markup sets three- and four-up grids, which read best as one column at this width. */
 @media (max-width: 480px) { .grid.grid-3, .grid.grid-4 { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- Call / Free Estimate row (src/lib/cta.ts, src/components/CtaRow.astro) ----------
+   Ends every other section. Existing button styles only; centred under centred sections, left in page heroes. */
+.cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 14px; margin-top: 36px; }
+.cta-row--start { justify-content: flex-start; margin-top: 26px; }
+.content-block .cta-row { margin: 32px 0; }
+@media (max-width: 560px) {
+  .cta-row .btn { flex: 1 1 100%; }
+}

@@ -8,6 +8,7 @@
 // in a background tab, and resumes after. No autoplay with prefers-reduced-motion (everything else still works).
 // Every photo slot is sized in CSS from the photo's real proportions, so nothing moves when the script starts (CLS 0).
 import Picture from '../Picture.astro';
+import CtaRow from '../CtaRow.astro';
 import { imageInfo } from '../../lib/images';
 
 interface Photo { photo: string; alt: string; caption?: string }
@@ -19,8 +20,9 @@ interface Props {
   text: string;
   groups: Group[];
   link?: { href: string; label: string };
+  cta?: string; // GA label: when set, the section ends with the Call / Free Estimate row
 }
-const { id = 'work', kicker, heading, text, groups, link } = Astro.props;
+const { id = 'work', kicker, heading, text, groups, link, cta } = Astro.props;
 
 const withRatio = async (list: Photo[]) => Promise.all(list.map(async (p) => {
   const info = await imageInfo(p.photo);
@@ -71,6 +73,7 @@ const headingId = `${id}-heading`;
   </div>
 
   {link && <p class="container more"><a class="btn btn-navy" href={link.href}>{link.label}</a></p>}
+  {cta && <div class="container"><CtaRow label={cta} quoteHref="#quote" /></div>}
 </section>
 
 <script>

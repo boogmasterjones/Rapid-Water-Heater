@@ -22,8 +22,10 @@ interface Props {
   // Where "Free Estimate" buttons point: "#quote" on a page that has the estimate form, the homepage form otherwise.
   quoteHref?: string;
   photoBand?: boolean;
+  // The page's CTA alternation (src/lib/cta.ts) gives the photo band a Call / Free Estimate row.
+  photoBandCta?: boolean;
 }
-const { title, description, image, noindex = false, ogType = 'website', jsonLd = [], bodyClass, quoteHref = site.cta.href, photoBand = true } = Astro.props;
+const { title, description, image, noindex = false, ogType = 'website', jsonLd = [], bodyClass, quoteHref = site.cta.href, photoBand = true, photoBandCta = false } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname);
 const ogImage = `${site.site.url}${image ?? site.site.defaultOgImage}`;
 const gaId = site.site.gaMeasurementId;
@@ -73,7 +75,7 @@ const brandVars = `:root{--c-primary:${colors.primary};--c-primary-alt:${colors.
     <Header quoteHref={quoteHref} />
     <main id="main">
       <slot />
-      {photoBand && <PhotoBand />}
+      {photoBand && <PhotoBand cta={photoBandCta} quoteHref={quoteHref.startsWith('#') ? quoteHref : '/#quote'} />}
     </main>
     <Footer />
     <CallBar quoteHref={quoteHref} />

@@ -7,6 +7,7 @@ import HowItWorks from '../components/glass/HowItWorks.astro';
 import glass from '../../data/glass.json';
 import { getHome, getLocations, getServices } from '../lib/content';
 import { businessSchema, faqSchema } from '../lib/schema';
+import { appendCta, hasCta, planCtas, splitSections } from '../lib/cta';
 
 const page = await getHome();
 const { Content } = await render(page);
@@ -18,14 +19,26 @@ const jsonLd = [businessSchema(locations.map((l) => l.data.city), services.map((
 const html = page.rendered?.html ?? '';
 const parts = html ? html.split(/<!--\s*glass:([a-z-]+)\s*-->/) : [];
 const { hero, gallery, how, rating } = glass;
+
+// Call / Free Estimate rows on every other section (lib/cta.ts). The page is a mix of components and ported markup,
+// so it is flattened into one list of blocks first: the hero ends in buttons, the carousel and the tank do not, and
+// each <section> of the markup is checked. The trust strip between sections is not a section and is skipped.
+type Block = { kind: 'html'; html: string; section: boolean } | { kind: 'part'; name: string };
+const blocks: Block[] = parts.flatMap((part, i): Block[] => (i % 2 === 0 ? splitSections(part).map((c) => ({ kind: 'html' as const, ...c })) : [{ kind: 'part' as const, name: part }]));
+const counted = blocks.filter((b) => b.kind === 'part' || b.section);
+const plan = planCtas(counted.map((b) => (b.kind === 'part' ? b.name === 'hero' : hasCta(b.html))));
+const ctaFor = new Map(counted.map((b, i) => [b, plan[i]]));
+let ctaN = 0;
+const label = () => `home_section_cta_${++ctaN}_phone_button`;
 ---
 
 <Base title={page.data.title} description={page.data.description} image={page.data.image} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref="#quote" photoBand={false}>
-  {parts.length > 1 ? parts.map((part, i) => {
-    if (i % 2 === 0) return <Fragment set:html={part} />;
-    if (part === 'hero') return <GlassHero heading={page.data.heading} lede={page.data.subheading} {...hero} rating={rating} />;
-    if (part === 'gallery') return <PhotoCarousel {...gallery} />;
-    if (part === 'how') return <HowItWorks {...how} />;
+  {parts.length > 1 ? blocks.map((b) => {
+    if (b.kind === 'html') return <Fragment set:html={ctaFor.get(b) ? appendCta(b.html, { label: label(), quoteHref: '#quote' }) : b.html} />;
+    const cta = ctaFor.get(b) ? label() : undefined;
+    if (b.name === 'hero') return <GlassHero heading={page.data.heading} lede={page.data.subheading} {...hero} rating={rating} />;
+    if (b.name === 'gallery') return <PhotoCarousel {...gallery} cta={cta} />;
+    if (b.name === 'how') return <HowItWorks {...how} cta={cta} />;
     return null;
   }) : <Content />}
 </Base>

@@ -6,12 +6,13 @@
 // The finished state is the default: without the script, and with reduced motion, the tank is simply full and hot.
 // Only transform and opacity animate (CLS 0, nothing for the browser to re-lay out).
 import Picture from '../Picture.astro';
+import CtaRow from '../CtaRow.astro';
 import { phoneHref, site } from '../../lib/site';
 import { callClick } from '../../lib/track';
 
 interface Step { title: string; text: string; photo: string; alt: string }
-interface Props { id?: string; kicker: string; heading: string; text: string; steps: Step[] }
-const { id = 'how', kicker, heading, text, steps } = Astro.props;
+interface Props { id?: string; kicker: string; heading: string; text: string; steps: Step[]; cta?: string }
+const { id = 'how', kicker, heading, text, steps, cta } = Astro.props;
 const phone = site.business.phone;
 const call = callClick('how_it_works_phone');
 // "{phone}" in a step's text becomes a tap-to-call link.
@@ -60,6 +61,7 @@ const stepHtml = (t: string) => t.split('{phone}');
         ))}
       </ol>
     </div>
+    {cta && <CtaRow label={cta} quoteHref="#quote" />}
   </div>
 </section>
 

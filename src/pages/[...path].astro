@@ -1,6 +1,8 @@
 ---
 import { render } from 'astro:content';
 import { responsiveImages } from '../lib/images';
+import { addCtas } from '../lib/cta';
+import { pageKey, photoBandFor } from '../lib/photoband';
 import Base from '../layouts/Base.astro';
 import { getPages } from '../lib/content';
 import { breadcrumbSchema, faqSchema } from '../lib/schema';
@@ -12,12 +14,15 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
-// Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts); falls back to the normal render.
-const bodyHtml = page.rendered?.html ? await responsiveImages(page.rendered.html) : null;
 const hasQuote = /id="quote"/.test(page.body ?? '');
+// Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts), and every other section ends with a
+// Call / Free Estimate row (lib/cta.ts), the photo band included. Falls back to the normal render.
+const withCtas = page.rendered?.html
+  ? addCtas(await responsiveImages(page.rendered.html), { quoteHref: hasQuote ? '#quote' : '/#quote', prefix: pageKey(page.data.path), tail: Boolean(photoBandFor(page.data.path)) })
+  : null;
 const jsonLd = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: page.data.heading.replace(/\*/g, ''), path: page.data.path }]), ...(page.data.faqs.length > 0 ? [faqSchema(page.data.faqs)] : [])];
 ---
 
-<Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref={hasQuote ? '#quote' : undefined}>
-  {bodyHtml !== null ? <Fragment set:html={bodyHtml} /> : <Content />}
+<Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref={hasQuote ? '#quote' : undefined} photoBandCta={withCtas?.tailCta ?? false}>
+  {withCtas ? <Fragment set:html={withCtas.html} /> : <Content />}
 </Base>

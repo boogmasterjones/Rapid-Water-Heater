@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import CtaRow from '../../components/CtaRow.astro';
 import { formatDate, getPosts, readingTime } from '../../lib/content';
 import { breadcrumbSchema } from '../../lib/schema';
 import { site } from '../../lib/site';
@@ -16,6 +17,7 @@ const description = "Practical, honest advice from Rapid Water Heater LLC on kee
       <div class="breadcrumbs"><a href="/">Home</a><span class="sep">/</span><span aria-current="page">Blog</span></div>
       <h1>Plumbing &amp; Water Heater Tips</h1>
       <p>Practical, honest advice from Rapid Water Heater LLC on keeping your hot water reliable — written for Sarasota-area homeowners, not search engines.</p>
+      <CtaRow label="blog_section_cta_1_phone_button" align="start" />
     </div>
   </section>
   <section class="section-blue-tint">

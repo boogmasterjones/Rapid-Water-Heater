@@ -1,0 +1,10 @@
+---
+// The compact "Call / Get a Free Estimate" row that ends every other section (rules and markup in src/lib/cta.ts).
+// `label` is the GA4 call_click label for this placement.
+import { ctaRowHtml } from '../lib/cta';
+
+interface Props { label: string; quoteHref?: string; align?: 'center' | 'start' }
+const { label, quoteHref = '/#quote', align = 'center' } = Astro.props;
+---
+
+<Fragment set:html={ctaRowHtml({ label, quoteHref, align })} />

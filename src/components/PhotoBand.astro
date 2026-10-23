@@ -1,11 +1,14 @@
 ---
 // Real-people photo strip shown above the footer. Photos and per-page copy live in data/photos.json,
-// keyed by page path, so content rewrites never touch them.
-import photos from '../../data/photos.json';
+// keyed by page path, so content rewrites never touch them. `cta` adds the Call / Free Estimate row when the
+// page's alternation (src/lib/cta.ts) gives this last section one.
 import Picture from './Picture.astro';
+import CtaRow from './CtaRow.astro';
+import { pageKey, photoBandFor } from '../lib/photoband';
 
-const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1').replace(/^\/index$/, '/');
-const band = (photos.pages as Record<string, typeof photos.fallback>)[path] ?? (path.startsWith('/blog/') ? photos.fallback : null);
+interface Props { cta?: boolean; quoteHref?: string }
+const { cta = false, quoteHref = '/#quote' } = Astro.props;
+const band = photoBandFor(Astro.url.pathname);
 ---
 
 {
@@ -28,6 +31,7 @@ const band = (photos.pages as Record<string, typeof photos.fallback>)[path] ?? (
             <a class="btn btn-navy" href="/family">Meet the Rapid Water Heater Family</a>
           </p>
         )}
+        {cta && <CtaRow label={`${pageKey(Astro.url.pathname)}_photo_band_cta_phone_button`} quoteHref={quoteHref} />}
       </div>
     </section>
   )

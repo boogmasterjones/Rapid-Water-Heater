@@ -3,6 +3,9 @@ import { render } from 'astro:content';
 import { responsiveImages } from '../../lib/images';
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
+import CtaRow from '../../components/CtaRow.astro';
+import { insertMidCta } from '../../lib/cta';
+import { pageKey } from '../../lib/photoband';
 import { formatDate, getPosts, readingTime } from '../../lib/content';
 import { blogPostingSchema, breadcrumbSchema, faqSchema } from '../../lib/schema';
 import { site } from '../../lib/site';
@@ -17,8 +20,10 @@ const { post } = Astro.props;
 const { data } = post;
 const { Content } = await render(post);
 // Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts); falls back to the normal render.
-const bodyHtml = post.rendered?.html ? await responsiveImages(post.rendered.html) : null;
 const path = `/blog/${post.id}`;
+// Call / Free Estimate rows: one mid-article (before the middle H2) and one at the end (lib/cta.ts). The photo band
+// that follows stays plain, so two never sit back to back.
+const bodyHtml = post.rendered?.html ? insertMidCta(await responsiveImages(post.rendered.html), { label: `${pageKey(path)}_mid_article_cta_phone_button`, quoteHref: '/#quote' }) : null;
 const author = data.author ?? site.business.name;
 const date = formatDate(data.date);
 const minutes = readingTime(post.body ?? '');
@@ -47,6 +52,7 @@ const jsonLd = [blogPostingSchema({ ...data, path }), breadcrumbSchema([{ name: 
           <div class="faq-list">{data.faqs.map((f) => (<details class="faq-item"><summary>{f.question}</summary><p>{f.answer}</p></details>))}</div>
         </>
       )}
+      <CtaRow label={`${pageKey(path)}_end_article_cta_phone_button`} />
       </div>
     </div>
   </section>
