@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { responsiveImages } from '../../lib/images';
 import Base from '../../layouts/Base.astro';
 import { getLocations, getServices } from '../../lib/content';
 import { breadcrumbSchema, businessSchema, faqSchema, serviceSchema } from '../../lib/schema';
@@ -12,6 +13,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+// Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts); falls back to the normal render.
+const bodyHtml = entry.rendered?.html ? await responsiveImages(entry.rendered.html) : null;
 const path = `/services/${entry.id}`;
 const [services, locations] = await Promise.all([getServices(), getLocations()]);
 const business = businessSchema(locations.map((l) => l.data.city), services.map((s) => s.data.name));
@@ -19,5 +22,5 @@ const jsonLd = [business, serviceSchema(entry.data.name, entry.data.description,
 ---
 
 <Base title={entry.data.title} description={entry.data.description} image={entry.data.image} jsonLd={jsonLd}>
-  <Content />
+  {bodyHtml !== null ? <Fragment set:html={bodyHtml} /> : <Content />}
 </Base>

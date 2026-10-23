@@ -22,7 +22,7 @@ path: "/about"
         <p>As a licensed Florida plumbing contractor, we hold ourselves to a high standard of professionalism on every project we take on. We work with trusted manufacturers such as Bradford White, Rheem, A.O. Smith, and Halo to provide products known for reliability, performance, and long-term value — because pairing quality equipment with professional installation is how homeowners get the most out of their investment.</p>
         <p>We know that inviting a contractor into your home requires confidence and trust. Our team works to earn that trust through transparent pricing, honest recommendations, and dependable workmanship. That commitment is what our slogan is all about: <strong>Hot water now. No monkey business!</strong></p>
       </div>
-      <div class="art-panel art-photo"><img src="/images/photos/150-whole-family-team-in-front-of-van.jpg" alt="The whole Rapid Water Heater family and team in front of the company van" width="1600" height="1067" loading="lazy" decoding="async"><div class="art-badge">
+      <div class="art-panel art-photo"><img sizes="(max-width: 900px) 92vw, 540px" src="/images/photos/150-whole-family-team-in-front-of-van.jpg" alt="The whole Rapid Water Heater family and team in front of the company van" width="1600" height="1067" loading="lazy" decoding="async"><div class="art-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg>
           <div><strong>Licensed Florida Plumbing Contractor</strong><span>Serving Sarasota &amp; Southwest Florida</span></div>
         </div></div>

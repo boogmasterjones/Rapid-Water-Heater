@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { responsiveImages } from '../lib/images';
 import Base from '../layouts/Base.astro';
 import { getPages } from '../lib/content';
 import { breadcrumbSchema, faqSchema } from '../lib/schema';
@@ -11,10 +12,12 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+// Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts); falls back to the normal render.
+const bodyHtml = page.rendered?.html ? await responsiveImages(page.rendered.html) : null;
 const hasQuote = /id="quote"/.test(page.body ?? '');
 const jsonLd = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: page.data.heading.replace(/\*/g, ''), path: page.data.path }]), ...(page.data.faqs.length > 0 ? [faqSchema(page.data.faqs)] : [])];
 ---
 
 <Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref={hasQuote ? '#quote' : undefined}>
-  <Content />
+  {bodyHtml !== null ? <Fragment set:html={bodyHtml} /> : <Content />}
 </Base>

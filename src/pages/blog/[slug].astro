@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { responsiveImages } from '../../lib/images';
 import Base from '../../layouts/Base.astro';
 import Picture from '../../components/Picture.astro';
 import { formatDate, getPosts, readingTime } from '../../lib/content';
@@ -15,6 +16,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { data } = post;
 const { Content } = await render(post);
+// Plain <img> tags in the Markdown get WebP srcsets (lib/images.ts); falls back to the normal render.
+const bodyHtml = post.rendered?.html ? await responsiveImages(post.rendered.html) : null;
 const path = `/blog/${post.id}`;
 const author = data.author ?? site.business.name;
 const date = formatDate(data.date);
@@ -37,7 +40,7 @@ const jsonLd = [blogPostingSchema({ ...data, path }), breadcrumbSchema([{ name: 
     <div class="container">
       <div class="content-block" style="max-width:760px;margin:0 auto;">
       {data.image && <Picture src={data.image} alt={data.imageAlt ?? ''} loading="eager" fetchpriority="high" sizes="(max-width: 900px) 100vw, 760px" />}
-      <Content />
+      {bodyHtml !== null ? <Fragment set:html={bodyHtml} /> : <Content />}
       {data.faqs.length > 0 && (
         <>
           <h2>Frequently Asked Questions</h2>
