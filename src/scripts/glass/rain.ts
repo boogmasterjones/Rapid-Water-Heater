@@ -1,5 +1,5 @@
-// Starts the site-wide background rain on the fixed canvas in the layout. 40 drops on a computer at a 48 ms tick;
-// 16 drops on a phone at a 64 ms tick, drawn at 1x. Pauses while the tab is hidden. Reduced motion: no rain at all.
+// Starts the site-wide background rain on the fixed canvas in the layout. 40 drops on a computer at a 24 ms tick;
+// 16 drops on a phone at a 32 ms tick, drawn at 1x. Pauses while the tab is hidden. Reduced motion: no rain at all.
 // Where the browser allows it the drawing runs in a background worker, so scrolling and taps never wait on it.
 import { PHONE, RM, SHOT, tokenRgb } from './env';
 import { rainEngine, type RainApi, type RainCfg } from './rain-engine';
@@ -19,7 +19,7 @@ export function startRain(canvas: HTMLCanvasElement) {
     phone: PHONE,
     dpr: PHONE ? 1 : Math.min(devicePixelRatio || 1, 2),
     max: PHONE ? 16 : 40,
-    stepMs: PHONE ? 64 : 48,
+    stepMs: PHONE ? 32 : 24,
     colors: [tokenRgb('--cool', '53,167,255'), tokenRgb('--ice', '150,215,255'), tokenRgb('--gold', '245,179,0')],
   };
   const size = (): [number, number] => { const r = canvas.getBoundingClientRect(); return [Math.round(r.width), Math.round(r.height)]; };

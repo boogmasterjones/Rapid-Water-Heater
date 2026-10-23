@@ -1,11 +1,11 @@
 // Digital water drops for the site-wide background. Glowing droplets fall down a pixel grid, each dragging a fading
 // trail of square "pixels" (some carry faint 0s and 1s), and land with a dashed ripple and a few pixel splashes.
 //
-// Calm, stepped motion in the spirit of Hubert's matrix rain: the scene advances in ticks (about every 48 ms on a
-// computer, 64 ms on a phone) and only draws on a tick, so it runs at roughly 15 to 21 frames a second. Each drop has
-// its own speed, 60 to 220 px a second with most on the slow side, and its position is snapped to the 7 px grid, so
-// drops jump cell by cell at different rates. Drops start at random heights and wait a random moment before falling
-// again, so the columns never move in step.
+// Calm motion in the spirit of Hubert's matrix rain, but gliding: the scene advances in short ticks (about every 24 ms
+// on a computer, 32 ms on a phone, so roughly 30 to 40 frames a second) and only draws on a tick. Each drop has its own
+// speed, 60 to 220 px a second with most on the slow side. The glowing head moves smoothly between grid cells while
+// its trail stays on a fine 5 px pixel grid, so it still reads "digital" without the cell-by-cell jerk. Drops start at
+// random heights and wait a random moment before falling again, so the columns never move in step.
 //
 // The same engine runs in a background worker (OffscreenCanvas) where the browser allows it, and on the page otherwise.
 // It never touches the DOM, so it is safe in both. Every frame is image copies and rectangles: no blur, no shadows, no
@@ -27,7 +27,7 @@ type Spark = { x: number; y: number; vx: number; vy: number; t: number; a: numbe
 
 export type RainApi = { resize(w: number, h: number): void; run(on: boolean): void; still(): void };
 
-const CELL = 7;
+const CELL = 5;
 const MIN_SPEED = 60;
 const MAX_SPEED = 220;
 
@@ -79,7 +79,7 @@ export function rainEngine(canvas: AnyCanvas, cfg: RainCfg, frame: (cb: (t: numb
     d.v = MIN_SPEED + (MAX_SPEED - MIN_SPEED) * r * r; // most drops slow, a few quick
     d.y = first ? Math.random() * H * 1.1 - H * 0.3 : -30 - Math.random() * 80;
     d.wait = first ? 0 : Math.random() * 2.5; // a random pause before the column falls again
-    d.len = 5 + Math.round(z * 9); d.land = H * (0.3 + Math.random() * 0.68);
+    d.len = 7 + Math.round(z * 12); // in 5 px cells: about the same trail length as before d.land = H * (0.3 + Math.random() * 0.68);
     if (first && d.y > d.land) d.y = d.land * Math.random();
     d.data = Math.random() < 0.35; d.glyphs = Array.from({ length: d.len }, () => (Math.random() < 0.5 ? 0 : 1));
     d.a = 0.3 + z * 0.6;
@@ -105,7 +105,7 @@ export function rainEngine(canvas: AnyCanvas, cfg: RainCfg, frame: (cb: (t: numb
     ctx.clearRect(0, 0, W, H);
     for (const d of drops) {
       if (d.wait > 0 || d.y < -30) continue;
-      const top = Math.floor(d.y / CELL) * CELL; // snapped to the grid: the drop jumps cell by cell
+      const top = Math.floor(d.y / CELL) * CELL; // the trail sits on the pixel grid; the head (below) does not
       ctx.fillStyle = `rgb(${d.rgb})`; // trail: squares on the pixel grid, fading upward
       for (let k = 1; k <= d.len; k++) {
         const cy = top - k * CELL;
@@ -116,7 +116,7 @@ export function rainEngine(canvas: AnyCanvas, cfg: RainCfg, frame: (cb: (t: numb
       }
       const s = 0.5 + d.z * 0.55;
       ctx.globalAlpha = d.a;
-      ctx.drawImage(SPR[d.rgb], d.col - 15 * s, top - 32 * s, 30 * s, 48 * s);
+      ctx.drawImage(SPR[d.rgb], d.col - 15 * s, d.y - 32 * s, 30 * s, 48 * s); // smooth, sub-grid head
     }
     ctx.lineWidth = 1.2;
     for (const r of ripples) {
@@ -131,7 +131,9 @@ export function rainEngine(canvas: AnyCanvas, cfg: RainCfg, frame: (cb: (t: numb
   const tick = (t: number) => {
     if (!on) { ticking = false; return; }
     frame(tick);
-    if (last && t - last < stepMs) return; // nothing moves or draws between ticks
+    // Nothing moves or draws between ticks. The 3 ms slack keeps a 32 ms tick on every second 60 Hz frame (33.3 ms)
+    // instead of jittering between two and three frames.
+    if (last && t - last < stepMs - 3) return;
     const dt = last ? Math.min(0.12, (t - last) / 1000) : stepMs / 1000;
     last = t;
     step(dt); draw();
