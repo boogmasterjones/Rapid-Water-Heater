@@ -79,7 +79,8 @@ export function rainEngine(canvas: AnyCanvas, cfg: RainCfg, frame: (cb: (t: numb
     d.v = MIN_SPEED + (MAX_SPEED - MIN_SPEED) * r * r; // most drops slow, a few quick
     d.y = first ? Math.random() * H * 1.1 - H * 0.3 : -30 - Math.random() * 80;
     d.wait = first ? 0 : Math.random() * 2.5; // a random pause before the column falls again
-    d.len = 7 + Math.round(z * 12); // in 5 px cells: about the same trail length as before d.land = H * (0.3 + Math.random() * 0.68);
+    d.len = 7 + Math.round(z * 12); // in 5 px cells: about the same trail length as before
+    d.land = H * (0.3 + Math.random() * 0.68); // where this drop lands
     if (first && d.y > d.land) d.y = d.land * Math.random();
     d.data = Math.random() < 0.35; d.glyphs = Array.from({ length: d.len }, () => (Math.random() < 0.5 ? 0 : 1));
     d.a = 0.3 + z * 0.6;
