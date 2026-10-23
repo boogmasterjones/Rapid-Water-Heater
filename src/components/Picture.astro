@@ -8,9 +8,13 @@ interface Props {
   loading?: 'lazy' | 'eager';
   fetchpriority?: 'high' | 'auto';
   sizes?: string;
+  // Deferred: the real sources wait in data-src/data-srcset until a script swaps them in (the homepage carousel does
+  // this a few photos ahead), with the normal <picture> in <noscript>. For photos the browser would otherwise fetch
+  // early because they sit sideways in a scroller, not for anything a reader scrolls down to.
+  defer?: boolean;
 }
 
-const { src, alt, class: className, loading = 'lazy', fetchpriority = 'auto', sizes } = Astro.props;
+const { src, alt, class: className, loading = 'lazy', fetchpriority = 'auto', sizes, defer = false } = Astro.props;
 const info = await imageInfo(src);
 const width = info?.width ?? 1200;
 const height = info?.height ?? 800;
@@ -19,10 +23,24 @@ const url = encodeURI(src);
 const webp = info?.webp ? encodeURI(info.webp) : null;
 // With a slot size (sizes) and a small copy available, offer both widths; otherwise the one full-size WebP as before.
 const srcset = webp && info?.webpSmall && sizes ? `${encodeURI(info.webpSmall)} 800w, ${webp} ${width}w` : webp;
+const blank = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 ---
 
 {
-  webp ? (
+  defer ? (
+    <>
+      <picture data-defer>
+        {webp && <source type="image/webp" data-srcset={srcset} sizes={sizes} />}
+        <img src={blank} data-src={url} alt={alt} class={className} width={width} height={height} loading="lazy" decoding="async" />
+      </picture>
+      <noscript>
+        <picture>
+          {webp && <source type="image/webp" srcset={srcset} sizes={sizes} />}
+          <img src={url} alt={alt} class={className} width={width} height={height} loading="lazy" decoding="async" />
+        </picture>
+      </noscript>
+    </>
+  ) : webp ? (
     <picture>
       <source type="image/webp" srcset={srcset} sizes={sizes} />
       <img src={url} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />

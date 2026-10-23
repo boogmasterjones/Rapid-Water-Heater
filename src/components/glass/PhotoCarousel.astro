@@ -34,6 +34,9 @@ const total = slides.length;
 // Slots are a fixed height (CSS --gh), so the width follows each photo's shape; sizes picks the WebP copy for that slot.
 const slot = (ratio: number) => `(max-width: 760px) ${Math.round(210 * ratio)}px, ${Math.round(380 * ratio)}px`;
 const headingId = `${id}-heading`;
+// The first photos load like any lazy image; the rest are deferred (Picture defer) and fetched a few slides ahead by
+// the script, so a phone does not download all twelve because they sit sideways inside the strip.
+const EAGER = 2;
 ---
 
 <section class="carousel-sec" id={id} aria-labelledby={headingId} data-carousel-sec>
@@ -61,15 +64,15 @@ const headingId = `${id}-heading`;
   </div>
 
   <div class="viewport" id={`${id}-track`} tabindex="0" role="region" aria-roledescription="carousel" aria-label={`${heading}: ${total} photos. Use the arrow keys to move.`} data-viewport>
-    <ul class="track" data-track aria-live="off">
+    <div class="track" data-track aria-live="off">
       {slides.map((p, i) => (
-        <li class:list={['slide', { 'group-start': p.firstOfGroup && i > 0 }]} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${total}${p.caption ? `: ${p.caption}` : ''}`} data-group={p.group} style={`--a:${p.ratio.toFixed(4)}`}>
-          <Picture src={p.photo} alt={p.alt} sizes={slot(p.ratio)} />
+        <div class:list={['slide', { 'group-start': p.firstOfGroup && i > 0 }]} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${total}${p.caption ? `: ${p.caption}` : ''}`} data-group={p.group} style={`--a:${p.ratio.toFixed(4)}`}>
+          <Picture src={p.photo} alt={p.alt} sizes={slot(p.ratio)} defer={i >= EAGER} />
           {p.firstOfGroup && <span class="group-tag" aria-hidden="true">{resolved[p.group].label}</span>}
           {p.caption && <span class="cap" aria-hidden="true">{p.caption}</span>}
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   </div>
 
   {link && <p class="container more"><a class="btn btn-navy" href={link.href}>{link.label}</a></p>}
@@ -107,9 +110,13 @@ const headingId = `${id}-heading`;
 
     // ---- Load photos a few slots ahead of the one in view (they are lazy until then) ----
     const warm = (from: number) => {
-      for (let i = from; i < Math.min(slides.length, from + 4); i++) {
-        const img = slides[i].querySelector('img');
-        if (img && img.loading === 'lazy') img.loading = 'eager';
+      for (let i = from; i < Math.min(slides.length, from + 3); i++) {
+        const pic = slides[i].querySelector<HTMLElement>('picture[data-defer]');
+        if (!pic) continue;
+        pic.removeAttribute('data-defer');
+        pic.querySelectorAll<HTMLSourceElement>('source[data-srcset]').forEach((s) => { s.srcset = s.dataset.srcset!; s.removeAttribute('data-srcset'); });
+        const img = pic.querySelector('img');
+        if (img?.dataset.src) { img.loading = 'eager'; img.src = img.dataset.src; img.removeAttribute('data-src'); }
       }
     };
 
@@ -150,7 +157,7 @@ const headingId = `${id}-heading`;
       jumps.forEach((b) => b.setAttribute('aria-pressed', String(slides[Number(b.dataset.jump)]?.dataset.group === g)));
     };
     let syncQueued = false;
-    vp.addEventListener('scroll', () => { if (!syncQueued) { syncQueued = true; requestAnimationFrame(() => { syncQueued = false; syncGroup(); }); } }, { passive: true });
+    vp.addEventListener('scroll', () => { if (!syncQueued) { syncQueued = true; requestAnimationFrame(() => { syncQueued = false; syncGroup(); warm(current()); }); } }, { passive: true });
 
     // ---- Autoplay with every pause reason tracked separately ----
     const holds = new Set<string>();
