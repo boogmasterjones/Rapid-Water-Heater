@@ -1,0 +1,284 @@
+---
+// "Our work" leading into "Meet the family": one horizontal carousel of real photos, the jobs first, then the people.
+// A normal page section, never pinned and never driven by the page's vertical scroll.
+//
+// Without the script it is a swipeable, scroll-snapping strip. With it: arrow buttons, mouse drag, keyboard arrows
+// when focused, and two jump buttons (Our work / Meet the family). It also advances by one photo every 2.5 s with a
+// slow slide and loops back to the start; it pauses while hovered, focused, dragged or touched, while off screen or
+// in a background tab, and resumes after. No autoplay with prefers-reduced-motion (everything else still works).
+// Every photo slot is sized in CSS from the photo's real proportions, so nothing moves when the script starts (CLS 0).
+import Picture from '../Picture.astro';
+import { imageInfo } from '../../lib/images';
+
+interface Photo { photo: string; alt: string; caption?: string }
+interface Group { label: string; photos: Photo[] }
+interface Props {
+  id?: string;
+  kicker: string;
+  heading: string;
+  text: string;
+  groups: Group[];
+  link?: { href: string; label: string };
+}
+const { id = 'work', kicker, heading, text, groups, link } = Astro.props;
+
+const withRatio = async (list: Photo[]) => Promise.all(list.map(async (p) => {
+  const info = await imageInfo(p.photo);
+  return { ...p, ratio: info ? info.width / info.height : 1.5 };
+}));
+const resolved = await Promise.all(groups.map(async (g) => ({ ...g, photos: await withRatio(g.photos) })));
+const slides = resolved.flatMap((g, gi) => g.photos.map((p, pi) => ({ ...p, group: gi, firstOfGroup: pi === 0 })));
+const total = slides.length;
+// Slots are a fixed height (CSS --gh), so the width follows each photo's shape; sizes picks the WebP copy for that slot.
+const slot = (ratio: number) => `(max-width: 760px) ${Math.round(210 * ratio)}px, ${Math.round(380 * ratio)}px`;
+const headingId = `${id}-heading`;
+---
+
+<section class="carousel-sec" id={id} aria-labelledby={headingId} data-carousel-sec>
+  <div class="container head">
+    <div class="intro">
+      <span class="kicker">{kicker}</span>
+      <h2 id={headingId}>{heading}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="controls">
+      <div class="jumps" role="group" aria-label="Jump to">
+        {resolved.map((g, gi) => (
+          <button type="button" class="jump" data-jump={slides.findIndex((s) => s.group === gi)} aria-pressed={gi === 0 ? 'true' : 'false'}>{g.label}</button>
+        ))}
+      </div>
+      <div class="arrows">
+        <button type="button" class="arrow" data-prev aria-label="Previous photo" aria-controls={`${id}-track`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+        </button>
+        <button type="button" class="arrow" data-next aria-label="Next photo" aria-controls={`${id}-track`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="viewport" id={`${id}-track`} tabindex="0" role="region" aria-roledescription="carousel" aria-label={`${heading}: ${total} photos. Use the arrow keys to move.`} data-viewport>
+    <ul class="track" data-track aria-live="off">
+      {slides.map((p, i) => (
+        <li class:list={['slide', { 'group-start': p.firstOfGroup && i > 0 }]} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${total}${p.caption ? `: ${p.caption}` : ''}`} data-group={p.group} style={`--a:${p.ratio.toFixed(4)}`}>
+          <Picture src={p.photo} alt={p.alt} sizes={slot(p.ratio)} />
+          {p.firstOfGroup && <span class="group-tag" aria-hidden="true">{resolved[p.group].label}</span>}
+          {p.caption && <span class="cap" aria-hidden="true">{p.caption}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {link && <p class="container more"><a class="btn btn-navy" href={link.href}>{link.label}</a></p>}
+</section>
+
+<script>
+  import { RM } from '../../scripts/glass/env';
+
+  const AUTO_MS = 2500; // one photo every 2.5 s
+  const SLIDE_MS = 900; // a slow, smooth slide
+  const RESUME_MS = 3500; // after a swipe, drag, click or key press
+
+  document.querySelectorAll<HTMLElement>('[data-carousel-sec]').forEach((sec) => {
+    const vp = sec.querySelector<HTMLElement>('[data-viewport]');
+    const track = sec.querySelector<HTMLElement>('[data-track]');
+    if (!vp || !track) return;
+    const slides = [...track.children] as HTMLElement[];
+    const jumps = [...sec.querySelectorAll<HTMLButtonElement>('[data-jump]')];
+    const prevBtn = sec.querySelector<HTMLButtonElement>('[data-prev]');
+    const nextBtn = sec.querySelector<HTMLButtonElement>('[data-next]');
+    const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+    // ---- Where are we? (the slide whose left edge is nearest the strip's left padding) ----
+    const padLeft = () => parseFloat(getComputedStyle(track).paddingLeft) || 0;
+    const maxScroll = () => vp.scrollWidth - vp.clientWidth;
+    const targetOf = (i: number) => Math.min(maxScroll(), Math.max(0, slides[i].offsetLeft - padLeft()));
+    const current = () => {
+      const x = vp.scrollLeft;
+      if (x >= maxScroll() - 2) return slides.length - 1;
+      let best = 0, d = Infinity;
+      slides.forEach((s, i) => { const dd = Math.abs(targetOf(i) - x); if (dd < d) { d = dd; best = i; } });
+      return best;
+    };
+
+    // ---- Load photos a few slots ahead of the one in view (they are lazy until then) ----
+    const warm = (from: number) => {
+      for (let i = from; i < Math.min(slides.length, from + 4); i++) {
+        const img = slides[i].querySelector('img');
+        if (img && img.loading === 'lazy') img.loading = 'eager';
+      }
+    };
+
+    // ---- Smooth, slow movement (snap is off while it runs, so it never fights the animation) ----
+    let anim = 0;
+    const glide = (to: number, ms = SLIDE_MS) => {
+      cancelAnimationFrame(anim);
+      const from = vp.scrollLeft;
+      if (Math.abs(to - from) < 1) return;
+      if (RM) { vp.scrollLeft = to; return; }
+      vp.classList.add('gliding');
+      const t0 = performance.now();
+      const tick = (t: number) => {
+        const k = Math.min(1, (t - t0) / ms);
+        vp.scrollLeft = from + (to - from) * ease(k);
+        if (k < 1) anim = requestAnimationFrame(tick);
+        else { anim = 0; vp.classList.remove('gliding'); }
+      };
+      anim = requestAnimationFrame(tick);
+    };
+    const go = (i: number, ms?: number) => {
+      const n = slides.length;
+      const idx = ((i % n) + n) % n;
+      warm(idx);
+      // Looping back to the start runs a little longer so the rewind reads as a slide, not a jump.
+      glide(targetOf(idx), ms ?? (idx === 0 && vp.scrollLeft > 0 ? SLIDE_MS * 1.6 : SLIDE_MS));
+    };
+    const step = (dir: 1 | -1) => {
+      const c = current();
+      if (dir > 0 && vp.scrollLeft >= maxScroll() - 2) return go(0);
+      if (dir < 0 && vp.scrollLeft <= 2) return go(slides.length - 1);
+      go(c + dir);
+    };
+
+    // ---- Jump buttons and the active group ----
+    const syncGroup = () => {
+      const g = slides[current()]?.dataset.group;
+      jumps.forEach((b) => b.setAttribute('aria-pressed', String(slides[Number(b.dataset.jump)]?.dataset.group === g)));
+    };
+    let syncQueued = false;
+    vp.addEventListener('scroll', () => { if (!syncQueued) { syncQueued = true; requestAnimationFrame(() => { syncQueued = false; syncGroup(); }); } }, { passive: true });
+
+    // ---- Autoplay with every pause reason tracked separately ----
+    const holds = new Set<string>();
+    let timer = 0;
+    const schedule = () => {
+      clearTimeout(timer);
+      if (RM || holds.size) return;
+      timer = window.setTimeout(() => { if (!holds.size) { step(1); schedule(); } }, AUTO_MS);
+    };
+    const hold = (why: string, on: boolean) => { if (on) holds.add(why); else holds.delete(why); schedule(); };
+    let nudgeT = 0;
+    const nudge = () => { hold('user', true); clearTimeout(nudgeT); nudgeT = window.setTimeout(() => hold('user', false), RESUME_MS); };
+
+    prevBtn?.addEventListener('click', () => { nudge(); step(-1); });
+    nextBtn?.addEventListener('click', () => { nudge(); step(1); });
+    jumps.forEach((b) => b.addEventListener('click', () => { nudge(); go(Number(b.dataset.jump)); }));
+    vp.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); nudge(); step(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); nudge(); step(-1); }
+      else if (e.key === 'Home') { e.preventDefault(); nudge(); go(0); }
+      else if (e.key === 'End') { e.preventDefault(); nudge(); go(slides.length - 1); }
+    });
+
+    sec.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') hold('hover', true); });
+    sec.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hold('hover', false); });
+    // Focus inside pauses it and lets screen readers hear each slide as it changes.
+    sec.addEventListener('focusin', () => { hold('focus', true); track.setAttribute('aria-live', 'polite'); });
+    sec.addEventListener('focusout', (e) => { if (!sec.contains(e.relatedTarget as Node)) { hold('focus', false); track.setAttribute('aria-live', 'off'); } });
+    // Touch swipes use the browser's own scrolling (momentum and snap); they just pause autoplay for a while.
+    vp.addEventListener('touchstart', () => { cancelAnimationFrame(anim); vp.classList.remove('gliding'); nudge(); }, { passive: true });
+    vp.addEventListener('wheel', (e) => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { cancelAnimationFrame(anim); vp.classList.remove('gliding'); nudge(); } }, { passive: true });
+
+    // ---- Mouse drag (touch and pens scroll natively) ----
+    let dragX = 0, dragLeft = 0, dragging = false, moved = 0, lastX = 0, lastT = 0, vel = 0;
+    vp.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      cancelAnimationFrame(anim);
+      dragging = true; moved = 0; dragX = lastX = e.clientX; dragLeft = vp.scrollLeft; lastT = performance.now(); vel = 0;
+      vp.classList.add('dragging'); hold('drag', true);
+    });
+    addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const now = performance.now();
+      vel = (e.clientX - lastX) / Math.max(1, now - lastT); lastX = e.clientX; lastT = now;
+      moved = Math.max(moved, Math.abs(e.clientX - dragX));
+      vp.scrollLeft = dragLeft - (e.clientX - dragX);
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false; vp.classList.remove('dragging');
+      // A little momentum, then settle on the nearest photo.
+      const projected = vp.scrollLeft - vel * 260;
+      let best = 0, d = Infinity;
+      slides.forEach((s, i) => { const dd = Math.abs(targetOf(i) - projected); if (dd < d) { d = dd; best = i; } });
+      warm(best); glide(targetOf(best), 520);
+      hold('drag', false); nudge();
+    };
+    addEventListener('pointerup', endDrag);
+    addEventListener('pointercancel', endDrag);
+    // A drag must not also count as a click on a photo or link inside.
+    vp.addEventListener('click', (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); moved = 0; } }, true);
+    vp.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // ---- Sleep when off screen or in a background tab ----
+    if ('IntersectionObserver' in window) {
+      hold('offscreen', true);
+      new IntersectionObserver(([en]) => { if (en.isIntersecting) warm(current()); hold('offscreen', !en.isIntersecting); }, { threshold: 0.25 }).observe(vp);
+    }
+    document.addEventListener('visibilitychange', () => hold('hidden', document.hidden));
+
+    sec.classList.add('ready');
+    syncGroup();
+    schedule();
+  });
+</script>
+
+<style>
+  .carousel-sec { --gh: 380px; --gap: 16px; --pad: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); padding: 72px 0 56px; }
+  .head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px 32px; }
+  .intro { max-width: 640px; }
+  .intro h2 { margin-bottom: 10px; }
+  .intro p { margin: 0; font-size: 1.06rem; }
+  .controls { display: flex; align-items: center; gap: 14px; }
+  .jumps { display: inline-flex; padding: 4px; border-radius: var(--r-pill); background: rgb(255 255 255 / 0.06); border: 1px solid var(--glass-border); }
+  .jump {
+    min-height: 40px; padding: 0 16px; border: 0; border-radius: var(--r-pill); background: transparent; cursor: pointer;
+    color: var(--text-muted); font: 700 0.86rem var(--font-sans); letter-spacing: 0.04em; transition: background-color 0.25s, color 0.25s;
+  }
+  .jump[aria-pressed="true"] { background: linear-gradient(90deg, rgb(53 167 255 / 0.4), rgb(245 179 0 / 0.35)); color: #fff; }
+  .jump:hover { color: #fff; }
+  .arrows { display: inline-flex; gap: 8px; }
+  .arrow {
+    display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+    background: rgb(255 255 255 / 0.1); border: 1px solid var(--glass-border-strong); color: #fff; box-shadow: var(--glass-edge);
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .arrow:hover { background: rgb(255 255 255 / 0.18); border-color: var(--gold); }
+  .arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .viewport {
+    margin-top: 26px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad);
+    scrollbar-width: none; outline-offset: -4px; border-radius: var(--r-md); touch-action: pan-x pan-y;
+  }
+  .viewport::-webkit-scrollbar { display: none; }
+  .viewport:focus-visible { outline: 3px solid var(--gold-hi); }
+  /* While the script slides or the mouse drags, snapping is off so it never fights the movement. */
+  .viewport:global(.gliding), .viewport:global(.dragging) { scroll-snap-type: none; }
+  .viewport:global(.dragging) { cursor: grabbing; user-select: none; }
+  :global(.ready) .viewport { cursor: grab; }
+  .track { display: flex; gap: var(--gap); list-style: none; margin: 0; padding: 6px var(--pad) 18px; width: max-content; }
+  .slide {
+    position: relative; flex: none; margin: 0; height: var(--gh); width: calc(var(--gh) * var(--a)); scroll-snap-align: start;
+    border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--glass-border-strong);
+    box-shadow: var(--shadow-2), 0 0 0 6px rgb(255 255 255 / 0.04); background: rgb(255 255 255 / 0.04);
+  }
+  .slide.group-start { margin-left: 18px; box-shadow: var(--shadow-2), 0 0 0 6px rgb(245 179 0 / 0.08); }
+  .slide :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; pointer-events: none; -webkit-user-drag: none; }
+  .cap, .group-tag {
+    position: absolute; padding: 7px 12px; border-radius: var(--r-pill); font-size: 0.84rem; font-weight: 700; color: #fff;
+    background: var(--glass-fill-strong); border: 1px solid var(--glass-border-strong); box-shadow: var(--glass-edge);
+  }
+  .cap { left: 12px; bottom: 12px; max-width: calc(100% - 24px); }
+  .group-tag { left: 12px; top: 12px; color: var(--gold-hi); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.72rem; }
+  .more { margin-top: 18px; margin-bottom: 0; }
+
+  @media (max-width: 760px) {
+    .carousel-sec { --gh: clamp(200px, 52vw, 260px); --gap: 12px; padding: 56px 0 44px; }
+    .head { align-items: stretch; }
+    .controls { width: 100%; justify-content: space-between; }
+    .jump { padding: 0 13px; font-size: 0.82rem; }
+    .arrow { width: 46px; height: 46px; }
+    .viewport { margin-top: 20px; }
+  }
+</style>

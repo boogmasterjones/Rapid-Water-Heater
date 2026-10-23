@@ -2,7 +2,7 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GlassHero from '../components/glass/GlassHero.astro';
-import TeamGallery from '../components/glass/TeamGallery.astro';
+import PhotoCarousel from '../components/glass/PhotoCarousel.astro';
 import glass from '../../data/glass.json';
 import { getHome, getLocations, getServices } from '../lib/content';
 import { businessSchema, faqSchema } from '../lib/schema';
@@ -23,7 +23,7 @@ const { hero, gallery, rating } = glass;
   {parts.length > 1 ? parts.map((part, i) => {
     if (i % 2 === 0) return <Fragment set:html={part} />;
     if (part === 'hero') return <GlassHero heading={page.data.heading} lede={page.data.subheading} {...hero} rating={rating} />;
-    if (part === 'gallery') return <TeamGallery team={gallery.team} work={gallery.work} />;
+    if (part === 'gallery') return <PhotoCarousel {...gallery} />;
     return null;
   }) : <Content />}
 </Base>
