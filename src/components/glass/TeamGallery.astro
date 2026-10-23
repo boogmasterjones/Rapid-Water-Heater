@@ -20,6 +20,8 @@ const teamPhotos = await withRatio(team.photos);
 const workPhotos = await withRatio(work.photos);
 const all = [...teamPhotos, ...workPhotos];
 const sumRatio = all.reduce((s, p) => s + p.ratio, 0).toFixed(3);
+// The slot each photo fills (cards are a fixed height, so width follows the photo's shape), for picking the WebP size.
+const slot = (ratio: number) => `(max-width: 760px) ${Math.round(280 * ratio)}px, ${Math.round(400 * ratio)}px`;
 const gaps = all.length; // gaps between photos, plus the one around the divider tile
 ---
 
@@ -43,16 +45,16 @@ const gaps = all.length; // gaps between photos, plus the one around the divider
     </div>
     <div class="viewport" tabindex="0" role="region" aria-label={`${team.kicker} and ${work.kicker.toLowerCase()} photos`}>
       <ul class="track" data-track>
-        {teamPhotos.map((p, i) => (
+        {teamPhotos.map((p) => (
           <li class="shot" style={`--a:${p.ratio.toFixed(4)}`}>
-            <Picture src={p.photo} alt={p.alt} loading={i < 3 ? 'eager' : 'lazy'} sizes="(max-width: 860px) 70vw, 560px" />
+            <Picture src={p.photo} alt={p.alt} sizes={slot(p.ratio)} />
             {p.caption && <span class="cap">{p.caption}</span>}
           </li>
         ))}
         <li class="divider" data-divider aria-hidden="true"><span>{work.kicker}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
         {workPhotos.map((p) => (
           <li class="shot work" style={`--a:${p.ratio.toFixed(4)}`}>
-            <Picture src={p.photo} alt={p.alt} sizes="(max-width: 860px) 70vw, 560px" />
+            <Picture src={p.photo} alt={p.alt} sizes={slot(p.ratio)} />
             {p.caption && <span class="cap">{p.caption}</span>}
           </li>
         ))}
@@ -87,6 +89,7 @@ const gaps = all.length; // gaps between photos, plus the one around the divider
       if (isWork !== lastWork) { lastWork = isWork; sec.classList.toggle('is-work', isWork); }
     };
     const ask = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    viewport.removeAttribute('tabindex'); viewport.removeAttribute('role'); viewport.removeAttribute('aria-label');
     measure();
     sec.style.setProperty('--switch', switchAt.toFixed(4));
     update();
@@ -106,10 +109,10 @@ const gaps = all.length; // gaps between photos, plus the one around the divider
   .lab .big { margin: 0 0 6px; font: 700 var(--fs-h2)/1.06 var(--font-display); color: var(--text-strong); letter-spacing: -0.015em; text-wrap: balance; }
   .lab .sub { margin: 0; max-width: 46ch; font-size: 1.06rem; }
   .meter { display: none; }
-  .viewport { overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; margin-top: 26px; outline-offset: -3px; }
+  .viewport { overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: var(--pad); scrollbar-width: thin; margin-top: 26px; outline-offset: -3px; }
   .track { display: flex; gap: var(--gap); list-style: none; margin: 0; padding: 6px var(--pad) 16px; width: max-content; }
   .shot {
-    position: relative; flex: none; margin: 0; height: var(--gh); width: calc(var(--gh) * var(--a)); scroll-snap-align: center;
+    position: relative; flex: none; margin: 0; height: var(--gh); width: calc(var(--gh) * var(--a)); scroll-snap-align: start;
     border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--glass-border-strong);
     box-shadow: var(--shadow-2), 0 0 0 6px rgb(255 255 255 / 0.04);
   }

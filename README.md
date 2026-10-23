@@ -1,8 +1,24 @@
 # Rapid Water Heater LLC — website
 
-Built from the Biggify agency site template, so it shares the same content contract as every other client site and the Biggify Platform can publish to it. Design lives in this site's own `public/css`, `public/js` and `src/`; the header and footer are static markup in `src/components`.
+Built from the Biggify agency site template, so it shares the same content contract as every other client site and the Biggify Platform can publish to it. The design ("Glass Rain": glass and depth over calm digital water drops) lives in `src/`; menu, FAQ, carousel and form behaviour stay in `public/js`.
 
 Built with Astro. Deployed by Netlify from GitHub (`npm run build`, output in `dist/`).
+
+## Design system (Glass Rain)
+
+Built to be lifted into the shared template with only the client colours changing.
+
+| What | Where |
+|---|---|
+| Tokens: colour roles, glass, radii, shadows, type, motion (client colours arrive from `data/site.json` as `--c-*`) | `src/styles/tokens.css` |
+| Base elements, buttons, glass, reveals, reduced motion | `src/styles/base.css` |
+| The ported page vocabulary (page-hero, card, grid, cta-band, quote form, content-block, FAQ, family, photo band) | `src/styles/content.css` |
+| Site-wide water-drop background (worker canvas with main-thread fallback), header pill, footer, phone bar | `src/components/glass/Backdrop.astro`, `src/components/Header.astro`, `src/components/Footer.astro`, `src/components/glass/CallBar.astro` |
+| Homepage hero and the team-to-work gallery | `src/components/glass/GlassHero.astro`, `src/components/glass/TeamGallery.astro` |
+| Their copy, photo picks and the displayed Google rating | `data/glass.json` |
+| Scripts (reveals, loop pausing, tilt, rain engine) | `src/scripts/glass/` |
+
+The homepage copy stays in `content/pages/home.md`; `<!-- glass:hero -->` and `<!-- glass:gallery -->` mark where the components go. Reduced motion turns off the drops and every loop and shows the gallery as a plain swipe strip. `?shot` on any address shows every reveal finished (for screenshots).
 
 ## What makes each site unique
 
@@ -58,7 +74,7 @@ Services and locations additionally need `name`, `heading`, `summary` (20-200 ch
 
 Navigation, footer links, the blog index, `sitemap.xml`, `robots.txt`, `llms.txt`, canonical tags, Open Graph tags and structured data (business, service, breadcrumb, FAQ, article). Adding a content file is all it takes.
 
-At build time: WebP copies of every JPG/PNG in `public/images/` (served through `<picture>`), photos capped at 1600px, real width/height on every image, and `apple-touch-icon.png` from `favicon.svg`. Every phone link fires a GA4 `call_click` event with a label for where it was clicked.
+At build time: WebP copies of every JPG/PNG in `public/images/` (served through `<picture>`), plus an 800px-wide WebP of wider photos that `<Picture sizes="...">` offers through srcset, photos capped at 1600px, real width/height on every image, and `apple-touch-icon.png` from `favicon.svg`. Every phone link fires a GA4 `call_click` event with a label for where it was clicked.
 
 ## Paths the platform may write
 

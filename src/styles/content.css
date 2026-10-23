@@ -189,7 +189,9 @@
 .testi-name strong { display: block; font-size: 0.95rem; }
 .testi-name span { font-size: 0.84rem; color: var(--text-muted); }
 .review-carousel { position: relative; max-width: 940px; margin: 0 auto; }
-.review-track { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 6px 4px 14px; margin: 0 -4px; scrollbar-width: none; }
+/* scroll-padding matches the track padding so the first slide already sits on its snap point: an initial snap scroll
+   would count as a scroll and stop the browser reporting the page's largest paint. */
+.review-track { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 4px; scroll-behavior: smooth; padding: 6px 4px 14px; margin: 0 -4px; scrollbar-width: none; }
 .review-track::-webkit-scrollbar { display: none; }
 .review-slide { flex: 0 0 100%; scroll-snap-align: start; }
 @media (min-width: 760px) { .review-slide { flex: 0 0 calc(50% - 11px); } }

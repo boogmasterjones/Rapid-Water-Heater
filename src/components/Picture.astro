@@ -17,12 +17,14 @@ const height = info?.height ?? 800;
 // File names with spaces (e.g. "work photos/") are percent-encoded in the markup; the file lookup above uses the raw path.
 const url = encodeURI(src);
 const webp = info?.webp ? encodeURI(info.webp) : null;
+// With a slot size (sizes) and a small copy available, offer both widths; otherwise the one full-size WebP as before.
+const srcset = webp && info?.webpSmall && sizes ? `${encodeURI(info.webpSmall)} 800w, ${webp} ${width}w` : webp;
 ---
 
 {
   webp ? (
     <picture>
-      <source type="image/webp" srcset={webp} sizes={sizes} />
+      <source type="image/webp" srcset={srcset} sizes={sizes} />
       <img src={url} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
     </picture>
   ) : (

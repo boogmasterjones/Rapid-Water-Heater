@@ -6,6 +6,7 @@ import sharp from 'sharp';
 const PUBLIC = join(process.cwd(), 'public');
 const IMAGES = join(PUBLIC, 'images');
 const MAX_EDGE = 1600;
+const SMALL_WIDTH = 800;
 
 function* walk(dir) {
   if (!existsSync(dir)) return;
@@ -35,6 +36,15 @@ for (const file of walk(IMAGES)) {
     const stale = !existsSync(webp) || statSync(webp).mtimeMs < statSync(file).mtimeMs;
     if (stale) {
       await sharp(file).webp({ quality: 80, effort: 5 }).toFile(webp);
+      converted++;
+    }
+
+    // A smaller WebP for photos shown well below their full size (cards, galleries, the hero photo). Picture.astro
+    // offers both through srcset, and the browser picks by the slot size it is given.
+    const width = Math.min(meta.width ?? 0, MAX_EDGE);
+    const small = file.slice(0, -ext.length) + `.w${SMALL_WIDTH}.webp`;
+    if (width > SMALL_WIDTH + 100 && (!existsSync(small) || statSync(small).mtimeMs < statSync(file).mtimeMs)) {
+      await sharp(file).resize({ width: SMALL_WIDTH }).webp({ quality: 78, effort: 5 }).toFile(small);
       converted++;
     }
   } catch (error) {

@@ -6,3 +6,7 @@
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Astro's built CSS and JS have content hashes in their names, so they can be cached for good.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

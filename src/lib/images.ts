@@ -2,7 +2,8 @@ import { existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import sharp from 'sharp';
 
-export type ImageInfo = { src: string; webp: string | null; width: number; height: number };
+// webpSmall: an 800px-wide WebP for photos wider than that (also made by the optimizer), or null.
+export type ImageInfo = { src: string; webp: string | null; webpSmall: string | null; width: number; height: number };
 
 const cache = new Map<string, Promise<ImageInfo | null>>();
 const PUBLIC_DIR = join(process.cwd(), 'public');
@@ -19,7 +20,9 @@ export function imageInfo(src: string | undefined): Promise<ImageInfo | null> {
         const meta = await sharp(file).metadata();
         const webpPath = src.replace(/\.(jpe?g|png)$/i, '.webp');
         const hasWebp = webpPath !== src && existsSync(join(PUBLIC_DIR, webpPath)) && statSync(join(PUBLIC_DIR, webpPath)).size > 0;
-        return { src, webp: hasWebp ? webpPath : null, width: meta.width ?? 1200, height: meta.height ?? 800 };
+        const smallPath = src.replace(/\.(jpe?g|png)$/i, '.w800.webp');
+        const hasSmall = hasWebp && smallPath !== src && existsSync(join(PUBLIC_DIR, smallPath)) && statSync(join(PUBLIC_DIR, smallPath)).size > 0;
+        return { src, webp: hasWebp ? webpPath : null, webpSmall: hasSmall ? smallPath : null, width: meta.width ?? 1200, height: meta.height ?? 800 };
       })(),
     );
   }

@@ -66,3 +66,6 @@ export function tilt(el: HTMLElement, max = 8, host: HTMLElement = el) {
   host.addEventListener('pointerleave', () => { cancelAnimationFrame(raf); raf = 0; el.style.transform = ''; });
 }
 $$('main .service-card, [data-tilt]').forEach((c) => tilt(c, 8));
+
+// ---------- Keyboard access for the ported review carousel (a scrollable strip must be focusable) ----------
+$$('.review-track').forEach((t) => { if (!t.hasAttribute('tabindex')) { t.tabIndex = 0; t.setAttribute('role', 'region'); t.setAttribute('aria-label', 'Customer reviews'); } });
