@@ -1,5 +1,5 @@
 ---
-title: "Tank vs. Tankless Water Heaters: Which Is Right for Your Sarasota Home?"
+title: "Tank vs. Tankless Water Heaters: Which Fits Your Sarasota Home?"
 description: "An honest comparison of tank and tankless water heaters — cost, energy use, space, lifespan, and which fits your Sarasota home."
 date: 2026-09-10
 category: "Buying Guide"

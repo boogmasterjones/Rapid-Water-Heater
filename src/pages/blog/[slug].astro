@@ -19,10 +19,13 @@ const path = `/blog/${post.id}`;
 const author = data.author ?? site.business.name;
 const date = formatDate(data.date);
 const minutes = readingTime(post.body ?? '');
+// Brand suffix only when the whole title still fits in a search result (~65 characters); otherwise the article title alone.
+const suffix = ` | ${site.brand.logoText}`;
+const pageTitle = data.title.length + suffix.length <= 65 ? data.title + suffix : data.title;
 const jsonLd = [blogPostingSchema({ ...data, path }), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }, { name: data.title, path }]), ...(data.faqs.length > 0 ? [faqSchema(data.faqs)] : [])];
 ---
 
-<Base title={`${data.title} | ${site.brand.logoText}`} description={data.description} image={data.image} ogType="article" jsonLd={jsonLd}>
+<Base title={pageTitle} description={data.description} image={data.image} ogType="article" jsonLd={jsonLd}>
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumbs"><a href="/">Home</a><span class="sep">/</span><a href="/blog">Blog</a><span class="sep">/</span><span aria-current="page">{data.title}</span></div>
