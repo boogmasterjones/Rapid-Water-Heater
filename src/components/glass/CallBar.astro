@@ -1,0 +1,29 @@
+---
+// The phone call bar that sticks to the bottom on small screens. public/js/main.js slides it in (body.sticky-bar-visible)
+// once the visitor has scrolled past half of the first hero, exactly as before.
+import { phoneHref, site } from '../../lib/site';
+import { callClick } from '../../lib/track';
+
+interface Props { quoteHref?: string }
+const { quoteHref = site.cta.href } = Astro.props;
+---
+
+<div class="sticky-call-mobile">
+  <a class="btn btn-gold" href={phoneHref(site.business.phone)} onclick={callClick('sticky_mobile_phone_button')}>Call Now</a>
+  <a class="btn btn-outline-light" href={quoteHref}>{site.cta.label}</a>
+</div>
+
+<style>
+  .sticky-call-mobile { display: none; }
+  @media (max-width: 760px) {
+    .sticky-call-mobile {
+      position: fixed; z-index: 95; left: 10px; right: 10px; bottom: 10px;
+      display: flex; gap: 10px; padding: 8px; border-radius: var(--r-pill);
+      background: var(--glass-solid); border: 1px solid rgb(255 255 255 / 0.2);
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 10px 40px rgb(0 0 0 / 0.45);
+      transform: translateY(150%); transition: transform 0.35s var(--ease-out);
+    }
+    :global(body.sticky-bar-visible) .sticky-call-mobile { transform: none; }
+    .btn { flex: 1; min-height: 48px; padding: 12px 14px; }
+  }
+</style>

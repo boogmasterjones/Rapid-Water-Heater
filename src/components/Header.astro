@@ -1,40 +1,147 @@
 ---
-// Static header ported from the original site. Links already point at the new addresses.
+// The floating glass pill. Class names .menu-toggle / .main-nav are kept because public/js/main.js drives the
+// menu (open, close on outside click and on Escape).
+import Picture from './Picture.astro';
+import { phoneHref, site } from '../lib/site';
+import { callClick, cleanPath } from '../lib/track';
+
+interface Props { quoteHref?: string }
+const { quoteHref = site.cta.href } = Astro.props;
+const here = cleanPath(Astro.url.pathname);
+
+const menu = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/family', label: 'Meet the Family' },
+  { href: '/services', label: 'Services' },
+  { href: '/services/water-heater-installation', label: 'Water Heater Installation' },
+  { href: '/services/tankless-water-heater-installation', label: 'Tankless Water Heater Installation' },
+  { href: '/services/same-day-water-heaters', label: 'Same-Day Water Heaters' },
+  { href: '/services/drain-cleaning', label: 'Drain Cleaning' },
+  { href: '/services/emergency-plumbing', label: 'Emergency Plumbing' },
+  { href: '/locations', label: 'Service Areas' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/contact', label: 'About & Contact' },
+];
+const quick = [
+  { href: '/services', label: 'Services' },
+  { href: '/locations', label: 'Service Areas' },
+  { href: '/family', label: 'Family' },
+  { href: '/reviews', label: 'Reviews' },
+  { href: '/blog', label: 'Blog' },
+];
+const current = (href: string) => (href === here ? 'page' : undefined);
 ---
+
 <header class="site-header">
-  <div class="header-inner container">
+  <div class="pill">
     <a href="/" class="logo">
-      <img class="logo-mark" src="/images/mascot-logo.png" alt="Rapid Water Heater LLC mascot" width="40" height="40" loading="lazy">
-      <span>Rapid Water Heater<small>Plumbing &amp; Water Heaters</small></span>
+      <Picture src="/images/mascot-logo.png" alt={`${site.business.name} mascot`} class="logo-mark" loading="eager" />
+      <span>{site.brand.logoText}<small>Plumbing &amp; Water Heaters</small></span>
     </a>
 
-    <div class="header-cta">
-      <div class="menu-wrap">
-        <button class="menu-toggle" aria-haspopup="true" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-          <span class="menu-label">Menu</span>
-        </button>
-        <nav class="main-nav" aria-label="Primary">
-          <a href="/" aria-current="page">Home</a>
-          <a href="/about">About</a>
-          <a href="/family">Meet the Family</a>
-          <a href="/services">Services</a>
-          <a href="/services/water-heater-installation">Water Heater Installation</a>
-          <a href="/services/tankless-water-heater-installation">Tankless Water Heater Installation</a>
-          <a href="/services/same-day-water-heaters">Same-Day Water Heaters</a>
-          <a href="/services/drain-cleaning">Drain Cleaning</a>
-          <a href="/services/emergency-plumbing">Emergency Plumbing</a>
-          <a href="/locations">Service Areas</a>
-          <a href="/blog">Blog</a>
-          <a href="/reviews">Reviews</a>
-          <a href="/contact">About &amp; Contact</a>
-        </nav>
-      </div>
-      <a class="header-phone" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'header_phone_button'})">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span class="phone-text">941-876-5900</span>
-      </a>
-      <a class="btn btn-gold" href="#quote">Free Estimate</a>
+    <nav class="quick" aria-label="Quick links">
+      {quick.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+    </nav>
+
+    <div class="menu-wrap">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        <span class="menu-label">Menu</span>
+      </button>
+      <nav class="main-nav" id="site-menu" aria-label="Primary">
+        {menu.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+      </nav>
     </div>
+
+    <a class="header-phone" href={phoneHref(site.business.phone)} onclick={callClick('header_phone_button')}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span class="phone-cta">Call now</span>
+      <span class="phone-text">{site.business.phone}</span>
+    </a>
+    <a class="btn btn-gold estimate" href={quoteHref}>{site.cta.label}</a>
   </div>
 </header>
+
+<style>
+  .site-header {
+    position: fixed; z-index: 100; top: var(--header-top); left: 0; right: 0;
+    display: flex; justify-content: center; padding: 0 12px; pointer-events: none;
+  }
+  .pill {
+    pointer-events: auto; position: relative;
+    display: flex; align-items: center; gap: 18px;
+    min-height: var(--header-h); max-width: 100%; padding: 8px 10px 8px 14px;
+    border-radius: var(--r-pill);
+    background: var(--glass-solid); border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 10px 40px rgb(0 0 0 / 0.3);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #fff; font: 700 1.05rem/1.05 var(--font-display); white-space: nowrap; }
+  .logo :global(.logo-mark) { width: 38px; height: 38px; border-radius: 50%; background: #fff; padding: 2px; object-fit: contain; flex: none; }
+  .logo small { display: block; margin-top: 3px; font: 600 0.6rem/1 var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-hi); }
+
+  .quick { display: flex; gap: 2px; }
+  .quick a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; border-radius: var(--r-pill);
+    color: #e6efff; text-decoration: none; font-weight: 600; font-size: 0.92rem;
+  }
+  .quick a:hover, .quick a[aria-current="page"] { color: var(--gold-hi); }
+
+  .menu-wrap { position: relative; }
+  .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 0 14px;
+    border-radius: var(--r-pill); border: 1px solid rgb(255 255 255 / 0.22); background: rgb(255 255 255 / 0.08);
+    color: #fff; font: 700 0.92rem var(--font-sans); cursor: pointer;
+  }
+  .menu-toggle:hover, .menu-toggle[aria-expanded="true"] { border-color: var(--gold); color: var(--gold-hi); }
+  .main-nav {
+    position: absolute; top: calc(100% + 14px); right: -60px; z-index: 5;
+    display: grid; grid-template-columns: 1fr; min-width: 270px; padding: 10px;
+    border-radius: var(--r-md); background: rgb(12 24 58 / 0.98); border: 1px solid rgb(255 255 255 / 0.2);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.15), var(--shadow-3);
+    opacity: 0; visibility: hidden; transform: translateY(-8px) scale(0.98); transform-origin: top right;
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+  .main-nav:global(.open) { opacity: 1; visibility: visible; transform: none; }
+  .main-nav a { padding: 11px 14px; border-radius: var(--r-xs); color: #e6efff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .main-nav a:hover { background: rgb(255 255 255 / 0.08); color: var(--gold-hi); }
+  .main-nav a[aria-current="page"] { color: var(--gold-hi); background: rgb(245 179 0 / 0.1); }
+
+  .header-phone { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #fff; text-decoration: none; font-weight: 800; white-space: nowrap; }
+  .header-phone svg { width: 18px; height: 18px; color: var(--gold); flex: none; }
+  .header-phone:hover { color: var(--gold-hi); }
+  .phone-cta { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .estimate { min-height: 44px; padding: 10px 20px; font-size: 0.95rem; }
+
+  @media (max-width: 1240px) { .quick { display: none; } }
+  @media (max-width: 760px) {
+    .pill { gap: 8px; padding: 6px 6px 6px 8px; width: 100%; }
+    .logo { min-width: 0; font-size: 0.98rem; gap: 8px; white-space: normal; }
+    .logo > span { min-width: 0; }
+    .logo :global(.logo-mark) { width: 34px; height: 34px; }
+    .logo small { font-size: 0.55rem; letter-spacing: 0.1em; }
+    .menu-label { display: none; }
+    .menu-toggle { padding: 0; }
+    .menu-wrap { position: static; margin-left: auto; }
+    .main-nav { left: 0; right: 0; top: calc(100% + 10px); min-width: 0; grid-template-columns: 1fr 1fr; gap: 2px; max-height: calc(100svh - 120px); overflow-y: auto; transform-origin: top center; }
+    .main-nav a { font-size: 0.9rem; padding: 11px 12px; }
+    .estimate { display: none; }
+    .header-phone {
+      padding: 0 16px; border-radius: var(--r-pill); color: var(--on-gold);
+      background: linear-gradient(135deg, #ffe07a, var(--gold) 60%, var(--gold-deep)); box-shadow: var(--glow-gold);
+    }
+    .header-phone:hover { color: var(--on-gold); }
+    .header-phone svg { color: currentColor; }
+    .phone-cta { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+    .phone-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  }
+  @media (max-width: 480px) {
+    .logo { font-size: 0.92rem; line-height: 1.02; }
+    .logo small { display: none; }
+    .header-phone { padding: 0 14px; }
+  }
+  @media (max-width: 360px) {
+    .header-phone svg { display: none; }
+  }
+</style>

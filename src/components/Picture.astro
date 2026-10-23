@@ -14,15 +14,18 @@ const { src, alt, class: className, loading = 'lazy', fetchpriority = 'auto', si
 const info = await imageInfo(src);
 const width = info?.width ?? 1200;
 const height = info?.height ?? 800;
+// File names with spaces (e.g. "work photos/") are percent-encoded in the markup; the file lookup above uses the raw path.
+const url = encodeURI(src);
+const webp = info?.webp ? encodeURI(info.webp) : null;
 ---
 
 {
-  info?.webp ? (
+  webp ? (
     <picture>
-      <source type="image/webp" srcset={info.webp} sizes={sizes} />
-      <img src={src} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+      <source type="image/webp" srcset={webp} sizes={sizes} />
+      <img src={url} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
     </picture>
   ) : (
-    <img src={src} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+    <img src={url} alt={alt} class={className} width={width} height={height} loading={loading} fetchpriority={fetchpriority} decoding="async" />
   )
 }

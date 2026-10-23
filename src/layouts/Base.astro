@@ -3,15 +3,34 @@ import Analytics from '../components/Analytics.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import PhotoBand from '../components/PhotoBand.astro';
+import Backdrop from '../components/glass/Backdrop.astro';
+import CallBar from '../components/glass/CallBar.astro';
 import { canonicalUrl, site } from '../lib/site';
 import { serializeJsonLd } from '../lib/schema';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/content.css';
 
-interface Props { title: string; description: string; image?: string; noindex?: boolean; ogType?: 'website' | 'article'; jsonLd?: Record<string, unknown>[]; bodyClass?: string; }
-const { title, description, image, noindex = false, ogType = 'website', jsonLd = [], bodyClass } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>[];
+  bodyClass?: string;
+  // Where "Free Estimate" buttons point: "#quote" on a page that has the estimate form, the homepage form otherwise.
+  quoteHref?: string;
+  photoBand?: boolean;
+}
+const { title, description, image, noindex = false, ogType = 'website', jsonLd = [], bodyClass, quoteHref = site.cta.href, photoBand = true } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname);
 const ogImage = `${site.site.url}${image ?? site.site.defaultOgImage}`;
 const gaId = site.site.gaMeasurementId;
 const fonts = site.brand.fonts.googleFontsUrl;
+// Client colours and fonts from data/site.json feed the design tokens (src/styles/tokens.css).
+const { colors, fonts: fontNames } = site.brand;
+const brandVars = `:root{--c-primary:${colors.primary};--c-primary-alt:${colors.primaryAlt};--c-action:${colors.action};--c-accent:${colors.accent};--c-font-head:'${fontNames.heading}';--c-font-body:'${fontNames.body}'}`;
 ---
 
 <!doctype html>
@@ -25,6 +44,7 @@ const fonts = site.brand.fonts.googleFontsUrl;
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content={colors.primary} />
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -40,20 +60,25 @@ const fonts = site.brand.fonts.googleFontsUrl;
     {gaId && <Analytics id={gaId} />}
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KD5Q9SWT');</script>
     <script is:inline>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
-    <style is:inline>@media (max-width: 480px) { html body .grid.grid-3, html body .grid.grid-4 { grid-template-columns: 1fr !important; } }</style>
+    <!-- Before first paint: "js" lets scroll reveals hide below-the-fold blocks; "rm" (reduced motion, or ?shot for
+         screenshots) shows everything finished and still. -->
+    <script is:inline>(function(d){var r=d.documentElement,s=/[?&]shot/.test(location.search);r.classList.add('js');if(s||matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm');if(s)r.style.setProperty('--vh','900px');})(document);</script>
+    <style is:inline set:html={brandVars}></style>
     {fonts && (<><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="stylesheet" href={fonts} /></>)}
-    <link rel="stylesheet" href="/css/style.css">
-    <style is:inline>picture{display:contents}</style>
   </head>
   <body class={bodyClass}>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD5Q9SWT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <Header />
-    <main>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Backdrop />
+    <Header quoteHref={quoteHref} />
+    <main id="main">
       <slot />
-      <PhotoBand />
+      {photoBand && <PhotoBand />}
     </main>
     <Footer />
+    <CallBar quoteHref={quoteHref} />
     <script is:inline src="/js/main.js"></script>
     <script is:inline src="/js/progressive-form.js" defer></script>
+    <script>import '../scripts/glass/core';</script>
   </body>
 </html>

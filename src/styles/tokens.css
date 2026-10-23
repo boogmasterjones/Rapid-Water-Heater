@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Glass Rain design tokens
+   --------------------------------------------------------------------------
+   The one file to change when this design is lifted into the shared site
+   template. Everything else (base.css, content.css, the components in
+   src/components/glass) reads only these custom properties.
+
+   Client colours are NOT set here. Base.astro writes them from
+   data/site.json (brand.colors) as --c-* properties on :root, and the
+   tokens below derive the glass palette from them. The fallback values after
+   each var() are Rapid Water Heater's own colours, so the file also works on
+   its own.
+
+   Optional per-client overrides (not in site.json yet; add to :root if a
+   client needs them): --c-cool (cold-water / rain blue), --c-ice (light rain),
+   --c-hot (hot-water orange).
+   ========================================================================== */
+
+:root {
+  /* ---- Brand inputs (from data/site.json) ---- */
+  --brand-primary: var(--c-primary, #0a1630);
+  --brand-primary-alt: var(--c-primary-alt, #112241);
+  --brand-accent: var(--c-accent, #f5b300);
+  --brand-action: var(--c-action, #cc9010);
+
+  /* ---- Surfaces ---- */
+  /* Page background: the brand navy pushed a little darker so glass reads on it. */
+  --bg: #070f26;
+  --bg: color-mix(in oklab, var(--brand-primary) 70%, #000);
+  --bg-2: #0e1d46;
+  --bg-2: color-mix(in oklab, var(--brand-primary-alt) 80%, #1c3a8c);
+  --bg-raised: rgb(10 20 48); /* solid panel behind forms and long text */
+  --bg-raised: color-mix(in oklab, var(--bg) 82%, #26407e);
+
+  /* ---- Colour roles ---- */
+  --gold: var(--brand-accent);
+  --gold-hi: #ffd966;
+  --gold-hi: color-mix(in oklab, var(--brand-accent) 58%, #fff);
+  --gold-deep: var(--brand-action);
+  --on-gold: #1a1200;
+  --cool: var(--c-cool, #35a7ff);
+  --ice: var(--c-ice, #96d7ff);
+  --hot: var(--c-hot, #ff7a1a);
+
+  /* Water heater (cold at the bottom, warm gold to orange when hot; no purple). */
+  --water-cold-top: #5cc0ff;
+  --water-cold-bottom: #1b6fd1;
+  --water-hot-top: #ffc94a;
+  --water-hot-bottom: #f0761e;
+
+  /* ---- Text ---- */
+  --text: #cfdcf2;
+  --text-strong: #ffffff;
+  --text-muted: #a9bad3; /* 7.8:1 on --bg */
+  --text-long: #e1e9f6; /* long-form reading: a touch brighter than --text */
+  --link: var(--gold-hi);
+
+  /* ---- Glass ---- */
+  /* No backdrop-filter anywhere: a light-to-clear gradient, a bright top edge and a soft shadow read as frosted
+     glass over the still background and cost nothing to scroll. */
+  --glass-fill: linear-gradient(155deg, rgb(255 255 255 / 0.15), rgb(255 255 255 / 0.04));
+  --glass-fill-strong: linear-gradient(155deg, rgb(30 52 110 / 0.92), rgb(14 29 70 / 0.88));
+  --glass-border: rgb(255 255 255 / 0.22);
+  --glass-border-strong: rgb(255 255 255 / 0.3);
+  --glass-edge: inset 0 1px 0 rgb(255 255 255 / 0.22);
+  --glass-solid: rgb(12 24 58 / 0.93); /* the header pill */
+
+  /* ---- Radii ---- */
+  --r-xs: 10px;
+  --r-sm: 14px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* ---- Shadows / depth ---- */
+  --shadow-1: 0 10px 30px rgb(0 0 0 / 0.25);
+  --shadow-2: 0 24px 60px rgb(0 0 0 / 0.3);
+  --shadow-3: 0 40px 90px rgb(0 0 0 / 0.5);
+  --glow-cool: 0 0 70px rgb(53 167 255 / 0.25);
+  --glow-gold: 0 10px 30px rgb(245 179 0 / 0.4);
+  --glow-gold-strong: 0 14px 44px rgb(245 179 0 / 0.65);
+
+  /* ---- Type ---- */
+  --font-display: var(--c-font-head, "Fraunces"), Georgia, "Times New Roman", serif;
+  --font-sans: var(--c-font-body, "Inter"), system-ui, "Segoe UI", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-body: 1.0625rem;
+  --fs-long: 1.125rem;
+  --lh-body: 1.6;
+  --lh-long: 1.75;
+  --fs-h1: clamp(2.3rem, 1.4rem + 3.6vw, 4.4rem);
+  --fs-h1-inner: clamp(2.1rem, 1.5rem + 2.6vw, 3.6rem);
+  --fs-h2: clamp(1.8rem, 1.2rem + 2.4vw, 3rem);
+  --fs-h3: 1.3rem;
+
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --gutter: 22px;
+  --section-y: 96px;
+  --header-h: 64px; /* the floating pill, used to clear it */
+  --header-top: 16px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 0.15s;
+  --dur-med: 0.3s;
+  --dur-reveal: 0.85s;
+  --shine-period: 4.2s;
+  --float-period: 5s;
+
+  /* ---- Legacy aliases ----
+     The ported page markup in content/ has a few inline styles that name the old design's variables.
+     They are mapped onto the new tokens here so that markup keeps working untouched. */
+  --font-body: var(--font-sans);
+  --text-on-dark: var(--text);
+  --text-on-dark-muted: var(--text-muted);
+  --gold-400: var(--gold-hi);
+  --line-dark: var(--glass-border);
+  --radius-lg: var(--r-lg);
+  --shadow-md: var(--shadow-2);
+  --navy-950: var(--bg);
+  --blue-700: #155db5;
+}
+
+@media (max-width: 860px) {
+  :root {
+    --gutter: 18px;
+    --section-y: 64px;
+    --header-h: 56px;
+    --header-top: 10px;
+  }
+}

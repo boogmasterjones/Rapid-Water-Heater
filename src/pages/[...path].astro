@@ -11,9 +11,10 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+const hasQuote = /id="quote"/.test(page.body ?? '');
 const jsonLd = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: page.data.heading.replace(/\*/g, ''), path: page.data.path }]), ...(page.data.faqs.length > 0 ? [faqSchema(page.data.faqs)] : [])];
 ---
 
-<Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass}>
+<Base title={page.data.title} description={page.data.description} image={page.data.image} noindex={page.data.noindex} jsonLd={jsonLd} bodyClass={page.data.bodyClass} quoteHref={hasQuote ? '#quote' : undefined}>
   <Content />
 </Base>

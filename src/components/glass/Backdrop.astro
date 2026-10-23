@@ -1,0 +1,44 @@
+---
+// The site-wide background: still colour pools (painted once), the digital water-drop rain on one fixed canvas, a
+// scrim that darkens the reading column, and a faint grain on computers. Everything here is decorative, sits behind
+// the content, never takes pointer events and is hidden from screen readers. Reduced motion: no rain.
+---
+
+<div class="backdrop" aria-hidden="true">
+  <div class="mesh"></div>
+  <canvas class="rain" data-rain></canvas>
+  <div class="scrim"></div>
+  <div class="grain"></div>
+</div>
+
+<script>
+  import { startRain } from '../../scripts/glass/rain';
+  const canvas = document.querySelector<HTMLCanvasElement>('canvas[data-rain]');
+  if (canvas) {
+    // Let the page finish its first paint before the rain starts.
+    const go = () => startRain(canvas);
+    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 }); else setTimeout(go, 300);
+  }
+</script>
+
+<style>
+  .backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+  .mesh {
+    position: absolute; inset: -6%;
+    background:
+      radial-gradient(42vw 42vw at 12% 8%, rgb(28 79 209 / 0.6), transparent 70%),
+      radial-gradient(36vw 36vw at 88% 30%, rgb(245 179 0 / 0.22), transparent 70%),
+      radial-gradient(44vw 44vw at 55% 105%, rgb(20 163 230 / 0.34), transparent 70%),
+      var(--bg);
+  }
+  /* 100lvh: the canvas keeps its size when a phone's address bar slides in and out, so it is never re-allocated mid-scroll. */
+  .rain { position: absolute; left: 0; top: 0; width: 100%; height: 100vh; height: 100lvh; opacity: 0.8; }
+  /* A darker column where the text sits, so the drops stay in the margins of the reader's attention. */
+  .scrim { position: absolute; inset: 0; background: radial-gradient(ellipse 46% 80% at 50% 50%, rgb(7 15 38 / 0.6), rgb(7 15 38 / 0.25) 70%, transparent 100%); }
+  .grain {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @media (max-width: 860px) { .grain { display: none; } .rain { opacity: 0.65; } .scrim { background: radial-gradient(ellipse 80% 70% at 50% 45%, rgb(7 15 38 / 0.55), rgb(7 15 38 / 0.2) 80%, transparent); } }
+  @media (prefers-reduced-motion: reduce) { .rain { display: none; } }
+</style>
