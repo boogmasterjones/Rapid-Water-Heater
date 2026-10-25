@@ -291,4 +291,16 @@ const EAGER = 2;
     .arrow { width: 46px; height: 46px; }
     .viewport { margin-top: 20px; }
   }
+  /* Phones: the same 8/12/16/24/32/48 rhythm as the rest of the page, and 44px+ tap targets on the jump buttons. */
+  @media (max-width: 560px) {
+    .carousel-sec { padding: 48px 0; }
+    .head { gap: 24px; }
+    .intro h2 { margin-bottom: 12px; }
+    .intro p { font-size: 1.02rem; line-height: 1.62; }
+    .jump { min-height: 44px; }
+    .viewport { margin-top: 24px; }
+    .cap { left: 10px; bottom: 10px; max-width: calc(100% - 20px); font-size: 0.8rem; }
+    .group-tag { left: 10px; top: 10px; }
+    .more { margin-top: 16px; }
+  }
 </style>

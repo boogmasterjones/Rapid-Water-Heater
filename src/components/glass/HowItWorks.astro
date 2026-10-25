@@ -192,10 +192,15 @@ const stepHtml = (t: string) => t.split('{phone}');
     .layer i { top: -7px; height: 8px; }
   }
   @media (max-width: 560px) {
-    .step { grid-template-columns: 112px 1fr; gap: 14px; padding: 10px; align-items: start; }
-    .ph { aspect-ratio: 1; }
-    .txt { padding: 2px 4px 2px 0; }
-    .txt h3 { font-size: 1.3rem; }
-    .txt p { font-size: 0.98rem; }
+    /* Phones: the tank and its reading as one centred unit, then the steps on a steady 16px rhythm. */
+    .how-grid { gap: 32px; margin-top: 0; }
+    .tank-col { gap: 24px; }
+    .tank { --tw: 116px; }
+    .steps { gap: 16px; }
+    .step { grid-template-columns: 112px 1fr; gap: 16px; padding: 12px; align-items: start; border-radius: var(--r-md); }
+    .ph { aspect-ratio: 1; border-radius: var(--r-sm); }
+    .txt { padding: 4px 4px 4px 0; }
+    .txt h3 { font-size: 1.24rem; line-height: 1.2; margin: 4px 0 8px; }
+    .txt p { font-size: 0.98rem; line-height: 1.55; }
   }
 </style>
