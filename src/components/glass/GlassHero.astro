@@ -34,6 +34,9 @@ const icons = [
     <div class="copy">
       <span class="eyebrow">{eyebrow}</span>
       <h1 set:html={headingHtml} />
+      <div class="photo-m" aria-hidden="true">
+        <Picture src={photo} alt={photoAlt} loading="eager" sizes="(max-width: 860px) 92vw, 520px" style={`object-position:${photoPosition}`} />
+      </div>
       {lede && <p class="lede">{lede}</p>}
       <div class="hero-actions">
         <a class="btn btn-gold" href={phoneHref(site.business.phone)} onclick={callClick('hero_phone_button')}>
@@ -78,6 +81,7 @@ const icons = [
   .lede { max-width: 50ch; margin: 0 0 30px; font-size: 1.15rem; color: #dbe6f8; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
   .btn { padding: 15px 28px; }
+  .photo-m { display: none; }
 
   .stack { position: relative; transform-style: preserve-3d; transition: transform 0.15s ease-out; max-width: 520px; justify-self: center; width: 100%; }
   .card3d {
@@ -122,21 +126,24 @@ const icons = [
      with the screen so it keeps three lines without cramped leading; the photo's badges sit inside its corners (still,
      no float, no 3D push) so they never cross the card edge, the buttons or the copy. */
   @media (max-width: 760px) {
-    .glass-hero { padding: calc(var(--header-top) + var(--header-h) + 32px) 0 56px; }
-    .hero-grid { gap: 48px; }
-    .eyebrow { margin-bottom: 20px; }
-    h1 { font-size: clamp(2rem, 0.15rem + 8.4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
-    .lede { font-size: 1.02rem; line-height: 1.62; margin: 0 0 28px; }
-    .hero-actions { flex-direction: column; gap: 12px; }
-    .hero-actions .btn { flex: none; width: 100%; min-height: 54px; padding: 14px 20px; }
-
-    .stack { max-width: 440px; }
-    .card3d { aspect-ratio: 4 / 4.6; border-radius: var(--r-lg); box-shadow: var(--shadow-3), 0 0 0 6px rgb(255 255 255 / 0.06), 0 0 60px rgb(53 167 255 / 0.22); }
-    .chip { gap: 7px; padding: 8px 12px; border-radius: 12px; font-size: 0.8rem; transform: none; animation: none; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25), 0 8px 20px rgb(0 0 0 / 0.35); }
-    .chip :global(svg) { width: 15px; height: 15px; }
-    .chip-0 { display: none; } /* "Same-day" is already in the headline */
-    .chip-rating { top: 14px; left: 14px; right: auto; }
-    .chip-1 { top: auto; bottom: 14px; left: 14px; }
-    .stack :global(.mascot) { width: 30%; right: -3%; bottom: -7%; transform: none; }
+    /* One screen: badge, headline, then the intro on the left with a small photo on the right, then big call buttons.
+       .copy is flattened (display: contents) so the intro and the photo can sit side by side in the grid. */
+    /* The hero fills the whole first screen (the call bar sits over the bottom edge, so it gets extra room), with the
+       content spread out and centred, so the next section never peeks in. */
+    .glass-hero { display: flex; align-items: center; min-height: var(--vh, 100svh); padding: calc(var(--header-top) + var(--header-h) + 24px) 0 88px; }
+    .hero-grid { display: block; width: 100%; }
+    .eyebrow { margin-bottom: 32px; }
+    h1 { font-size: clamp(1.7rem, 0.1rem + 8vw, 2.6rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 28px; text-wrap: wrap; }
+    /* The photo floats right at the start of the intro, so the text begins beside it and wraps underneath it. */
+    .photo-m {
+      display: block; float: right; width: 50%; aspect-ratio: 4 / 5; margin: 4px 0 10px 16px; overflow: hidden;
+      border-radius: var(--r-md, 18px); border: 1px solid rgb(255 255 255 / 0.28);
+      box-shadow: 0 10px 24px rgb(0 0 0 / 0.4), 0 0 0 4px rgb(255 255 255 / 0.06), 0 0 36px rgb(53 167 255 / 0.2);
+    }
+    .photo-m :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lede { font-size: 1.08rem; line-height: 1.6; margin: 0; }
+    .hero-actions { clear: both; flex-direction: column; gap: 16px; padding-top: 36px; }
+    .hero-actions .btn { flex: none; width: 100%; min-height: 62px; padding: 16px 20px; font-size: 1.08rem; }
+    .stack { display: none; } /* the floated copy of the photo above replaces it on phones */
   }
 </style>
