@@ -34,87 +34,6 @@ bodyClass: "home"
       </div>
     </div>
   </section>
-  <div class="trust-strip">
-    <div class="container">
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg><span><strong>Licensed</strong>FL License #CFC1434490</span></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span><strong>Family-Owned</strong>Founded in Sarasota, 2025</span></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg><span><strong>Reviewed</strong>By Homeowners on Google</span></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><span><strong>Same-Day</strong>Quotes &amp; Installation</span></div>
-    </div>
-  </div>
-  <section>
-    <div class="container">
-      <div class="section-head center">
-        <span class="kicker">What We Do</span>
-        <h2>Our Plumbing Services</h2>
-        <p>From a failed water heater to a slow drain, our team handles the plumbing issues that disrupt Southwest Florida homes most often.</p>
-      </div>
-      <div class="grid grid-4">
-        <div class="card service-card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="4"></rect><path d="M9 8h6M9 12h6"></path></svg></div>
-          <h3>Water Heater Installation</h3>
-          <p>Tank, tankless, and heat pump water heaters installed and sized right for your household.</p>
-          <a class="card-link" href="/services/water-heater-installation">Learn more<span class="visually-hidden"> about water heater installation</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
-        </div>
-        <div class="card service-card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
-          <h3>Tankless Water Heaters</h3>
-          <p>Hot water heated on demand by a space-saving, energy-efficient tankless system.</p>
-          <a class="card-link" href="/services/tankless-water-heater-installation">Learn more<span class="visually-hidden"> about tankless water heaters</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
-        </div>
-        <div class="card service-card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg></div>
-          <h3>Same-Day Water Heaters</h3>
-          <p>No hot water is never convenient. We offer same-day quotes and installation whenever possible.</p>
-          <a class="card-link" href="/services/same-day-water-heaters">Learn more<span class="visually-hidden"> about same-day water heaters</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
-        </div>
-        <div class="card service-card">
-          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 9 9M12 21a9 9 0 0 1-9-9M7 12a5 5 0 0 1 5-5M17 12a5 5 0 0 1-5 5"></path></svg></div>
-          <h3>Drain Cleaning</h3>
-          <p>Slow or clogged drains cleared fast, with a look at the cause instead of a temporary fix.</p>
-          <a class="card-link" href="/services/drain-cleaning">Learn more<span class="visually-hidden"> about drain cleaning</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:36px;">
-        <a class="btn btn-navy" href="/services">View All Services</a>
-      </div>
-    </div>
-  </section>
-<!-- glass:how -->
-  <section class="section-yellow-tint">
-    <div class="container split">
-      <div class="art-panel">
-        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <radialGradient id="g1" cx="75%" cy="10%" r="80%">
-              <stop offset="0%" stop-color="#c6a15a" stop-opacity="0.35"></stop>
-              <stop offset="100%" stop-color="#c6a15a" stop-opacity="0"></stop>
-            </radialGradient>
-          </defs>
-          <rect width="400" height="340" fill="url(#g1)"></rect>
-          <circle cx="330" cy="60" r="90" fill="#ffffff" opacity="0.05"></circle>
-          <path d="M200 90c0 0-58 74-58 108a58 58 0 0 0 116 0c0-34-58-108-58-108Z" fill="#2868a3" opacity="0.9"></path>
-          <path d="M200 150c-11 14-17 23-17 33a17 17 0 0 0 34 0c0-7-3-12-7-18-6-11-1-20 10-30 2 11 8 21 16 28 6 5 10 12 10 20a31 31 0 1 1-62 0c0-8 3-14 7-20Z" fill="#c6a15a"></path>
-        </svg>
-        <div class="art-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          <div><strong>Family-Owned &amp; Local</strong><span>Founded in Sarasota, FL — 2025</span></div>
-        </div>
-      </div>
-      <div>
-        <span class="kicker">Why Homeowners Trust Us</span>
-        <h2>Honest, Dependable Plumbing — No Monkey Business</h2>
-        <p>Rapid Water Heater LLC was founded around a simple mission: provide honest, dependable, and high-quality service with the care and integrity only a local family business can offer. We know inviting a contractor into your home requires trust, so we focus on clear communication, transparent pricing, and workmanship that holds up.</p>
-        <p>We install products from manufacturers with a real reputation for reliability — Bradford White, Rheem, A.O. Smith, and Halo — so your investment is backed by quality equipment, not just quality installation.</p>
-        <ul class="icon-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Free consultations &amp; upfront pricing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Flexible hours &amp; emergency service</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Licensed Florida plumbing contractor</li>
-        </ul>
-        <a class="btn btn-navy" style="margin-top:12px;" href="/about">More About Our Team</a>
-      </div>
-    </div>
-  </section>
   <section id="reviews" class="section-blue-tint">
     <div class="container">
       <div class="section-head center">
@@ -220,6 +139,87 @@ bodyClass: "home"
       <div class="carousel-dots" data-dots=""></div>
       <div style="text-align:center;margin-top:30px;">
         <a class="btn btn-outline" href="https://maps.app.goo.gl/d3PUDCn4VZAFe1tb9" target="_blank" rel="noopener">Read Our Google Reviews</a>
+      </div>
+    </div>
+  </section>
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg><span><strong>Licensed</strong>FL License #CFC1434490</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span><strong>Family-Owned</strong>Founded in Sarasota, 2025</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg><span><strong>Reviewed</strong>By Homeowners on Google</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><span><strong>Same-Day</strong>Quotes &amp; Installation</span></div>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="section-head center">
+        <span class="kicker">What We Do</span>
+        <h2>Our Plumbing Services</h2>
+        <p>From a failed water heater to a slow drain, our team handles the plumbing issues that disrupt Southwest Florida homes most often.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card service-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="4"></rect><path d="M9 8h6M9 12h6"></path></svg></div>
+          <h3>Water Heater Installation</h3>
+          <p>Tank, tankless, and heat pump water heaters installed and sized right for your household.</p>
+          <a class="card-link" href="/services/water-heater-installation">Learn more<span class="visually-hidden"> about water heater installation</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+        <div class="card service-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
+          <h3>Tankless Water Heaters</h3>
+          <p>Hot water heated on demand by a space-saving, energy-efficient tankless system.</p>
+          <a class="card-link" href="/services/tankless-water-heater-installation">Learn more<span class="visually-hidden"> about tankless water heaters</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+        <div class="card service-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg></div>
+          <h3>Same-Day Water Heaters</h3>
+          <p>No hot water is never convenient. We offer same-day quotes and installation whenever possible.</p>
+          <a class="card-link" href="/services/same-day-water-heaters">Learn more<span class="visually-hidden"> about same-day water heaters</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+        <div class="card service-card">
+          <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 9 9M12 21a9 9 0 0 1-9-9M7 12a5 5 0 0 1 5-5M17 12a5 5 0 0 1-5 5"></path></svg></div>
+          <h3>Drain Cleaning</h3>
+          <p>Slow or clogged drains cleared fast, with a look at the cause instead of a temporary fix.</p>
+          <a class="card-link" href="/services/drain-cleaning">Learn more<span class="visually-hidden"> about drain cleaning</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a class="btn btn-navy" href="/services">View All Services</a>
+      </div>
+    </div>
+  </section>
+<!-- glass:how -->
+  <section class="section-yellow-tint">
+    <div class="container split">
+      <div class="art-panel">
+        <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="g1" cx="75%" cy="10%" r="80%">
+              <stop offset="0%" stop-color="#c6a15a" stop-opacity="0.35"></stop>
+              <stop offset="100%" stop-color="#c6a15a" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="340" fill="url(#g1)"></rect>
+          <circle cx="330" cy="60" r="90" fill="#ffffff" opacity="0.05"></circle>
+          <path d="M200 90c0 0-58 74-58 108a58 58 0 0 0 116 0c0-34-58-108-58-108Z" fill="#2868a3" opacity="0.9"></path>
+          <path d="M200 150c-11 14-17 23-17 33a17 17 0 0 0 34 0c0-7-3-12-7-18-6-11-1-20 10-30 2 11 8 21 16 28 6 5 10 12 10 20a31 31 0 1 1-62 0c0-8 3-14 7-20Z" fill="#c6a15a"></path>
+        </svg>
+        <div class="art-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <div><strong>Family-Owned &amp; Local</strong><span>Founded in Sarasota, FL — 2025</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="kicker">Why Homeowners Trust Us</span>
+        <h2>Honest, Dependable Plumbing — No Monkey Business</h2>
+        <p>Rapid Water Heater LLC was founded around a simple mission: provide honest, dependable, and high-quality service with the care and integrity only a local family business can offer. We know inviting a contractor into your home requires trust, so we focus on clear communication, transparent pricing, and workmanship that holds up.</p>
+        <p>We install products from manufacturers with a real reputation for reliability — Bradford White, Rheem, A.O. Smith, and Halo — so your investment is backed by quality equipment, not just quality installation.</p>
+        <ul class="icon-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Free consultations &amp; upfront pricing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Flexible hours &amp; emergency service</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg> Licensed Florida plumbing contractor</li>
+        </ul>
+        <a class="btn btn-navy" style="margin-top:12px;" href="/about">More About Our Team</a>
       </div>
     </div>
   </section>
