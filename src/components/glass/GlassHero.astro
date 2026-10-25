@@ -117,4 +117,26 @@ const icons = [
     .chip-rating { right: 2%; }
     .stack :global(.mascot) { width: 34%; right: -2%; }
   }
+
+  /* Phones: one clear column (chip, headline, lede, calls, photo) on the 8/12/16/24/32/48 rhythm. The headline scales
+     with the screen so it keeps three lines without cramped leading; the photo's badges sit inside its corners (still,
+     no float, no 3D push) so they never cross the card edge, the buttons or the copy. */
+  @media (max-width: 760px) {
+    .glass-hero { padding: calc(var(--header-top) + var(--header-h) + 32px) 0 56px; }
+    .hero-grid { gap: 48px; }
+    .eyebrow { margin-bottom: 20px; }
+    h1 { font-size: clamp(2rem, 0.15rem + 8.4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
+    .lede { font-size: 1.02rem; line-height: 1.62; margin: 0 0 28px; }
+    .hero-actions { flex-direction: column; gap: 12px; }
+    .hero-actions .btn { flex: none; width: 100%; min-height: 54px; padding: 14px 20px; }
+
+    .stack { max-width: 440px; }
+    .card3d { aspect-ratio: 4 / 4.6; border-radius: var(--r-lg); box-shadow: var(--shadow-3), 0 0 0 6px rgb(255 255 255 / 0.06), 0 0 60px rgb(53 167 255 / 0.22); }
+    .chip { gap: 7px; padding: 8px 12px; border-radius: 12px; font-size: 0.8rem; transform: none; animation: none; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25), 0 8px 20px rgb(0 0 0 / 0.35); }
+    .chip :global(svg) { width: 15px; height: 15px; }
+    .chip-0 { display: none; } /* "Same-day" is already in the headline */
+    .chip-rating { top: 14px; left: 14px; right: auto; }
+    .chip-1 { top: auto; bottom: 14px; left: 14px; }
+    .stack :global(.mascot) { width: 30%; right: -3%; bottom: -7%; transform: none; }
+  }
 </style>
