@@ -155,6 +155,10 @@ When your old water heater gives out, we can replace it with a new gas or electr
 
 Most Punta Gorda homes run either a gas or an electric tank, and we replace both. If you have gas now, we can usually put in a new gas tank in the same spot, or talk through moving to a gas tankless unit. If you are all-electric, the choice is a new electric tank or a heat pump (hybrid) unit, which uses far less power to heat the same water. We tell you plainly which one suits your home and your budget, and we haul the old unit away.
 
+## Water Heater Repair in Punta Gorda
+
+A water heater that sat unused for months can come back with a pilot that won't light, a sticking relief valve, or rusty, smelly water from a worn anode rod. Those are usually repairs, not replacements. Our [water heater repair](/services/water-heater-repair) page explains what we check and when a new unit makes more sense.
+
 ## Tankless Water Heater Installation in Punta Gorda, FL
 
 We install gas and electric tankless water heaters for Punta Gorda homes that want space-saving, on-demand hot water. A tankless conversion can need a larger gas line, new venting or an electrical check, so we look at all of that during a free consultation with upfront pricing before you decide. [Learn more about tankless water heater installation](/services/tankless-water-heater-installation), or compare the options in our guide to [tank vs. tankless water heaters](/blog/tank-vs-tankless-water-heater-sarasota).

@@ -121,6 +121,10 @@ A replacement usually needs a permit and an inspection, on both the Manatee and 
 
 Many Lakewood Ranch homes still have the gas or electric tank the builder put in. If you have gas, the usual choices are a larger gas tank or a gas tankless unit. If the house is all-electric, it is a larger electric tank or a heat pump (hybrid) unit, which collects heat from the warm garage air and moves it into the water. Whichever fuel you have, the real question here is usually capacity: a household with several bathrooms running at once often needs more than a standard 40-gallon tank can deliver.
 
+## Water Heater Repair in Lakewood Ranch
+
+Because so many Ranch homes are newer, the water heater is often young enough that fixing it is the sensible answer. A burned-out element or a worn thermostat on an electric tank, or a failed igniter on a gas unit, is a part swap rather than a replacement. Our [water heater repair](/services/water-heater-repair) page covers the problems we fix most often and how we decide between repairing and replacing.
+
 ## Tankless Water Heater Installation in Lakewood Ranch, FL
 
 A garage with good access makes tankless far more practical here than in a cramped closet. We install gas and electric tankless units, and a conversion can still need a larger gas line, new venting or an electrical check, so we look at that during a free consultation with upfront pricing. [Read more about tankless water heater installation](/services/tankless-water-heater-installation), or weigh it up with our guide to [tank vs. tankless water heaters](/blog/tank-vs-tankless-water-heater-sarasota).

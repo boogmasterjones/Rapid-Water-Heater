@@ -5,6 +5,7 @@ name: "North Port, FL"
 heading: "Water Heater Installation & Plumbing in North Port, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters throughout North Port — from the canal-front neighborhoods near Myakkahatchee Creek to the newer growth around Wellen Park's border."
 order: 4
+updatedAt: 2026-10-31
 city: "North Port"
 region: "FL"
 ---
@@ -152,6 +153,10 @@ We replace gas and electric tank water heaters for North Port homeowners. Remova
 We install Bradford White, Rheem and A.O. Smith products, and every installation follows manufacturer specifications and Florida plumbing code. Each new installation comes with a free 1-year maintenance visit.
 
 Not sure if it's time? Read [7 signs it's time to replace your water heater](/blog/7-signs-its-time-to-replace-your-water-heater), see our [water heater installation](/services/water-heater-installation) service, or [request a free estimate](/contact).
+
+## Water Heater Repair in North Port
+
+If your North Port water heater still holds water but has stopped heating properly, it may only need a repair. We diagnose gas and electric tanks and tankless units, quote the fix before any work begins, and say so honestly when a tank is too far gone to be worth fixing. Read more about [water heater repair](/services/water-heater-repair).
 
 ## Tankless Water Heater Installation in North Port
 

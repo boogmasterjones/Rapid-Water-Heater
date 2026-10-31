@@ -80,6 +80,7 @@ updatedAt: 2026-10-31
         <h2>Water Heater Installation Across Southwest Florida</h2>
         <p>Homeowners throughout Sarasota, Venice, and Bradenton rely on Rapid Water Heater LLC when a failed water heater disrupts their routine. Whether you're searching for "water heater installation near me" after waking up to a cold shower, or you're planning ahead for a tankless upgrade, our team provides same-day quotes and honest recommendations — not a hard sell on the most expensive unit in the truck.</p>
         <p>We install and service traditional tank water heaters, tankless (on-demand) systems, and heat pump water heaters, matching the right technology to your household size, fuel type, and budget. Every job includes a walkthrough of your options before we start, so you know exactly what you're paying for and why.</p>
+        <p>Not every failure means a new unit. If the tank is sound and only a part has failed, such as an element, a thermostat, an igniter or a relief valve, <a href="/services/water-heater-repair">water heater repair</a> may be the better fix, and we will tell you so.</p>
         <h3>Water Heater Types We Install</h3>
         <ul>
           <li>Traditional tank water heaters — gas &amp; electric</li>

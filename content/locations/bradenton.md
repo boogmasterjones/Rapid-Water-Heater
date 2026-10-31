@@ -120,6 +120,10 @@ In Manatee County a replacement usually needs a permit and an inspection, and we
 
 We replace gas and electric tanks all over Bradenton. If your home has gas, a new gas tank can usually go in the same spot, or we can talk through moving to a gas tankless unit. If your home is all-electric, the choice is a new electric tank or a heat pump (hybrid) unit, which collects heat from the surrounding air and moves it into the water. A hybrid needs room to breathe, so a garage suits it better than a small closed closet. In the bigger homes out toward State Road 64, we check whether the household has outgrown its old tank before we match it size for size.
 
+## Water Heater Repair in Bradenton
+
+Not every Bradenton call ends with a new tank. If the water has gone lukewarm, the pilot won't stay lit or the relief valve keeps dripping, the fix is often a single part: an element, a thermostat, a thermocouple or a valve. We test first and tell you whether a [water heater repair in Bradenton](/services/water-heater-repair) is worth it on a heater of that age, whether it runs on gas, electricity or is a tankless unit.
+
 ## Tankless Water Heater Installation in Bradenton, FL
 
 We install gas and electric tankless water heaters in Bradenton homes that want on-demand hot water and the floor space back. A tankless conversion can need a larger gas line, new venting or an electrical check, and a tight closet in an older downtown home is a different job from an open garage further east. We look at all of that during a free consultation with upfront pricing. [Learn more about tankless water heater installation](/services/tankless-water-heater-installation), or compare the options in our guide to [tank vs. tankless water heaters](/blog/tank-vs-tankless-water-heater-sarasota).

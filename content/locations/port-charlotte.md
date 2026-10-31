@@ -5,6 +5,7 @@ name: "Port Charlotte, FL"
 heading: "Water Heater Installation & Plumbing in Port Charlotte, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters for homeowners throughout Port Charlotte, from the waterfront streets along Charlotte Harbor to the neighborhoods further inland along US-41."
 order: 5
+updatedAt: 2026-10-31
 city: "Port Charlotte"
 region: "FL"
 ---
@@ -99,6 +100,8 @@ region: "FL"
         <h3>Water Supply and Hurricane Ian Recovery</h3>
         <p>Charlotte County's drinking water comes largely from the Peace River through the Peace River Manasota Regional Water Supply Authority, a surface water source rather than groundwater. Treated surface water still carries dissolved mineral that accumulates in a water heater tank over the years, which is why an annual flush does real good here and why we check sediment levels on any unit we service.</p>
         <p>Hurricane Ian in September 2022 reshaped a great deal of Port Charlotte, and we still see its effects in the homes we work in. Water heaters that were submerged during the storm should have been replaced rather than dried out and restarted, because flood water compromises gas controls and electrical components in ways that are not visible from the outside. Some were not. If your unit went through the storm and is still in service, it is worth knowing what condition it is actually in — that is something we can tell you quickly.</p>
+        <h3>Water Heater Repair in Port Charlotte</h3>
+        <p>When a Port Charlotte water heater stops heating, leaks at a fitting or keeps tripping its breaker, the cause is often one failed part. We find it, quote the fix before any work begins, and only suggest a new unit when the tank itself has failed. See <a href="/services/water-heater-repair">water heater repair</a> for the problems we fix.</p>
         <h3>Nearby Areas We Also Serve</h3>
         <p>In addition to Port Charlotte, we regularly serve <a href="/locations/punta-gorda">Punta Gorda</a>, <a href="/locations#rotonda-west">Rotonda West</a>, and <a href="/locations/north-port">North Port</a>. Call or text to confirm coverage for your specific street.</p>
       </div>

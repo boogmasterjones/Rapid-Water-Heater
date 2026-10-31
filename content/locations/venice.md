@@ -5,6 +5,7 @@ name: "Venice, FL"
 heading: "Water Heater Installation & Plumbing in Venice, FL"
 summary: "From the historic bungalows on Venice Island to the newer neighborhoods east of I-75, Rapid Water Heater LLC installs and services water heaters for homeowners throughout Venice, Florida."
 order: 1
+updatedAt: 2026-10-31
 city: "Venice"
 region: "FL"
 ---
@@ -100,6 +101,8 @@ region: "FL"
         <h3>Island Homes, Seasonal Homes, and Storm History</h3>
         <p>The age divide between Venice Island and the newer mainland neighborhoods shapes most of the installations we do. On the island, tight utility closets and decades-old supply lines mean we plan the route for getting the old tank out before we bring the new one in. On the mainland and toward Wellen Park, access is easier and the work is more predictable.</p>
         <p>Venice also has a high proportion of seasonal residents, and that changes what good advice looks like. If a home sits empty for months, the most valuable thing an owner can do is shut off the water at the main before leaving, which eliminates almost all risk of returning to a flooded house from a failed supply line or a tank that let go. Setting the water heater to its vacation setting rather than leaving it heating an empty house is worth doing at the same time. We are happy to show homeowners where those controls are during any visit.</p>
+        <h3>Water Heater Repair in Venice</h3>
+        <p>Not every Venice call needs a new water heater. A failed element or thermostat, a pilot that will not stay lit, or a dripping relief valve is usually a repair. We test first, quote upfront, and tell you plainly when a <a href="/services/water-heater-repair">water heater repair in Venice</a> is worth it and when it isn't.</p>
         <h3>Nearby Areas We Also Serve</h3>
         <p>In addition to Venice, we regularly serve <a href="/locations#nokomis">Nokomis</a>, <a href="/locations#sarasota">Sarasota</a>, and <a href="/locations#north-port">North Port</a>. If your home is between these service areas, call or text and we'll confirm availability.</p>
       </div>

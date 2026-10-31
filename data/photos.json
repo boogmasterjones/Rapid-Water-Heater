@@ -138,6 +138,29 @@
         }
       ]
     },
+    "/services/water-heater-repair": {
+      "title": "Tested Before Anything Gets Replaced",
+      "lede": "Josh and Pat check the elements, wiring and controls with a meter before they quote a repair.",
+      "link": false,
+      "images": [
+        {
+          "src": "/images/photos/143-josh-and-pat-water-heater-testing.jpg",
+          "alt": "Josh and Pat testing a water heater with a clamp meter | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/137-multimeter-water-heater-closeup.jpg",
+          "alt": "Clamp meter test on an electric water heater's wiring | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/138-multimeter-water-heater-closeup.jpg",
+          "alt": "Meter reading on a water heater during a repair check | Rapid Water Heater"
+        },
+        {
+          "src": "/images/photos/154-josh-carrying-water-heater-garage.jpg",
+          "alt": "Josh carrying a water heater through a garage | Rapid Water Heater"
+        }
+      ]
+    },
     "/services/same-day-water-heaters": {
       "title": "Fast Response, Same-Day Installs",
       "lede": "We load the van and get your hot water running again as quickly as we can.",
