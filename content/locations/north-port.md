@@ -141,6 +141,10 @@ region: "FL"
     </div>
   </section>
 
+<section class="section-md-tail">
+<div class="container">
+<div class="content-block">
+
 ## Water Heater Replacement in North Port
 
 We replace gas and electric tank water heaters for North Port homeowners. Removal and disposal of the old water heater is part of the job. Replacement units are typically kept in stock, and we offer same-day quotes and installation whenever possible.
@@ -156,3 +160,7 @@ We install gas and electric tankless (on-demand) water heaters in North Port hom
 Learn more about our [tankless water heater installation](/services/tankless-water-heater-installation), or compare options in our guide to [tank vs. tankless water heaters](/blog/tank-vs-tankless-water-heater-sarasota).
 
 We also install tank and tankless water heaters for homeowners in Wellen Park and [Port Charlotte](/locations/port-charlotte). Call (941) 876-5900 to talk directly with our team.
+
+</div>
+</div>
+</section>

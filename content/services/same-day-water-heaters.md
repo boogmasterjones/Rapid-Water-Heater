@@ -120,8 +120,16 @@ faqs:
  </div>
  </section>
 
+<section class="section-md-tail">
+<div class="container">
+<div class="content-block">
+
 ## Same-Day Water Heater Replacement in Sarasota
 
 If your tank is leaking from the body or you have no hot water at all, replacement is usually the fix, and timing matters. We offer flexible hours and emergency service, with same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and you talk directly with our team, not a call center. We also remove and dispose of the old water heater, and every new installation comes with a free 1-year maintenance visit.
 
 For plumbing problems beyond the water heater, see our [emergency plumbing](/services/emergency-plumbing) page. To compare tank, tankless and heat pump options, visit [water heater installation](/services/water-heater-installation) or read our guide to [tank vs. tankless water heaters in Sarasota](/blog/tank-vs-tankless-water-heater-sarasota). Call (941) 876-5900 for a free estimate.
+
+</div>
+</div>
+</section>
