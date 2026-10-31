@@ -64,7 +64,7 @@ If you end up needing a new water heater in a hurry, Rapid Water Heater LLC offe
 
 ## Should You Replace It with a Tank, Tankless or Heat Pump Model?
 
-An upcoming replacement is a good chance to think about what fits your home best. Smith and Halo.
+An upcoming replacement is a good chance to think about what fits your home best. We install Bradford White, Rheem, A.O. Smith and Halo units.
 
 - **Tank (gas or electric):** A familiar, straightforward choice. It often makes sense if you're happy with your current setup and want a direct replacement.
 - **Tankless (gas or electric):** Heats water on demand, so there's no storage tank. It can be a good fit if you want to free up space or plan to stay in the home for a while.
