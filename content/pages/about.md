@@ -2,7 +2,7 @@
 title: "About Rapid Water Heater LLC | Sarasota, FL Plumbing"
 description: "Meet Rapid Water Heater LLC — a licensed, family-owned plumbing company serving Sarasota, Venice & Bradenton with honest, dependable water heater installation."
 heading: "A Local Family Business Built on Honesty"
-subheading: "Rapid Water Heater LLC was founded in Sarasota with a simple mission: provide honest, dependable, high-quality plumbing service with the care only a local family business can offer."
+subheading: "Rapid Water Heater LLC is a Venice, FL family business founded with a simple mission: provide honest, dependable, high-quality plumbing service with the care only a local family business can offer."
 path: "/about"
 ---
 
@@ -10,7 +10,7 @@ path: "/about"
     <div class="container">
       <div class="breadcrumbs"><a href="/">Home</a><span class="sep">/</span><span aria-current="page">About</span></div>
       <h1>A Local Family Business Built on Honesty</h1>
-      <p>Rapid Water Heater LLC was founded in Sarasota with a simple mission: provide honest, dependable, high-quality plumbing service with the care only a local family business can offer.</p>
+      <p>Rapid Water Heater LLC is a Venice, FL family business founded with a simple mission: provide honest, dependable, high-quality plumbing service with the care only a local family business can offer.</p>
     </div>
   </section>
   <section>

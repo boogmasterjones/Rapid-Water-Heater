@@ -81,7 +81,7 @@ After the work is done, ask your agent what proof they need, such as an invoice 
 
 ## Serving Sarasota and Southwest Florida
 
-Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (License #CFC1434490) founded right here in Sarasota. We help homeowners across Sarasota, Venice, Bradenton, Lakewood Ranch, North Port, Nokomis, Siesta Key and the surrounding areas of Sarasota, Manatee and Charlotte Counties.
+Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (License #CFC1434490) based in Venice, FL. We help homeowners across Sarasota, Venice, Bradenton, Lakewood Ranch, North Port, Nokomis, Siesta Key and the surrounding areas of Sarasota, Manatee and Charlotte Counties.
 
 ## Ready for the Next Step?
 

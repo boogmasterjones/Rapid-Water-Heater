@@ -26,12 +26,12 @@ path: "/locations"
         <div class="card" id="sarasota">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
           <h3>Sarasota, FL</h3>
-          <p>Our home base and the heart of our service area — from downtown and Siesta Key to St. Armands Circle and Lido Key, we handle water heater installation and plumbing repairs across the city.</p>
+          <p>Just up the road from our Venice base and a big part of our service area — from downtown and Siesta Key to St. Armands Circle and Lido Key, we handle water heater installation and plumbing repairs across the city.</p>
         </div>
         <div class="card" id="venice">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
           <h3>Venice, FL</h3>
-          <p>From Venice Island's historic bungalows to newer construction near Laurel Road, we install and service water heaters suited to both older and modern plumbing systems.</p>
+          <p>Our home base. From Venice Island's historic bungalows to newer construction near Laurel Road, we install and service water heaters suited to both older and modern plumbing systems.</p>
           <a class="card-link" href="/locations/venice">View Venice page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></a>
         </div>
         <div class="card" id="bradenton">

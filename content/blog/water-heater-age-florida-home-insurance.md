@@ -74,7 +74,7 @@ The right choice depends on your space, fuel type, household size and budget. We
 
 ## How Rapid Water Heater LLC Can Help
 
-Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (License #CFC1434490) based in Sarasota. Here's what you can expect:
+Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (License #CFC1434490) based in Venice, FL. Here's what you can expect:
 
 - **Free estimates and consultations** with upfront pricing
 - **Installations that follow manufacturer specifications and Florida plumbing code**

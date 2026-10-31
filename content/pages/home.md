@@ -145,7 +145,7 @@ bodyClass: "home"
   <div class="trust-strip">
     <div class="container">
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"></path></svg><span><strong>Licensed</strong>FL License #CFC1434490</span></div>
-      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span><strong>Family-Owned</strong>Founded in Sarasota, 2025</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span><strong>Family-Owned</strong>Based in Venice, FL · Founded 2025</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg><span><strong>Reviewed</strong>By Homeowners on Google</span></div>
       <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg><span><strong>Same-Day</strong>Quotes &amp; Installation</span></div>
     </div>
@@ -206,7 +206,7 @@ bodyClass: "home"
         </svg>
         <div class="art-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          <div><strong>Family-Owned &amp; Local</strong><span>Founded in Sarasota, FL — 2025</span></div>
+          <div><strong>Family-Owned &amp; Local</strong><span>Based in Venice, FL — founded 2025</span></div>
         </div>
       </div>
       <div>

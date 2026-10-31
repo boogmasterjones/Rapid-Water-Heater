@@ -40,7 +40,7 @@ path: "/contact"
   <section>
     <div class="container">
       <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);">
-        <iframe title="Rapid Water Heater LLC service area map" src="https://maps.google.com/maps?q=Sarasota%2C%20FL&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="380" style="border:0;display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        <iframe title="Rapid Water Heater LLC service area map" src="https://maps.google.com/maps?q=Venice%2C%20FL&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="380" style="border:0;display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </div>

@@ -43,7 +43,7 @@ region: "FL"
         </svg>
         <div class="art-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <div><strong>Venice, FL</strong><span>~20 minutes from Sarasota</span></div>
+          <div><strong>Venice, FL</strong><span>Our home base</span></div>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ region: "FL"
     <div class="container">
       <div class="content-block">
         <h2>Water Heater Installation Near Me in Venice, FL</h2>
-        <p>If you're typing "water heater installation near me" from a home near Venice Avenue, the Legacy Trail, or one of the canal-front streets close to Roberts Bay, you're in our regular service area. We're a short drive from Venice year-round, which is part of why we can usually offer same-day quotes here rather than a multi-day wait. Local sun exposure and Gulf humidity both add stress to a water heater over time, and homes closer to the water sometimes see faster mineral buildup depending on the well or municipal supply feeding that stretch of the city — something we check for during every installation.</p>
+        <p>If you're typing "water heater installation near me" from a home near Venice Avenue, the Legacy Trail, or one of the canal-front streets close to Roberts Bay, you're in our regular service area. Venice is our home base, which is part of why we can usually offer same-day quotes here rather than a multi-day wait. Local sun exposure and Gulf humidity both add stress to a water heater over time, and homes closer to the water sometimes see faster mineral buildup depending on the well or municipal supply feeding that stretch of the city — something we check for during every installation.</p>
         <p>We also hear from a fair number of Venice homeowners who are renovating an older Venice Island property and want the water heater brought up to current code as part of that work, not left as the one outdated system in an otherwise updated home. Whether that's your situation or you just woke up to a cold shower, we handle both the planned upgrade and the same-day emergency with the same attention to detail.</p>
         <h3>Water Heater Types We Install in Venice</h3>
         <ul>

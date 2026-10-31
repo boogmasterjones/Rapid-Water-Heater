@@ -1,6 +1,6 @@
 ---
 title: "Meet the Rapid Water Heater Family | Sarasota, FL Plumbers"
-description: "Meet the family behind Rapid Water Heater LLC: Josh, Pat (47-year master plumber), Catherine, and future plumbers Callahan & Lewis. Local, family-owned, Sarasota FL."
+description: "Meet the family behind Rapid Water Heater LLC: Josh, Pat (47-year master plumber), Catherine, and future plumbers Callahan & Lewis. Local, family-owned, based in Venice, FL."
 heading: "Meet the Rapid Water Heater Family"
 subheading: "Rapid Water Heater is a real family business. When you call us, you get the people whose name is on the van, and a couple of future plumbers who take their job very seriously."
 path: "/family"
