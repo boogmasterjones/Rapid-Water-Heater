@@ -30,7 +30,7 @@ path: "/reviews"
         <p style="max-width:52ch;">We're proud of our rating, and we work every day to earn it — with honest pricing, clean installations, and clear communication on every job.</p>
         <div class="hero-actions" style="justify-content:center;">
           <a class="btn btn-navy" href="https://maps.app.goo.gl/d3PUDCn4VZAFe1tb9" target="_blank" rel="noopener">Read Our Google Reviews</a>
-          <a class="btn btn-outline" href="https://maps.app.goo.gl/d3PUDCn4VZAFe1tb9" target="_blank" rel="noopener">Leave a Review</a>
+          <a class="btn btn-outline" href="https://g.page/r/Cehm0imnT-g5EBM/review" target="_blank" rel="noopener">Leave a Review</a>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@ path: "/reviews"
           <p>We'd love a review — it helps other Southwest Florida homeowners find honest, dependable service.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="https://maps.app.goo.gl/d3PUDCn4VZAFe1tb9" target="_blank" rel="noopener">Leave a Google Review</a>
+          <a class="btn btn-gold" href="https://g.page/r/Cehm0imnT-g5EBM/review" target="_blank" rel="noopener">Leave a Google Review</a>
           <a class="btn btn-outline-light" href="/contact">Contact Us</a>
         </div>
       </div>
