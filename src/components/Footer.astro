@@ -82,6 +82,8 @@ import { callClick } from '../lib/track';
   .footer-col a { display: inline-flex; align-items: center; min-height: 40px; color: var(--text); text-decoration: none; }
   .footer-col a:hover { color: var(--gold-hi); }
   .footer-contact li { display: flex; align-items: center; gap: 10px; min-height: 40px; color: var(--text); }
+  /* The phone link's tap area is 44px tall; the negative margin keeps the row at its 40px height. */
+  .footer-contact a[href^="tel:"] { min-height: 44px; margin-block: -2px; }
   .footer-contact svg { width: 18px; height: 18px; flex: none; color: var(--gold); }
   .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 20px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--glass-border); font-size: 0.85rem; }
   .panel :global(.socials) { border-top-color: var(--glass-border); }

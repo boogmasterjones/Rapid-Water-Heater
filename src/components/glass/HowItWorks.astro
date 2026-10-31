@@ -179,6 +179,8 @@ const stepHtml = (t: string) => t.split('{phone}');
   .n { display: block; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-hi); font-weight: 700; }
   .txt h3 { font-size: clamp(1.4rem, 1rem + 1.2vw, 1.9rem); margin: 4px 0 6px; }
   .txt p { margin: 0; max-width: 48ch; font-size: 1.04rem; }
+  /* Inline phone link: vertical padding gives a 44px+ tap area without moving the text. */
+  .txt p a[href^="tel:"] { padding-block: 12px; }
 
   @media (max-width: 860px) {
     .how-grid { grid-template-columns: 1fr; gap: 28px; }

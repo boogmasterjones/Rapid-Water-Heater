@@ -8,10 +8,10 @@ interface Props { quoteHref?: string }
 const { quoteHref = site.cta.href } = Astro.props;
 ---
 
-<div class="sticky-call-mobile">
+<nav class="sticky-call-mobile" aria-label="Call or request an estimate">
   <a class="btn btn-gold" href={phoneHref(site.business.phone)} onclick={callClick('sticky_mobile_phone_button')}>Call Now</a>
   <a class="btn btn-outline-light" href={quoteHref}>{site.cta.label}</a>
-</div>
+</nav>
 
 <style>
   .sticky-call-mobile { display: none; }
@@ -23,7 +23,7 @@ const { quoteHref = site.cta.href } = Astro.props;
       box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 10px 40px rgb(0 0 0 / 0.45);
       transform: translateY(150%); transition: transform 0.35s var(--ease-out);
     }
-    :global(body.sticky-bar-visible) .sticky-call-mobile { transform: none; }
+    :global(body.sticky-bar-visible) .sticky-call-mobile, .sticky-call-mobile:focus-within { transform: none; }
     .btn { flex: 1; min-height: 48px; padding: 12px 14px; }
   }
 </style>
