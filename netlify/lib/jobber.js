@@ -86,7 +86,7 @@ async function createClient(lead) {
 // NOTE: the exact input fields of the request-creation mutation still need to be confirmed against
 // the live schema (Developer Center > Test in GraphiQL). Everything request-specific lives here.
 async function createRequest(clientId, lead) {
-  const title = ("Website request: " + (lead.services.join(", ") || "Estimate") + (lead.serviceArea ? " (" + lead.serviceArea + ")" : "")).slice(0, 200);
+  const title = ("Website request" + (lead.smsConsent ? " (OK to text)" : "") + ": " + (lead.services.join(", ") || "Estimate") + (lead.serviceArea ? " (" + lead.serviceArea + ")" : "")).slice(0, 200);
   const data = await graphql(
     "mutation { requestCreate(input: { clientId: " + JSON.stringify(clientId) + ", title: " + JSON.stringify(title) + " }) { request { id } userErrors { message path } } }"
   );

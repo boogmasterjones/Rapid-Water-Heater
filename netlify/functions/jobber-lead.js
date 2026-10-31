@@ -30,6 +30,8 @@ exports.handler = async function (event) {
     phone: clean(body.phone, 40),
     email: clean(body.email, 120),
     serviceArea: clean(body["service-area"], 60),
+    // The SMS consent box on the form (unchecked unless the visitor ticks it).
+    smsConsent: body.sms_consent === "yes",
     services: Array.isArray(body.services) ? body.services.slice(0, 10).map(function (s) { return clean(s, 80); }).filter(Boolean) : []
   };
   if (!lead.name || (!lead.phone && !lead.email)) return json(400, { ok: false, error: "missing" });
