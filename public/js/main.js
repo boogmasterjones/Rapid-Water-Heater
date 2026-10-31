@@ -24,7 +24,7 @@ function goToQuoteForm(prefillMessage) {
     quoteSection.scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(applyQuotePrefill, 350);
   } else {
-    window.location.href = "/contact.html#quote";
+    window.location.href = "/contact#quote";
   }
 }
 
