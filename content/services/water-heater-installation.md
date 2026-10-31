@@ -5,6 +5,7 @@ name: "Water Heater Installation"
 heading: "Water Heater Installation in Sarasota, FL"
 summary: "Whether your current water heater has stopped working or you're ready for an upgrade, we provide professional installation designed to keep your home comfortable — tank, tankless, and heat pump…"
 order: 1
+updatedAt: 2026-10-31
 ---
 
 <section class="page-hero">
@@ -95,8 +96,8 @@ order: 1
         <h3>Choosing the Right Size for Your Household</h3>
         <p>Capacity in gallons is the number most people know, but first-hour rating is the more useful one. It describes how much hot water a unit can actually deliver during a busy hour, accounting for both what is stored and how quickly it reheats. Two tanks of the same gallon capacity can have meaningfully different first-hour ratings depending on the burner or element.</p>
         <p>As a general guide, a 40 to 50 gallon tank serves many two to three person households, and larger families or homes with multiple bathrooms running at once tend to need more capacity or faster recovery. What matters more than any rule of thumb is your actual pattern of use — several showers back to back in the morning puts a different demand on a system than the same amount of hot water spread across a day. We ask about that before recommending a size, because an undersized unit is the most common reason a brand new water heater still disappoints.</p>
-        <h3>Proudly Serving</h3>
-        <p>Sarasota, Venice, Bradenton, Lakewood Ranch, Wellen Park, Englewood, Nokomis, North Port, Rotonda West, Port Charlotte, Punta Gorda, Arcadia, Palmetto, and Parrish, FL. Don't see your community? <a href="/contact">Contact us</a> to check availability.</p>
+        <h3>Water Heater Installation Near You</h3>
+        <p>We install water heaters from Manatee County down to Charlotte Harbor. Each town page covers what we see in local homes: <a href="/locations/bradenton">water heater installation in Bradenton</a>, <a href="/locations/lakewood-ranch">water heater installation in Lakewood Ranch</a>, and our work in <a href="/locations/venice">Venice</a>, <a href="/locations/north-port">North Port</a>, <a href="/locations/port-charlotte">Port Charlotte</a> and <a href="/locations/punta-gorda">Punta Gorda</a>. We also serve Sarasota, Wellen Park, Englewood, Nokomis, Rotonda West, Arcadia, Palmetto and Parrish, FL. Don't see your community? <a href="/contact">Contact us</a> to check availability.</p>
       </div>
     </div>
   </section>
