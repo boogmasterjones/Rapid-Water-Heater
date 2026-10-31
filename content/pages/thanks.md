@@ -69,6 +69,7 @@ if (!sessionStorage.getItem("rwhFormTracked")) { sessionStorage.setItem("rwhForm
 } catch (e) { /* storage unavailable: cannot verify, so just show the page */ }
 window.dataLayer = window.dataLayer || [];
 if (shouldTrack) window.dataLayer.push({ event: "form_submission_success", form_name: "estimate_request" });
+if (shouldTrack && typeof window.gtag === "function") window.gtag("event", "generate_lead", { form_name: "estimate_request" });
 window.__rwhTrack = shouldTrack;
 })();
 </script>
