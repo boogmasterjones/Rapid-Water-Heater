@@ -101,4 +101,24 @@ import { callClick } from '../lib/track';
     .footer-col:nth-child(3) ul { grid-template-columns: 1fr 1fr; column-gap: 16px; }
     .footer-bottom { flex-direction: column; gap: 8px; margin-top: 24px; }
   }
+  /* Phones, compact pass: contact details come straight after the brand (the phone is what people want here), the
+     Google pill that the "Find us online" row repeats is dropped, that row sits on one line, links get full 44px
+     targets, and the legal lines are smaller. */
+  @media (max-width: 560px) {
+    .site-footer { padding-top: 8px; }
+    .panel { padding: 28px 20px 20px; }
+    .footer-grid { gap: 28px; padding-bottom: 8px; }
+    .footer-brand { order: -2; }
+    .footer-col:nth-child(4) { order: -1; }
+    .footer-social { display: none; }
+    .footer-brand p { margin-top: 10px; font-size: 0.95rem; line-height: 1.55; }
+    ul { gap: 0; }
+    .footer-col a { min-height: 44px; }
+    .footer-contact li { min-height: 44px; }
+    .footer-contact a[href^="tel:"] { margin-block: 0; font-weight: 700; color: #fff; font-size: 1.05rem; }
+    .site-footer .panel :global(.socials) { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 16px; }
+    .site-footer .panel :global(.socials-title) { margin: 0; }
+    .footer-bottom { margin-top: 16px; padding-top: 16px; font-size: 0.82rem; line-height: 1.5; gap: 4px; }
+    .footer-bottom a { display: inline-block; padding: 8px 2px; margin: -8px 0; }
+  }
 </style>
