@@ -151,9 +151,10 @@ const icons = [
   @media (max-width: 760px) {
     /* One screen: badge, headline, then the intro on the left with a small photo on the right, then big call buttons.
        .copy is flattened (display: contents) so the intro and the photo can sit side by side in the grid. */
-    /* The hero fills the whole first screen (the call bar sits over the bottom edge, so it gets extra room), with the
-       content spread out and centred, so the next section never peeks in. */
-    .glass-hero { display: flex; align-items: center; min-height: var(--vh, 100svh); padding: calc(var(--header-top) + var(--header-h) + 24px) 0 88px; }
+    /* The hero fills the whole first screen with the content centred, so the next section never peeks in. The call bar
+       only slides in after half the hero has scrolled away, so the bottom needs no room for it: an 88px reserve left the
+       content riding high with a ~150px empty band under the buttons. Now the space above and below is even. */
+    .glass-hero { display: flex; align-items: center; min-height: var(--vh, 100svh); padding: calc(var(--header-top) + var(--header-h) + 24px) 0 32px; }
     .hero-grid { display: block; width: 100%; }
     .eyebrow { margin-bottom: 28px; font-size: 0.72rem; letter-spacing: 0.07em; padding: 8px 14px; max-width: 100%; white-space: nowrap; }
     h1 { font-size: clamp(1.7rem, 0.1rem + 8vw, 2.6rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 28px; text-wrap: wrap; }

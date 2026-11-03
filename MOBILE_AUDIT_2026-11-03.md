@@ -197,3 +197,82 @@ Checks after the change, at 360, 390, 430 and 768:
 4. The phone menu's "About & Contact" label sits beside "About" and duplicates it. That is a label question for the owner.
 5. The "Find us online" footer label is muted grey serif and reads as disabled. It matches desktop, so it was left.
 6. Real-device checks are still outstanding: the iOS Safari toolbar with the call bar and the auto-hiding header, `text-wrap: balance` support (iOS 17.5+; older devices just wrap normally), and `:has()` support (iOS 15.4+).
+
+---
+
+# Pass 3 of 3 (final, 2026-11-03)
+
+## Method
+
+- **Screens:** I screenshotted key routes screen by screen at 390x844, plus first screens at 360x780 and 430x932. Tablets were checked at 768x1024, 1024x1366 and 1180x820. The automated audit (overflow, small text, tap targets) ran on all 31 routes at 360 and 430: **0 overflow anywhere**.
+- **Older iOS:** I simulated a browser without `:has()` and `text-wrap` by deleting every `:has()` rule (20-24 per page) and every `text-wrap` declaration in the live page, on home, contact, about, a location page, a service page and /family at 360px. There is no overflow and nothing breaks. Without `:has()`:
+  - icon cards show the icon on its own row (the pre-pass-1 layout);
+  - the area pills fall back to rows;
+  - form tiles don't turn gold when ticked, but the checkbox still shows.
+- **Animation:** a programmatic scroll down the whole page at 390 on home, a service page and /family ran a median 16.7ms per frame, with p95 at 17.0ms and 0 frames over 33ms. The rain already runs in a worker at 16 drops and a 32ms tick on phones.
+- **Desktop proof (1440x900, all 31 routes):** I dumped computed styles and geometry before the pass and after it.
+  - Apart from the two desktop bug fixes below (#1 and #2), the only differences are these:
+    - The header pill is 10px narrower and re-centred: the stray `<source>` gap is gone, so 38 header rows shift by 5px.
+    - One new inline `span.nw` in the footer, with the same text and position.
+  - Pixel diffs elsewhere are the rain and the Google map's loading state.
+
+## What passes 1-2 missed, and the fixes
+
+| # | Issue | Where | Fix |
+|---|---|---|---|
+| 1 | **Desktop bug (approved):** `<source>` tags inside `display: contents` pictures were grid items. The /family "How We Work" grid showed photos in columns 2 and 4 only, Callahan & Lewis stacked in the right column, and the header logo had a 10px gap | /family and the header, every width | `picture > source { display: none }` and the footer-logo pin moved from `mobile.css` (900px and narrower) into `base.css`, unscoped. /family at 1440: 4 photos per row, Callahan & Lewis side by side, page 1,113px shorter |
+| 2 | **Desktop bug:** the injected Call / Free Estimate row inside a two-column `.split` became a third grid item. It sat stranded under the left column, 100-135px below the text, centred in half the width | Home "Honest, Dependable Plumbing" and /family "Callahan & Lewis", 901px and up | `.split > .cta-row` spans both columns, centred, 36px under (the normal CTA gap). Phones unchanged (one column already) |
+| 3 | Inner-page H1s were 33.6-34px, so long titles ran 4-5 lines (Lakewood Ranch and Same-Day ran 5) | All inner pages, phones | H1 is 28.8px at 360-390, rising to 32px at 560. Section H2s are 24.8px (the size reading panels already used), so H1 > H2 > card H3 still holds. Lakewood Ranch at 390: 5 → 3 lines. Every location title at 390: 4 → 3 lines. At 360 the longest stay at 4 lines (that is the minimum without going under 28px) |
+| 4 | Home hero on phones reserved 88px at the bottom for the call bar, which only appears after scrolling. The content rode high, with a ~150px empty band under the buttons at 430x932 | Home, phones | Bottom padding 88 → 32px. The space above the badge and below the buttons is now even |
+| 5 | "Find us online" read as muted grey serif, like a disabled control | Footer, phones | It now matches the Services / Company / Contact labels: gold, uppercase, small sans. The label and icons stay on one line at 360 |
+| 6 | Legal line broke "License / #CFC1434490" | Footer, phones | "License #CFC1434490" kept together |
+| 7 | Home "Service area" city pills sat flush left under a centred kicker, heading and intro | Home, phones | Pills centred |
+| 8 | Service cards spent a 44px row on "Learn more"; only that small link was tappable | Home, services hub, location pages, phones | A gold chevron sits at the end of the description, and the link stretches invisibly over the whole card, so the card is the button. Titles keep their full width (none wrap). The accessible name is unchanged ("Learn more about ...") |
+| 9 | One-word last lines ("time.", "right.", "LLC.", "code.") all over the paragraphs | Every page, 900px and narrower | `text-wrap: pretty` on p, li, figcaption and blockquote. It is a no-op where unsupported |
+| 10 | Every page waited on a separate render-blocking CSS file (Lighthouse: about 160ms) | All pages | `build.inlineStylesheets: 'always'`: the CSS (about 12 KB compressed) is inlined. The look is identical |
+
+## Lighthouse (mobile, built site served locally)
+
+Scores are performance / accessibility / best practices / SEO. Local runs swing ±25 performance points run to run (home scored 50, 77 and 52).
+
+| Page | Score | LCP | CLS | TBT |
+|---|---|---|---|---|
+| Home | 52-77 / 100 / 77 / 100 | 1.5-7.8s | 0 | 1.1s |
+| Water Heater Installation | 80 / 100 / 77 / 100 | 1.4s | 0 | 0.8s |
+| Venice | 77 / 100 / 77 / 100 | 1.4s | 0 | 1.0s |
+| Contact | 73-81 / 100 / 77 / 100 | 1.5-3.2s | 0 | 0.8s |
+| Blog (Florida 4-point) | 75 / 100 / 77 / 100 | 1.4-2.9s | 0 | 0.8s |
+
+**What holds the score down is the tracking stack, not the site.**
+- With the tracking scripts blocked, home and contact both score **99 performance, 100 best practices**, with LCP 1.8s and TBT 0ms.
+- The tracking stack is GTM, two GA4 tags, the Ads tag, the Meta pixel and Clarity. It adds about 1.7s of main-thread script, 444 KB of unused JS and the third-party cookies that cost the 23 best-practice points.
+- I left all of it untouched (tracking must stay intact).
+- **Owner decision:** loading GTM after the first interaction or on idle would recover most of it, but it can drop very-fast-bounce sessions from the stats.
+
+Other notes:
+- The 20 KB `mascot-logo.webp` is shown at 34-42px. A ~4 KB 120px copy would save about 15 KB a page. I didn't do it because it means adding an image under `public/images/`, which is platform territory.
+- No oversized photos were flagged beyond 15-37 KB per image.
+
+## Checked and fine
+
+- Tablets: 768x1024 two-column hero, 1024x1366 and 1180x820. There is no overlap, and the badge and mascot sit inside the edges.
+- Tracking: 9 `tel:` links and 7 `call_click` handlers on home. The form, `progressive-form.js` and the Jobber path are untouched. Facts, "24/7" and every content file are unchanged.
+- `astro check` reports 0 errors and 0 warnings, `npm run build` passes, and `npm run audit` reports 0 errors and 0 warnings.
+
+## Left for the owner (not changed)
+
+- The "Keep reading" folds, the auto-hiding header, the reduced-motion opt-out and the SMS consent wording are as before.
+- The menu has "About" beside "About & Contact" (label question).
+- Phone format is mixed: some CTA buttons in the content files say "Call 941-876-5900" while others say "(941) 876-5900". It is the same number. The text lives in `content/`, so I didn't touch it.
+- On narrow phones, balanced headings sometimes break at a hyphen ("Same-/Day Service"). It only reads oddly in 1-2 headings.
+
+## Real-phone checklist for the owner (iPhone, Safari)
+
+1. Open the homepage: the badge, headline, photo and both call buttons should fill the first screen evenly, with no big empty band at the bottom.
+2. Scroll down slowly, then flick back up a little: the bottom Call / Estimate bar slides in, the top bar steps aside while reading, and it returns the moment you scroll up. It should feel calm, not jumpy.
+3. Tap a service card anywhere (not just the little gold arrow): it should open that service page.
+4. Open a location page (try Lakewood Ranch): the headline should be 3 lines and the Call button visible without scrolling.
+5. Tap "Call" anywhere (header, hero, bottom bar, footer number): the phone dialer should open with (941) 876-5900.
+6. On Contact, fill the first step of the form with a test name: the form shouldn't jump, and the ticked choice tiles should turn gold. Don't submit.
+7. On Meet the Family, check the "How We Work" photos sit two by two with no gaps, and the footer's "Find us online" label and three icons sit on one line.
+8. Turn the phone sideways on the homepage: nothing should run off the screen edge.

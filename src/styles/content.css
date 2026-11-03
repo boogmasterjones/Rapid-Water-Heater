@@ -395,6 +395,10 @@ iframe { max-width: 100%; border-radius: var(--r-lg); }
 .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 14px; margin-top: 36px; }
 .cta-row--start { justify-content: flex-start; margin-top: 26px; }
 .content-block .cta-row { margin: 32px 0; }
+/* A row appended inside a two-column .split (home "About", Meet the Family "Callahan & Lewis") became a third grid item
+   and sat stranded under the left column, half a screen below the text. It spans both columns, centred, 36px under. */
+.split > .cta-row { grid-column: 1 / -1; }
+@media (min-width: 901px) { .split > .cta-row { margin-top: -28px; } }
 @media (max-width: 560px) {
   .cta-row .btn { flex: 1 1 100%; }
 }

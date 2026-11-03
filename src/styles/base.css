@@ -18,6 +18,12 @@ body {
 img, svg, video, canvas { display: block; max-width: 100%; }
 img { height: auto; }
 picture { display: contents; }
+/* With <picture> as display: contents, its <source> tags became empty grid and flex items: on Meet the Family the
+   "How We Work" photos and the Callahan & Lewis pair sat in every second column, and the header logo carried a stray
+   10px gap. Sources never render, so they leave layout at every width. */
+picture > source { display: none; }
+/* The footer logo is inline-flex; without the empty source its baseline moved and the row grew 5px. */
+.footer-brand .logo { vertical-align: top; }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--text-strong);
