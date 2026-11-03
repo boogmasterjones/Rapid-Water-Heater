@@ -299,8 +299,16 @@ const EAGER = 2;
     .intro p { font-size: 1.02rem; line-height: 1.62; }
     .jump { min-height: 44px; }
     .viewport { margin-top: 24px; }
-    .cap { left: 10px; bottom: 10px; max-width: calc(100% - 20px); font-size: 0.8rem; }
-    .group-tag { left: 10px; top: 10px; }
+    .cap { left: 10px; bottom: 10px; max-width: calc(100% - 20px); font-size: 0.84rem; }
+    .group-tag { left: 10px; top: 10px; font-size: 0.75rem; }
     .more { margin-top: 16px; }
+    /* Taller photos (they were 200px high on a 390px phone), and the two jump buttons never wrap onto two lines. */
+    .carousel-sec { --gh: clamp(230px, 64vw, 290px); }
+    .jumps { flex: 1 1 auto; min-width: 0; }
+    .jump { flex: 1 1 auto; white-space: nowrap; padding: 0 12px; }
+  }
+  /* Small phones: the segmented buttons take the whole row; swiping (with the next photo peeking in) does the arrows' job. */
+  @media (max-width: 400px) {
+    .arrows { display: none; }
   }
 </style>

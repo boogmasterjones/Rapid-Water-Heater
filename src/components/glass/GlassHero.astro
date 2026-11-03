@@ -122,6 +122,21 @@ const icons = [
     .stack :global(.mascot) { width: 34%; right: -2%; }
   }
 
+  /* Tablet portrait (761-860px): copy and photo stay side by side, as on a computer, instead of a full-width button
+     stack over a photo two screens tall. */
+  @media (min-width: 761px) and (max-width: 860px) {
+    .glass-hero { min-height: 0; padding-bottom: 72px; }
+    .hero-grid { grid-template-columns: 1.12fr 0.88fr; gap: 36px; }
+    h1 { font-size: 2.55rem; }
+    .lede { font-size: 1.04rem; margin-bottom: 26px; }
+    .hero-actions { gap: 12px; }
+    .stack { max-width: 330px; }
+    .chip { font-size: 0.78rem; padding: 8px 12px; }
+    .chip-0 { left: -6%; }
+    .chip-1 { left: -8%; }
+    .chip-rating { right: -4%; }
+  }
+
   /* Phones: one clear column (chip, headline, lede, calls, photo) on the 8/12/16/24/32/48 rhythm. The headline scales
      with the screen so it keeps three lines without cramped leading; the photo's badges sit inside its corners (still,
      no float, no 3D push) so they never cross the card edge, the buttons or the copy. */
@@ -132,11 +147,11 @@ const icons = [
        content spread out and centred, so the next section never peeks in. */
     .glass-hero { display: flex; align-items: center; min-height: var(--vh, 100svh); padding: calc(var(--header-top) + var(--header-h) + 24px) 0 88px; }
     .hero-grid { display: block; width: 100%; }
-    .eyebrow { margin-bottom: 32px; }
+    .eyebrow { margin-bottom: 28px; font-size: 0.72rem; letter-spacing: 0.07em; padding: 8px 14px; max-width: 100%; white-space: nowrap; }
     h1 { font-size: clamp(1.7rem, 0.1rem + 8vw, 2.6rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 28px; text-wrap: wrap; }
     /* The photo floats right at the start of the intro, so the text begins beside it and wraps underneath it. */
     .photo-m {
-      display: block; float: right; width: 50%; aspect-ratio: 4 / 5; margin: 4px 0 10px 16px; overflow: hidden;
+      display: block; float: right; width: 44%; aspect-ratio: 4 / 5; margin: 4px 0 10px 16px; overflow: hidden;
       border-radius: var(--r-md, 18px); border: 1px solid rgb(255 255 255 / 0.28);
       box-shadow: 0 10px 24px rgb(0 0 0 / 0.4), 0 0 0 4px rgb(255 255 255 / 0.06), 0 0 36px rgb(53 167 255 / 0.2);
     }
