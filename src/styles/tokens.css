@@ -133,10 +133,11 @@
 }
 
 /* Phones: a touch more side room and a steadier section rhythm. Phone spacing uses one scale everywhere:
-   8 / 12 / 16 / 24 / 32 / 48 / 56 / 64. */
+   8 / 12 / 16 / 24 / 32 / 48 / 56 / 64. Sections breathe 48px top and bottom (96px between two), which keeps the rhythm
+   without the near-empty screen gaps 56px left between some sections. */
 @media (max-width: 560px) {
   :root {
     --gutter: 20px;
-    --section-y: 56px;
+    --section-y: 48px;
   }
 }

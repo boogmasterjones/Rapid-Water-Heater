@@ -10,6 +10,7 @@ import { serializeJsonLd } from '../lib/schema';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/content.css';
+import '../styles/mobile.css';
 
 interface Props {
   title: string;
@@ -81,6 +82,6 @@ const brandVars = `:root{--c-primary:${colors.primary};--c-primary-alt:${colors.
     <CallBar quoteHref={quoteHref} />
     <script is:inline src="/js/main.js"></script>
     <script is:inline src="/js/progressive-form.js" defer></script>
-    <script>import '../scripts/glass/core';</script>
+    <script>import '../scripts/glass/core'; import '../scripts/glass/mobile';</script>
   </body>
 </html>

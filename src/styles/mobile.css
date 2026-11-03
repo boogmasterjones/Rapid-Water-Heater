@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Mobile and tablet makeover (2026-11-03).
+   Loaded after content.css. Every rule here sits inside a max-width media
+   query (900px or narrower), so the desktop layout is never touched.
+   Phone rhythm: 8 / 12 / 16 / 24 / 32 / 48.
+   ========================================================================== */
+
+/* ---------- Tablet portrait (761-900px) ---------- */
+@media (min-width: 761px) and (max-width: 900px) {
+  /* Once .split stacks, the drawn tank illustration filled a whole screen on its own. Phones already drop it; tablets
+     now match. Real photos stay, at a landscape crop. */
+  .split > .art-panel:not(.art-photo) { display: none; }
+  .split > .art-panel.art-photo { aspect-ratio: 16 / 10; }
+  /* Inner-page heroes: no 68vh floor, which left a third of the screen empty under the buttons. */
+  .page-hero { min-height: 0; padding-bottom: 56px; }
+  /* A three-card row stays three across instead of two plus an orphan. */
+  .grid-3:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .grid-3:has(> :nth-child(3):last-child) > .card { padding: 24px 20px; }
+}
+
+/* ---------- Large phones and small tablets (621-760px): two-up grids never leave a lone card ---------- */
+@media (min-width: 621px) and (max-width: 760px) {
+  .grid-3 > :last-child:nth-child(odd), .grid-4 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  /* Icon cards: the icon sits beside the title and the text runs the full card width underneath, instead of a big
+     icon on its own row (or a 64px indent down the whole card). Saves 60-90px a card and keeps lines long. */
+  .card:has(> .card-icon) { display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; align-content: start; }
+  .card:has(> .card-icon) > * { grid-column: 1 / -1; }
+  .card:has(> .card-icon) > .card-icon { grid-column: 1; grid-row: 1; width: 44px; height: 44px; border-radius: 13px; margin: 0; align-self: center; }
+  .card:has(> .card-icon) > .card-icon svg { width: 22px; height: 22px; }
+  .card:has(> .card-icon) > h3 { grid-column: 2; grid-row: 1; align-self: center; margin: 0; font-size: 1.18rem; }
+  .card:has(> .card-icon) > h3 + * { margin-top: 12px; }
+  .card:has(> .card-icon) > p { margin-bottom: 8px; }
+  .card:has(> .card-icon) > p:last-child { margin-bottom: 0; }
+
+  /* Short plain cards (the four brands on About) pair up two to a row instead of four full-width tiles. */
+  .grid.grid-4:has(> .card):not(:has(.card-icon)) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .grid.grid-4:has(> .card):not(:has(.card-icon)) > .card { padding: 20px 14px; }
+  .grid.grid-4:has(> .card):not(:has(.card-icon)) > .card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+  .grid.grid-4:has(> .card):not(:has(.card-icon)) > .card p { font-size: 0.9rem; line-height: 1.45; }
+
+  /* Breadcrumbs: always one line. The current page (repeated in the H1 right below) gives way with an ellipsis, and
+     the links get a taller invisible tap area without moving anything. */
+  .breadcrumbs { display: flex; flex-wrap: nowrap; width: fit-content; max-width: 100%; white-space: nowrap; border-radius: var(--r-pill); padding: 8px 16px; }
+  .breadcrumbs > * { flex: none; }
+  .breadcrumbs [aria-current] { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .breadcrumbs a { padding: 12px 4px; margin: -12px -4px; }
+
+  /* Service-area links: wrapping pills instead of seven full-width rows (about 3 rows instead of 7). */
+  .grid:has(> .area-card) { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid > .area-card { min-height: 46px; padding: 10px 14px 10px 16px; gap: 6px; border-radius: var(--r-pill); }
+  .grid > .area-card h3 { font-size: 0.98rem; }
+  .grid > .area-card svg { width: 15px; height: 15px; }
+
+  /* Long reading panels run edge to edge: the side borders and the second 20px inset go, so a line holds about 44
+     characters instead of 38 and paragraphs stop running eight lines deep. The gradient top rule stays. */
+  .content-block { margin-inline: calc(var(--gutter) * -1) !important; padding: 32px var(--gutter); border-radius: 0; border-inline: 0; }
+  .page-hero .blog-meta { font-size: 0.76rem; letter-spacing: 0.06em; }
+
+  /* Small labels that fell under 13px. */
+  .trust-item span { font-size: 0.875rem; }
+  .family-role { font-size: 0.8rem; }
+
+  /* Team portraits: square on phones, so each one is a face and a caption rather than a full screen of shirt. */
+  .family-card img { aspect-ratio: 1 / 1; object-position: center 22%; }
+  .family-card figcaption { padding: 16px 20px 20px; }
+
+  /* SMS disclosure links: a taller tap area without changing the text. */
+  /* Quote form choices become tappable tiles: the whole tile is the target and a chosen one lights up gold. */
+  .check-grid, .radio-grid { gap: 8px; }
+  .check-grid .check-item, .radio-grid .radio-item {
+    min-height: 52px; padding: 8px 12px; gap: 10px; border-radius: var(--r-sm); line-height: 1.3; font-size: 0.92rem;
+    border: 1px solid var(--glass-border); background: rgb(255 255 255 / 0.04);
+    transition: border-color var(--dur-fast), background-color var(--dur-fast);
+  }
+  .check-grid .check-item:has(input:checked), .radio-grid .radio-item:has(input:checked) { border-color: rgb(245 179 0 / 0.7); background: rgb(245 179 0 / 0.1); color: #fff; }
+  .quote-form .consent-item { font-size: 0.84rem; }
+  .quote-form .consent-item a { padding: 6px 0; }
+}
+
+/* ---------- Long reading panels: "Keep reading" (phones and small tablets) ----------
+   src/scripts/glass/mobile.ts clamps a long keyword section on service, location and hub pages (never a blog post) and
+   adds the button. Everything stays in the page; one tap opens it. */
+@media (max-width: 760px) {
+  .content-block.is-clamped { max-height: var(--clamp-h, 520px); }
+  .content-block.is-clamped::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 200px; pointer-events: none;
+    background: linear-gradient(180deg, transparent, var(--bg-raised) 64%);
+  }
+  .content-block.is-opening { transition: max-height 0.6s var(--ease-out); }
+  .read-more {
+    position: absolute; z-index: 2; left: 50%; bottom: 22px; translate: -50% 0;
+    min-height: 48px; padding: 12px 24px; gap: 8px;
+  }
+  .read-more svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .content-block:not(.is-clamped) .read-more { display: none; }
+}
