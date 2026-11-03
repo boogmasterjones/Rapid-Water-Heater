@@ -34,8 +34,8 @@ const icons = [
     <div class="copy">
       <span class="eyebrow">{eyebrow}</span>
       <h1 set:html={headingHtml} />
-      <div class="photo-m" aria-hidden="true">
-        <Picture src={photo} alt={photoAlt} loading="eager" sizes="(max-width: 860px) 92vw, 520px" style={`object-position:${photoPosition}`} />
+      <div class="photo-m" aria-hidden="true" style={`--pos:${photoPosition}`}>
+        <Picture src={photo} alt={photoAlt} loading="eager" sizes="(max-width: 860px) 92vw, 520px" />
       </div>
       {lede && <p class="lede">{lede}</p>}
       <div class="hero-actions">
@@ -122,10 +122,18 @@ const icons = [
     .stack :global(.mascot) { width: 34%; right: -2%; }
   }
 
+  /* Tablet landscape and small laptops (861-1240px): the rating badge and the mascot hang past the photo by design, which
+     at these widths pushes them to the screen edge. Pull them in so nothing touches or crosses it. */
+  @media (min-width: 861px) and (max-width: 1240px) {
+    .chip-rating { right: 2%; }
+    .stack :global(.mascot) { right: -3%; }
+  }
+
   /* Tablet portrait (761-860px): copy and photo stay side by side, as on a computer, instead of a full-width button
      stack over a photo two screens tall. */
   @media (min-width: 761px) and (max-width: 860px) {
-    .glass-hero { min-height: 0; padding-bottom: 72px; }
+    /* The next section brings its own 64px, so a short hand-off here instead of a ~130px empty band. */
+    .glass-hero { min-height: 0; padding-bottom: 12px; }
     .hero-grid { grid-template-columns: 1.12fr 0.88fr; gap: 36px; }
     h1 { font-size: 2.55rem; }
     .lede { font-size: 1.04rem; margin-bottom: 26px; }
@@ -155,7 +163,7 @@ const icons = [
       border-radius: var(--r-md, 18px); border: 1px solid rgb(255 255 255 / 0.28);
       box-shadow: 0 10px 24px rgb(0 0 0 / 0.4), 0 0 0 4px rgb(255 255 255 / 0.06), 0 0 36px rgb(53 167 255 / 0.2);
     }
-    .photo-m :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-m :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); display: block; }
     .lede { font-size: 1.08rem; line-height: 1.6; margin: 0; }
     .hero-actions { clear: both; flex-direction: column; gap: 16px; padding-top: 36px; }
     .hero-actions .btn { flex: none; width: 100%; min-height: 62px; padding: 16px 20px; font-size: 1.08rem; }

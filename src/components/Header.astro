@@ -117,7 +117,11 @@ const current = (href: string) => (href === here ? 'page' : undefined);
   .phone-cta { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .estimate { min-height: 44px; padding: 10px 20px; font-size: 0.95rem; }
 
-  @media (max-width: 1240px) { .quick { display: none; } }
+  @media (max-width: 1240px) {
+    .quick { display: none; }
+    /* Phones and tablets: a fully solid sheet. At 98% the headline behind still ghosted through the menu items. */
+    .main-nav { background: rgb(12 24 58); min-width: 310px; } /* wide enough that no service name wraps */
+  }
   @media (max-width: 760px) {
     /* Steps aside while reading down (the bottom call bar is up by then), back on any scroll up: src/scripts/glass/mobile.ts. */
     .site-header { transition: transform 0.4s var(--ease-out); }

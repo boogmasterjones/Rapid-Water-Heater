@@ -73,3 +73,20 @@ const SMALL = matchMedia('(max-width: 760px)');
     if (folded) { (folded.querySelector('.read-more') as HTMLButtonElement | null)?.click(); setTimeout(() => t?.scrollIntoView(), 700); }
   });
 })();
+
+// ---------- 3. Long centred paragraphs read left-aligned ----------
+// A centred intro that runs six or more lines on a phone (About's "Why it matters", the Reviews mission) has a ragged
+// left edge the eye has to hunt for at every line. Those few switch to left-aligned text; short centred intros stay
+// centred. Same line breaks' height either way, so nothing moves.
+(function longCentred() {
+  if (!matchMedia('(max-width: 560px)').matches) return;
+  const run = () => {
+    $$('main p').forEach((p) => {
+      const cs = getComputedStyle(p);
+      if (cs.textAlign !== 'center') return;
+      const lines = p.getBoundingClientRect().height / parseFloat(cs.lineHeight);
+      if (lines >= 5.5) p.style.textAlign = 'left';
+    });
+  };
+  document.fonts?.ready ? document.fonts.ready.then(run) : run();
+})();

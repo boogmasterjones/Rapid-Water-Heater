@@ -64,8 +64,9 @@ const brandVars = `:root{--c-primary:${colors.primary};--c-primary-alt:${colors.
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KD5Q9SWT');</script>
     <script is:inline>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
     <!-- Before first paint: "js" lets scroll reveals hide below-the-fold blocks; "rm" (reduced motion, or ?shot for
-         screenshots) shows everything finished and still. -->
-    <script is:inline>(function(d){var r=d.documentElement,s=/[?&]shot/.test(location.search);r.classList.add('js');if(s||matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm');if(s)r.style.setProperty('--vh','900px');})(document);</script>
+         screenshots) shows everything finished and still. "pf-late" is the quote form's safety net: if
+         progressive-form.js has not run after 5s, its pre-hidden sections show (see content.css). -->
+    <script is:inline>(function(d){var r=d.documentElement,s=/[?&]shot/.test(location.search);r.classList.add('js');setTimeout(function(){r.classList.add('pf-late')},5000);if(s||matchMedia('(prefers-reduced-motion: reduce)').matches)r.classList.add('rm');if(s)r.style.setProperty('--vh','900px');})(document);</script>
     <style is:inline set:html={brandVars}></style>
     {fonts && (<><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="stylesheet" href={fonts} /></>)}
   </head>

@@ -98,3 +98,64 @@
   .read-more svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
   .content-block:not(.is-clamped) .read-more { display: none; }
 }
+
+/* ==========================================================================
+   Pass 2 (2026-11-03): fresh-eyes fixes. Still max-width only; desktop untouched.
+   ========================================================================== */
+
+/* ---------- Phones and tablets (900px and narrower) ---------- */
+@media (max-width: 900px) {
+  /* <picture> is display: contents, so its <source> tags became empty grid items: on Meet the Family every photo in the
+     "How We Work" gallery and the Callahan & Lewis pair sat in the right-hand column with the left one empty, and the
+     header logo carried a stray 10px gap. Sources never render, so take them out of layout. */
+  picture > source { display: none; }
+  /* The footer logo is inline-flex; without the empty source its baseline moved and the row grew 5px. */
+  .footer-brand .logo { vertical-align: top; }
+}
+
+/* ---------- Review carousel arrows (561-1039px) ----------
+   Between the phone layout (no arrows) and wide screens (arrows outside the cards) the arrows sat over the review
+   text. They now sit in the dots row under the cards, at its two ends. */
+@media (min-width: 561px) and (max-width: 1039px) {
+  /* The dots row (a sibling just below) is 14px down and 44px tall, so -58px puts the arrows on it. */
+  .review-carousel .carousel-arrow { top: auto; bottom: -58px; translate: none; width: 44px; height: 44px; }
+  .review-carousel .carousel-prev { left: 4px; }
+  .review-carousel .carousel-next { right: 4px; }
+}
+
+/* ---------- Tablets and large phones (561-860px): CTA band buttons side by side, not two full-width bars ---------- */
+@media (min-width: 561px) and (max-width: 860px) {
+  .cta-actions .btn { flex: 1 1 0; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  /* Drop cap: sized to sit exactly two lines deep (cap top on line one, foot on the baseline of line two) instead of
+     floating a line and a half, which read as a stray letter ("W e're"). */
+  .content-block > p:first-of-type::first-letter { font-size: 3.35em; line-height: 0.78; padding: 0.06em 0.06em 0 0; margin-right: 2px; }
+
+  /* Quote form tiles: a lone last choice ("No Rush", a 3rd or 5th option) spans the row instead of sitting half-width
+     beside a hole, and labels break evenly. */
+  .check-grid > :last-child:nth-child(odd), .radio-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .check-grid .check-item, .radio-grid .radio-item { text-wrap: balance; }
+}
+
+/* Narrow phones (400px and narrower): the quote card gives the tiles more of the width. At 360px a tile's label column
+   was 90px, so "Water Heater Installation" ran three lines. */
+@media (max-width: 400px) {
+  .quote-card { padding-inline: 16px; }
+  .check-grid .check-item, .radio-grid .radio-item { padding: 8px 10px; gap: 8px; font-size: 0.9rem; }
+}
+
+/* Tablets (641-900px): the eight "How We Work" photos sit four across (two rows) instead of four rows of 380px-tall
+   portraits that ran two screens. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .family-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* Phones and tablets: an over-long word (a URL, an email, a long product code in a future blog post) wraps instead of
+   running past its card or panel and being cut off at the screen edge. Normal words never break. */
+@media (max-width: 900px) {
+  h1, h2, h3, h4, summary, .faq-q, .breadcrumbs { overflow-wrap: anywhere; }
+  p, li, dd, figcaption, blockquote, td, label { overflow-wrap: break-word; }
+}

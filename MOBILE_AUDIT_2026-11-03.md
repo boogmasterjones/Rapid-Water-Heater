@@ -127,3 +127,73 @@ Checks after the change, at 360, 390, 430 and 768:
 7. **Reduced motion.** The site still honours prefers-reduced-motion (rain off, reveals still) from earlier work. The owner's standing rule is that animations always play. I added no new opt-outs but did not remove the existing ones; that is a separate decision.
 8. **Pre-existing type error.** `astro check` reports 1 error in `GlassHero.astro` line 38 (the `style` prop on `<Picture>`). It was already there before this pass, and the build and audit pass.
 9. **Real devices.** Not tested on real devices or iOS Safari specifically. Check `:has()` support on older iOS (16.4 and later are fine) and the `100svh` hero.
+
+---
+
+# Pass 2 of 3 (2026-11-03): fresh eyes
+
+## Method
+
+- All 31 built routes were checked: 25 pages plus the 7 blog posts, with /thanks counted. Phones were screenshotted at 390x844 and tablets at 768x1024, 1024x768 and 1180x820. An automated audit ran at 360x780 and 430x932. Spot checks went to 360, 800x1100 and 1024.
+- **Interactions tested:**
+  - the phone menu and the tablet dropdown;
+  - FAQ accordions;
+  - "Keep reading";
+  - gallery swipe, jump buttons and arrows;
+  - the review carousel;
+  - the quote form, filled step by step to the last section in a dev build. Submit was intercepted, so nothing went to formsubmit or Jobber.
+- **Measurements:**
+  - layout shift on load, using the layout-shift API while scrolling the page;
+  - long-word overflow: a 50-letter word injected into headings, cards, panels, FAQ, breadcrumb, CTA and footer.
+- **Desktop proof (1440x900, all 31 routes):**
+  - I dumped the computed style and geometry of every element before and after.
+  - The only difference is the class name `pf-ready` on the two quote forms. Their geometry and every measured style are identical.
+  - Pixel diffs are under 0.13% everywhere except /thanks, at up to 3%. That is the animated rain, not hidden there (see pass 1).
+  - Every visual change sits in a `max-width` query of 1240px or narrower, or in a 861-1240px range.
+- **Checks:** `astro check` reports 0 errors (the GlassHero error is fixed), `npm run build` passes, and `npm run audit` reports 0 errors and 0 warnings. The built site was also checked with `astro preview`.
+
+## What pass 1 missed, and the fixes
+
+| # | Issue | Where | Fix |
+|---|---|---|---|
+| 1 | **Meet the Family galleries broken.** `<picture>` is `display: contents`, so its `<source>` tags became empty grid items. Every "How We Work" photo and both Callahan & Lewis photos sat in the right column with the left column empty, so the gallery ran about 1,100px too long on phones | /family, phones and tablets | At 900px and narrower, `picture > source { display: none }`. At 641-900px the 8-photo gallery is 4 across (2 rows instead of 4 rows of 380px portraits). /family at 390px: 7,807 → 6,731px |
+| 2 | The same stray `<source>` added a 10px gap inside the header logo | Header, at 900px and narrower | Fixed by #1. The footer logo's baseline is pinned so the footer height is unchanged |
+| 3 | **The contact page jumped on load.** The quote form painted at full length, then progressive-form.js collapsed it: CLS 0.20 on phones | /contact, and /thanks, which redirects to /contact | CSS pre-hides the later form sections until the script marks the form `.pf-ready`. CLS is now 0.00 in dev and in the built site. Safety net: `html.pf-late` (set by an inline timer after 5s) shows all sections if the script never loads, and with no JS nothing is hidden |
+| 4 | Review carousel arrows sat on top of the review text | 561-1039px (every tablet) | Arrows move into the dots row under the cards, one at each end |
+| 5 | The menu sheet was 98% opaque, so the hero headline ghosted through behind the menu items | Phones and tablets | Solid sheet at 1240px and narrower. The tablet dropdown is 310px wide, so "Tankless Water Heater Installation" no longer wraps |
+| 6 | Tablet hero had about 130px of empty space under it (pass 1, item 3) | 761-860px | Hero bottom padding 72 → 12px. The gap to the gallery is now about 85px |
+| 7 | "5.0 on Google" badge and the mascot touched or crossed the screen edge | 861-1240px (iPad landscape, small laptops) | Pulled inside the photo edge in that range only |
+| 8 | Quote form tiles at 360px: a 90px label column, "Water Heater Installation" on 3 lines, and "No Rush" sitting half-width beside a hole | Phones | Lone last tile spans the row and labels use balanced wrapping. At 400px and narrower the card padding is 16px and the tiles are tighter. Tiles are now an even 55px |
+| 9 | Drop cap floated about 1.5 lines deep and read as a stray letter ("W e're", "I f you're") | Every phone reading panel | Sized to sit exactly two lines deep |
+| 10 | Long centred intros ran 7 ragged lines | About ("Why it matters"), Reviews (mission), phones | `mobile.ts` left-aligns any centred paragraph of 6 or more lines on phones. Short centred intros stay centred |
+| 11 | A long unbroken word (URL, email, model number) ran past its card or panel and was cut off | Every page, phones and tablets | `overflow-wrap` on headings, FAQ questions, paragraphs and lists at 900px and narrower. Normal words never break |
+| 12 | CTA band buttons were two full-width bars stacked on tablets | 561-860px | Side by side, equal width |
+| 13 | `astro check` error: the `style` prop on `<Picture>` (it never applied, so the phone hero photo ignored `photoPosition`) | GlassHero line 38 | Passed as `--pos` on the wrapper. The phone photo now uses the configured 58% 50% crop. Desktop is untouched (that copy of the photo is `display: none` there) |
+
+## Checked and fine
+
+- No horizontal overflow on any route at 360, 390, 430 or 768.
+- Only sub-44px targets remaining: carousel dots (28x44), inline legal links and the 43px breadcrumbs (as in pass 1).
+- Bottom Call/Estimate bar: the footer's legal lines clear it on every page.
+- Layout shift is 0.00 on home, about, family, a service page, a location page and a blog post.
+- **Interactions:**
+  - The FAQ accordion opens.
+  - "Keep reading" opens to full height and the button goes.
+  - Gallery swipe to the end switches the segmented control to "Meet the family", and the jump buttons glide back.
+- **Tracking untouched:** `call_click` handlers, every tel: link, the form fields and names, and the Jobber/formsubmit path. progressive-form.js only gains the ready class.
+- Facts, "24/7" and content files are untouched.
+
+## Owner decisions: new evidence
+
+- **"Keep reading" folds.** They work as built (tap opens to full height with all text in the DOM). No new issues.
+- **Auto-hiding header.** It behaved correctly in emulation. Still needs a real-iPhone feel test.
+- **Reduced motion.** Nothing added or removed.
+
+## Left for pass 3
+
+1. **Desktop bug (not fixed because desktop must not change; needs a go).** The same `<source>` problem breaks the /family galleries at 1440: the 4-column "How We Work" grid shows photos only in columns 2 and 4, and the Callahan & Lewis pair stacks in the right column. The header logo also has a stray 10px gap. Fix: move `picture > source { display: none; }` from the 900px block in `mobile.css` to `base.css`, unscoped.
+2. Inner-page H1s run 4 lines at 360-390px on long location and service titles ("Water Heater Installation & Plumbing in Venice, FL"). A slightly smaller phone H1 (about 30px) would save a line. Left alone because the CTA is still in the first screen.
+3. The SMS consent text is 14 lines on phones, between the phone field and Submit. It is required 10DLC wording. A shorter visible summary with the full text a tap away is a compliance question, not a design one.
+4. The phone menu's "About & Contact" label sits beside "About" and duplicates it. That is a label question for the owner.
+5. The "Find us online" footer label is muted grey serif and reads as disabled. It matches desktop, so it was left.
+6. Real-device checks are still outstanding: the iOS Safari toolbar with the call bar and the auto-hiding header, `text-wrap: balance` support (iOS 17.5+; older devices just wrap normally), and `:has()` support (iOS 15.4+).

@@ -97,6 +97,13 @@
   style.textContent = '[data-pf-hidden]{display:none!important}[data-pf-revealed]{animation:pf-reveal .3s ease}@keyframes pf-reveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}';
   document.head.appendChild(style);
 
-  function init() { Array.prototype.forEach.call(document.querySelectorAll('form[data-progressive-fields]'), setup); }
+  // The stylesheet pre-hides the later sections until a form is marked ready (no jump on load); they must be visible
+  // again while the groups are measured, and the hiding attributes go on in the same task, so nothing flashes.
+  function init() {
+    Array.prototype.forEach.call(document.querySelectorAll('form[data-progressive-fields]'), function (form) {
+      form.classList.add('pf-ready');
+      setup(form);
+    });
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

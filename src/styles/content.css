@@ -267,6 +267,12 @@
 }
 
 /* ---------- Quote form (markup and behaviour unchanged; only the look) ---------- */
+/* Before public/js/progressive-form.js runs, show only what it will show (the first section and the button), so the
+   form does not paint at full length and then jump shorter (a 0.2 layout shift on phones where the form is in the first
+   screen). The script marks each form .pf-ready; .pf-late (set by Base.astro after 5s) shows everything if it never
+   loads. */
+html.js:not(.pf-late) .quote-form[data-progressive-fields]:not(.pf-ready) > .field-label ~ .field-label,
+html.js:not(.pf-late) .quote-form[data-progressive-fields]:not(.pf-ready) > .field-label ~ .field-label ~ :not(button):not(input) { display: none; }
 .quote-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 44px; align-items: start; }
 @media (max-width: 900px) { .quote-layout { grid-template-columns: 1fr; gap: 30px; } }
 .quote-card { padding: 44px 38px 38px; }
