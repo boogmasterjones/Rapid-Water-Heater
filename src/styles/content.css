@@ -492,3 +492,23 @@ iframe { max-width: 100%; border-radius: var(--r-lg); }
   .breadcrumbs { border-radius: var(--r-sm); padding: 8px 14px; margin-bottom: 20px; line-height: 1.4; }
   .card-icon { margin-bottom: 16px; }
 }
+
+/* SMS consent, compact (owner 2026-11-03): the plain-English line is the checkbox label; a few words of the legal text and
+   "read more" open the FULL legal text in place (native <details>: it is in the HTML and opens without JavaScript);
+   Privacy Policy and Terms stay visible while it is closed. */
+.sms-copy{display:flex;flex-wrap:wrap;align-items:center;column-gap:.7em;min-width:0}
+.sms-copy label.sms-plain{display:block;flex:1 0 100%;margin:0;padding:0;font:inherit;letter-spacing:inherit;text-transform:none;color:inherit;cursor:pointer}
+.sms-copy .sms-plain strong{font-weight:700}
+.sms-copy .sms-teaser{font-weight:400}
+.sms-copy details.sms-more{flex:0 1 auto;min-width:0;margin:0;padding:0;border:0;background:none;box-shadow:none}
+.sms-copy details.sms-more[open]{flex-basis:100%}
+.sms-copy .sms-more>summary{display:flex;align-items:center;font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap;min-height:44px;margin:0;padding:0;border:0;background:none;font-size:inherit;font-family:inherit;line-height:inherit;color:inherit;letter-spacing:inherit;text-transform:none;cursor:pointer;list-style:none}
+.sms-copy .sms-more>summary::-webkit-details-marker{display:none}
+.sms-copy .sms-more>summary::marker{content:''}
+.sms-copy .sms-more>summary::before,.sms-copy .sms-more>summary::after{content:none;display:none}
+.sms-copy .sms-more>summary:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:3px}
+.sms-copy .sms-hide,.sms-copy .sms-more[open] .sms-show,.sms-copy:has(.sms-more[open]) .sms-teaser{display:none}
+.sms-copy .sms-more[open] .sms-hide{display:inline}
+.sms-copy .sms-legal{margin:0 0 6px;padding:0;font:inherit;color:inherit;max-width:none}
+.sms-copy .sms-links{display:inline-flex;flex-wrap:wrap;align-items:center;column-gap:.45em;min-height:44px}
+.sms-copy .sms-more[open]+.sms-links{display:none}
