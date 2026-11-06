@@ -1,6 +1,6 @@
 ---
 title: "Drain Cleaning in Sarasota, FL | Rapid Water Heater LLC"
-description: "Professional drain cleaning for kitchen, bathroom & main line clogs in Sarasota, Venice & Bradenton, FL. Honest pricing. Call 941-876-5900."
+description: "Professional drain cleaning for kitchen, bathroom & main line clogs in Sarasota, Venice & Bradenton, FL. Honest pricing. Call 941-393-1313."
 name: "Drain Cleaning"
 heading: "Drain Cleaning in Sarasota, FL"
 summary: "Slow and clogged drains cleared thoroughly — with an eye toward what caused the clog, not just a quick fix that leaves the same problem for next month."
@@ -13,7 +13,7 @@ order: 4
       <h1>Drain Cleaning in Sarasota, FL</h1>
       <p>Slow and clogged drains cleared thoroughly — with an eye toward what caused the clog, not just a quick fix that leaves the same problem for next month.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_drain_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_drain_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -105,7 +105,7 @@ order: 4
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Can you clear a drain the same day I call?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Often, yes. Call or text 941-876-5900 and describe what's happening — we'll do our best to get to you the same day, especially if a backup is actively affecting your ability to use the fixture.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Often, yes. Call 941-393-1313 or text 941-876-5900 and describe what's happening — we'll do our best to get to you the same day, especially if a backup is actively affecting your ability to use the fixture.</p></div></div>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@ order: 4
           <p>Call or text now — we'll get to the root of the problem, not just the symptom.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_drain_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_drain_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

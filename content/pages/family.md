@@ -73,7 +73,7 @@ imageAlt: "The whole Rapid Water Heater family and team in yellow shirts in fron
           <p>Call or text and talk with the family directly. No call center, no scripts. Free estimates across Sarasota, Venice, Bradenton and Southwest Florida.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="gtag('event','call_click',{'event_category':'engagement','event_label':'family_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="gtag('event','call_click',{'event_category':'engagement','event_label':'family_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Free Estimate</a>
         </div>
       </div>

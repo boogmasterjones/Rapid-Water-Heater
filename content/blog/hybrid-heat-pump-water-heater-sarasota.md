@@ -82,4 +82,4 @@ Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (
 
 We serve homeowners in Sarasota, Venice, Bradenton, Lakewood Ranch, North Port and across Southwest Florida. Learn more about our [water heater installation](/services/water-heater-installation) service.
 
-Thinking about going hybrid? Call Rapid Water Heater LLC at (941) 876-5900 or [contact us](/contact) for a free consultation with upfront pricing. Hot water now. No monkey business!
+Thinking about going hybrid? Call Rapid Water Heater LLC at (941) 393-1313 or [contact us](/contact) for a free consultation with upfront pricing. Hot water now. No monkey business!

@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation in Venice, FL | Rapid Water Heater LLC"
-description: "Same-day water heater installation & plumbing in Venice, FL — Venice Island to Laurel Road. Licensed & family-owned. Call 941-876-5900."
+description: "Same-day water heater installation & plumbing in Venice, FL — Venice Island to Laurel Road. Licensed & family-owned. Call 941-393-1313."
 name: "Venice, FL"
 heading: "Water Heater Installation & Plumbing in Venice, FL"
 summary: "From the historic bungalows on Venice Island to the newer neighborhoods east of I-75, Rapid Water Heater LLC installs and services water heaters for homeowners throughout Venice, Florida."
@@ -16,7 +16,7 @@ region: "FL"
       <h1>Water Heater Installation &amp; Plumbing in Venice, FL</h1>
       <p>From the historic bungalows on Venice Island to the newer neighborhoods east of I-75, Rapid Water Heater LLC installs and services water heaters for homeowners throughout Venice, Florida.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_venice_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_venice_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -125,7 +125,7 @@ region: "FL"
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How fast can you get to a Venice home?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Venice is well within our regular service area, and we offer same-day quotes and installation whenever our schedule allows. Call or text 941-876-5900 to check same-day availability.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Venice is well within our regular service area, and we offer same-day quotes and installation whenever our schedule allows. Call 941-393-1313 or text 941-876-5900 to check same-day availability.</p></div></div>
         </div>
       </div>
     </div>
@@ -138,7 +138,7 @@ region: "FL"
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_venice_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_venice_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

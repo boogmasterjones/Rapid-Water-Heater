@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation | Lakewood Ranch, FL"
-description: "Water heater installation and drain cleaning in Lakewood Ranch, FL. Tank, tankless and heat pump systems, clog removal and camera inspection. Call 941-876-5900."
+description: "Water heater installation and drain cleaning in Lakewood Ranch, FL. Tank, tankless and heat pump systems, clog removal and camera inspection. Call 941-393-1313."
 name: "Lakewood Ranch, FL"
 heading: "Water Heater Installation & Plumbing in Lakewood Ranch, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters for homeowners throughout Lakewood Ranch — one of the fastest-growing communities in Southwest Florida."
@@ -16,7 +16,7 @@ updatedAt: 2026-10-31
       <h1>Water Heater Installation &amp; Plumbing in Lakewood Ranch, FL</h1>
       <p>Rapid Water Heater LLC installs and services water heaters for homeowners throughout Lakewood Ranch — one of the fastest-growing communities in Southwest Florida.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_lwr_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_lwr_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -131,7 +131,7 @@ A garage with good access makes tankless far more practical here than in a cramp
 
 ## Same-Day Water Heater Replacement in Lakewood Ranch
 
-Replacement units are typically kept in stock, and with the easy garage access in most Ranch homes, [same-day quotes and installation](/services/same-day-water-heaters) are realistic more often than not. Call or text 941-876-5900 to check today's schedule.
+Replacement units are typically kept in stock, and with the easy garage access in most Ranch homes, [same-day quotes and installation](/services/same-day-water-heaters) are realistic more often than not. Call 941-393-1313 or text 941-876-5900 to check today's schedule.
 
 ## Helpful Reading for Lakewood Ranch Homeowners
 
@@ -179,7 +179,7 @@ Heading west toward the river? We also do [water heater installation in Bradento
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_lwr_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_lwr_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>
@@ -196,7 +196,7 @@ Along with water heaters, Rapid Water Heater LLC offers [drain line cleaning](/s
 
 As with every job, you get a free estimate and upfront pricing before any work begins, and you talk directly with our team, not a call center. If a backup can't wait, our [emergency plumbing](/services/emergency-plumbing) service and flexible hours are there to help.
 
-We also provide drain cleaning and water heater installation in Parrish and [Bradenton](/locations/bradenton). Call 941-876-5900 to schedule a visit.
+We also provide drain cleaning and water heater installation in Parrish and [Bradenton](/locations/bradenton). Call 941-393-1313 to schedule a visit.
 
 </div>
 </div>

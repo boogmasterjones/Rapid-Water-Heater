@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation in Bradenton, FL | Rapid Water Heater LLC"
-description: "Same-day water heater installation & plumbing in Bradenton, FL — downtown to East Bradenton. Licensed & family-owned. Call 941-876-5900."
+description: "Same-day water heater installation & plumbing in Bradenton, FL — downtown to East Bradenton. Licensed & family-owned. Call 941-393-1313."
 name: "Bradenton, FL"
 heading: "Water Heater Installation & Plumbing in Bradenton, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters for homeowners across Bradenton — from the neighborhoods near the Manatee River and downtown Riverwalk to the newer communities further east."
@@ -16,7 +16,7 @@ updatedAt: 2026-10-31
       <h1>Water Heater Installation &amp; Plumbing in Bradenton, FL</h1>
       <p>Rapid Water Heater LLC installs and services water heaters for homeowners across Bradenton — from the neighborhoods near the Manatee River and downtown Riverwalk to the newer communities further east.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_bradenton_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_bradenton_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -130,7 +130,7 @@ We install gas and electric tankless water heaters in Bradenton homes that want 
 
 ## Same-Day Water Heater Replacement in Bradenton
 
-When the hot water quits, you don't want to wait a week. Replacement units are typically kept in stock, and we offer [same-day water heater quotes and installation](/services/same-day-water-heaters) whenever our schedule allows. Call or text 941-876-5900 and you talk directly with our team, not a call center.
+When the hot water quits, you don't want to wait a week. Replacement units are typically kept in stock, and we offer [same-day water heater quotes and installation](/services/same-day-water-heaters) whenever our schedule allows. Call 941-393-1313 or text 941-876-5900 and you talk directly with our team, not a call center.
 
 ## Helpful Reading for Bradenton Homeowners
 
@@ -161,7 +161,7 @@ Just east of town, we also handle [water heater installation in Lakewood Ranch](
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Can you do same-day service in Bradenton?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Bradenton is within our regular service area, and we offer same-day quotes and installation whenever possible. Call or text 941-876-5900 to check availability.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Bradenton is within our regular service area, and we offer same-day quotes and installation whenever possible. Call 941-393-1313 or text 941-876-5900 to check availability.</p></div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do you install both gas and electric water heaters in Bradenton?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
@@ -182,7 +182,7 @@ Just east of town, we also handle [water heater installation in Lakewood Ranch](
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_bradenton_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_bradenton_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

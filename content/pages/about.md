@@ -79,7 +79,7 @@ path: "/about"
           <p>Have a question before you book? Call or text and talk with our team directly — no call center, no scripts.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'about_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'about_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Contact Us</a>
         </div>
       </div>

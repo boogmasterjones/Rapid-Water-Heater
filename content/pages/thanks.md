@@ -13,7 +13,7 @@ noindex: true
       <h1>Thanks — We've Got Your Request</h1>
       <p style="margin-left:auto;margin-right:auto;">Someone from our team will reach out shortly to confirm the details and schedule your free estimate. If it's urgent, don't wait on us — call or text and we'll pick up.</p>
       <div class="hero-actions" style="justify-content:center;margin-top:28px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'thankyou_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'thankyou_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/">Back to Home</a>
       </div>
     </div>

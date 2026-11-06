@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation | Port Charlotte, FL"
-description: "Same-day water heater installation & plumbing in Port Charlotte, FL — harborfront to inland. Licensed & family-owned. Call 941-876-5900."
+description: "Same-day water heater installation & plumbing in Port Charlotte, FL — harborfront to inland. Licensed & family-owned. Call 941-393-1313."
 name: "Port Charlotte, FL"
 heading: "Water Heater Installation & Plumbing in Port Charlotte, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters for homeowners throughout Port Charlotte, from the waterfront streets along Charlotte Harbor to the neighborhoods further inland along US-41."
@@ -16,7 +16,7 @@ region: "FL"
       <h1>Water Heater Installation &amp; Plumbing in Port Charlotte, FL</h1>
       <p>Rapid Water Heater LLC installs and services water heaters for homeowners throughout Port Charlotte, from the waterfront streets along Charlotte Harbor to the neighborhoods further inland along US-41.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pc_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pc_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -124,7 +124,7 @@ region: "FL"
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How quickly can you get to Port Charlotte?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Port Charlotte is part of our regular service area, and we offer same-day quotes whenever our schedule allows. Call or text 941-876-5900.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Port Charlotte is part of our regular service area, and we offer same-day quotes whenever our schedule allows. Call 941-393-1313 or text 941-876-5900.</p></div></div>
         </div>
       </div>
     </div>
@@ -137,7 +137,7 @@ region: "FL"
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pc_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pc_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

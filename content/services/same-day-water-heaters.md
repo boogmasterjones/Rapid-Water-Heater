@@ -1,6 +1,6 @@
 ---
 title: "Same-Day Water Heater Replacement | Sarasota, FL"
-description: "Water heater leaking or no hot water? Same-day quotes and installation when possible, units typically in stock. Sarasota, Venice & Bradenton: 941-876-5900."
+description: "Water heater leaking or no hot water? Same-day quotes and installation when possible, units typically in stock. Sarasota, Venice & Bradenton: 941-393-1313."
 name: "Same-Day Water Heater Installation"
 heading: "Same-Day Water Heater Installation in Sarasota, FL"
 summary: "Running out of hot water is never convenient. We offer same-day quotes and installation whenever possible, helping homeowners restore hot water quickly with responsive service."
@@ -8,7 +8,7 @@ order: 3
 updatedAt: 2026-10-31
 faqs:
  - question: "My insurance or home sale needs the water heater replaced soon – can you help?"
-   answer: "Yes. We offer free estimates with upfront pricing, and same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and every installation follows manufacturer specifications and Florida plumbing code. Call (941) 876-5900 to talk directly with our team."
+   answer: "Yes. We offer free estimates with upfront pricing, and same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and every installation follows manufacturer specifications and Florida plumbing code. Call (941) 393-1313 to talk directly with our team."
 ---
 
 <section class="page-hero">
@@ -17,7 +17,7 @@ faqs:
  <h1>Same-Day Water Heater Replacement and Installation in Sarasota, FL</h1>
  <p>Running out of hot water is never convenient. We offer same-day quotes and installation whenever possible, helping homeowners restore hot water quickly with responsive service.</p>
  <div class="hero-actions" style="margin-top:24px;">
- <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_sameday_hero_phone_button'})">Call 941-876-5900</a>
+ <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_sameday_hero_phone_button'})">Call 941-393-1313</a>
  <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
  </div>
  </div>
@@ -111,10 +111,10 @@ faqs:
  <div class="cta-band">
  <div>
  <h2>Out of Hot Water Right Now?</h2>
- <p>Call or text 941-876-5900 — we'll do our best to get you a same-day quote.</p>
+ <p>Call 941-393-1313 or text 941-876-5900 — we'll do our best to get you a same-day quote.</p>
  </div>
  <div class="cta-actions">
- <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_sameday_cta_phone_button'})">Call 941-876-5900</a>
+ <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_sameday_cta_phone_button'})">Call 941-393-1313</a>
  <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
  </div>
  </div>
@@ -129,7 +129,7 @@ faqs:
 
 If your tank is leaking from the body or you have no hot water at all, replacement is usually the fix, and timing matters. We offer flexible hours and emergency service, with same-day quotes and installation whenever possible. Replacement units are typically kept in stock, and you talk directly with our team, not a call center. We also remove and dispose of the old water heater, and every new installation comes with a free 1-year maintenance visit.
 
-For plumbing problems beyond the water heater, see our [emergency plumbing](/services/emergency-plumbing) page. To compare tank, tankless and heat pump options, visit [water heater installation](/services/water-heater-installation) or read our guide to [tank vs. tankless water heaters in Sarasota](/blog/tank-vs-tankless-water-heater-sarasota). Call (941) 876-5900 for a free estimate.
+For plumbing problems beyond the water heater, see our [emergency plumbing](/services/emergency-plumbing) page. To compare tank, tankless and heat pump options, visit [water heater installation](/services/water-heater-installation) or read our guide to [tank vs. tankless water heaters in Sarasota](/blog/tank-vs-tankless-water-heater-sarasota). Call (941) 393-1313 for a free estimate.
 
 </div>
 </div>

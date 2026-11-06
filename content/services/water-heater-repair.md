@@ -14,7 +14,7 @@ faqs:
  - question: "Do you repair tankless water heaters?"
    answer: "Yes. We work on gas and electric tankless water heaters, from error codes and ignition faults to scale build-up that cuts the flow of hot water. If the unit needs parts or replacement, we tell you before any work begins."
  - question: "My water heater is leaking. What should I do right now?"
-   answer: "Close the shut-off valve on the cold water line at the top of the unit, or the main water valve to the house if that one will not turn. Switch off the breaker on an electric unit, or turn the gas control to off on a gas unit. Then call or text (941) 876-5900. A leak from a fitting or the relief valve can often be repaired; a leak from the tank body cannot."
+   answer: "Close the shut-off valve on the cold water line at the top of the unit, or the main water valve to the house if that one will not turn. Switch off the breaker on an electric unit, or turn the gas control to off on a gas unit. Then call (941) 393-1313 or text (941) 876-5900. A leak from a fitting or the relief valve can often be repaired; a leak from the tank body cannot."
 ---
 
 <section class="page-hero">
@@ -23,7 +23,7 @@ faqs:
       <h1>Water Heater Repair in Venice, Sarasota &amp; Bradenton, FL</h1>
       <p>No hot water, a leak or a strange noise? We find what has actually failed, repair it when a repair makes sense, and tell you straight when it doesn't.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_repair_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_repair_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -82,7 +82,7 @@ faqs:
         <p>Age matters more than most people expect. Most tank water heaters last somewhere between eight and twelve years, and Florida water tends to push toward the lower end of that range. On a unit only a few years old, a repair is usually the right answer. Past roughly ten years, a repair buys an unknown amount of time on a tank that is already near the end of its expected life. We give you both prices and let you decide.</p>
         <p>If replacement is the better choice, we install traditional tank, tankless and heat pump water heaters from Bradford White, Rheem, A.O. Smith and Halo. See <a href="/services/water-heater-installation">water heater installation and replacement</a>, or <a href="/services/same-day-water-heaters">same-day water heater replacement</a> if you need hot water back fast. Replacement units are typically kept in stock, and every new installation comes with a free 1-year maintenance visit. Our guide to the <a href="/blog/7-signs-its-time-to-replace-your-water-heater">signs it is time to replace your water heater</a> is a useful read before you decide.</p>
         <h3>What to Check Before You Call</h3>
-        <p>A few things are safe to check yourself. On an electric unit, look at the breaker for the water heater. On a gas unit, make sure the gas valve to the heater is on and look through the sight glass to see whether the pilot is lit. If you smell gas, leave the house and call your gas utility first. If there is water on the floor, close the cold water valve at the top of the tank and switch off the power or gas, then call us at (941) 876-5900.</p>
+        <p>A few things are safe to check yourself. On an electric unit, look at the breaker for the water heater. On a gas unit, make sure the gas valve to the heater is on and look through the sight glass to see whether the pilot is lit. If you smell gas, leave the house and call your gas utility first. If there is water on the floor, close the cold water valve at the top of the tank and switch off the power or gas, then call us at (941) 393-1313.</p>
         <h3>Water Heater Repair Services</h3>
         <ul>
           <li>Electric water heater repair: heating elements, thermostats, high-limit switches</li>
@@ -118,7 +118,7 @@ faqs:
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">My water heater is leaking. What should I do right now?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Close the shut-off valve on the cold water line at the top of the unit, or the main water valve to the house if that one will not turn. Switch off the breaker on an electric unit, or turn the gas control to off on a gas unit. Then call or text (941) 876-5900. A leak from a fitting or the relief valve can often be repaired; a leak from the tank body cannot.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Close the shut-off valve on the cold water line at the top of the unit, or the main water valve to the house if that one will not turn. Switch off the breaker on an electric unit, or turn the gas control to off on a gas unit. Then call (941) 393-1313 or text (941) 876-5900. A leak from a fitting or the relief valve can often be repaired; a leak from the tank body cannot.</p></div></div>
         </div>
       </div>
     </div>
@@ -128,10 +128,10 @@ faqs:
       <div class="cta-band">
         <div>
           <h2>Water Heater Acting Up?</h2>
-          <p>Call or text 941-876-5900 and tell us what it is doing. We'll tell you whether it sounds like a repair.</p>
+          <p>Call 941-393-1313 or text 941-876-5900 and tell us what it is doing. We'll tell you whether it sounds like a repair.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_repair_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_repair_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

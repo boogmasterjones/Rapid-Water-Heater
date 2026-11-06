@@ -55,7 +55,7 @@ path: "/services"
         <div class="card" style="grid-column:1/-1;background:linear-gradient(160deg,var(--navy-950),var(--blue-700));border:none;color:#fff;display:flex;flex-direction:column;justify-content:center;">
           <h3 style="color:#fff;">Not Sure What You Need?</h3>
           <p style="color:var(--text-on-dark-muted);">Call or text a description of the problem and we'll point you to the right fix — no guesswork required.</p>
-          <a class="btn btn-gold" style="margin-top:6px;" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'services_hub_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" style="margin-top:6px;" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'services_hub_phone_button'})">Call 941-393-1313</a>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@ path: "/services"
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'services_hub_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'services_hub_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation & Replacement in Punta Gorda, FL"
-description: "Same-day water heater quotes and installation in Punta Gorda when possible. Replacement units typically in stock, free 1-year maintenance visit. (941) 876-5900"
+description: "Same-day water heater quotes and installation in Punta Gorda when possible. Replacement units typically in stock, free 1-year maintenance visit. (941) 393-1313"
 name: "Punta Gorda, FL"
 heading: "Water Heater Installation & Plumbing in Punta Gorda, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters throughout Punta Gorda, from the historic downtown near Fishermen's Village to the canal-front homes of Punta Gorda Isles."
@@ -16,7 +16,7 @@ updatedAt: 2026-10-31
       <h1>Water Heater Installation &amp; Plumbing in Punta Gorda, FL</h1>
       <p>Rapid Water Heater LLC installs and services water heaters throughout Punta Gorda, from the historic downtown near Fishermen's Village to the canal-front homes of Punta Gorda Isles.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pg_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pg_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -123,7 +123,7 @@ updatedAt: 2026-10-31
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Can you match same-day service out to Punta Gorda?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Often, yes — call or text 941-876-5900 and we'll do our best to fit Punta Gorda into the same-day schedule.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Often, yes — call 941-393-1313 or text 941-876-5900 and we'll do our best to fit Punta Gorda into the same-day schedule.</p></div></div>
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@ updatedAt: 2026-10-31
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pg_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_pg_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>
@@ -171,7 +171,7 @@ We install gas and electric tankless water heaters for Punta Gorda homes that wa
 
 ## Emergency Plumbing in Punta Gorda
 
-Plumbing problems rarely happen at a convenient time. We offer flexible hours and emergency service for Punta Gorda homeowners, along with drain cleaning, main sewer line clog diagnosis and clearing, and camera inspection of drain lines. When you call (941) 876-5900, you talk directly with our team, not a call center. See our [emergency plumbing services](/services/emergency-plumbing) for more details.
+Plumbing problems rarely happen at a convenient time. We offer flexible hours and emergency service for Punta Gorda homeowners, along with drain cleaning, main sewer line clog diagnosis and clearing, and camera inspection of drain lines. When you call (941) 393-1313, you talk directly with our team, not a call center. See our [emergency plumbing services](/services/emergency-plumbing) for more details.
 
 </div>
 </div>

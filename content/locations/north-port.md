@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Replacement & Tankless Installation in North Port"
-description: "Need a new water heater in North Port? Free estimates, upfront pricing and same-day installation whenever possible. Licensed, family-owned. Call (941) 876-5900."
+description: "Need a new water heater in North Port? Free estimates, upfront pricing and same-day installation whenever possible. Licensed, family-owned. Call (941) 393-1313."
 name: "North Port, FL"
 heading: "Water Heater Installation & Plumbing in North Port, FL"
 summary: "Rapid Water Heater LLC installs and services water heaters throughout North Port — from the canal-front neighborhoods near Myakkahatchee Creek to the newer growth around Wellen Park's border."
@@ -16,7 +16,7 @@ region: "FL"
       <h1>Water Heater Installation &amp; Plumbing in North Port, FL</h1>
       <p>Rapid Water Heater LLC installs and services water heaters throughout North Port — from the canal-front neighborhoods near Myakkahatchee Creek to the newer growth around Wellen Park's border.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_northport_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_northport_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -122,7 +122,7 @@ region: "FL"
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Can I get a same-day quote in North Port?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>North Port is part of our regular service area, and we offer same-day quotes and installation whenever our schedule allows. Call or text 941-876-5900.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>North Port is part of our regular service area, and we offer same-day quotes and installation whenever our schedule allows. Call 941-393-1313 or text 941-876-5900.</p></div></div>
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@ region: "FL"
           <p>Call or text now for a same-day quote, or request a free estimate online.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_northport_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'area_northport_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>
@@ -164,7 +164,7 @@ We install gas and electric tankless (on-demand) water heaters in North Port hom
 
 Learn more about our [tankless water heater installation](/services/tankless-water-heater-installation), or compare options in our guide to [tank vs. tankless water heaters](/blog/tank-vs-tankless-water-heater-sarasota).
 
-We also install tank and tankless water heaters for homeowners in Wellen Park and [Port Charlotte](/locations/port-charlotte). Call (941) 876-5900 to talk directly with our team.
+We also install tank and tankless water heaters for homeowners in Wellen Park and [Port Charlotte](/locations/port-charlotte). Call (941) 393-1313 to talk directly with our team.
 
 </div>
 </div>

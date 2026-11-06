@@ -55,7 +55,7 @@ If we change this policy, we will post the new version on this page with a new "
 
 ## Contact us
 
-If you feel we are not following this Privacy Policy, please contact us right away: Rapid Water Heater LLC, (941) 876-5900, or the form on our [contact page](/contact).
+If you feel we are not following this Privacy Policy, please contact us right away: Rapid Water Heater LLC, (941) 393-1313, or the form on our [contact page](/contact).
 
     </div>
   </section>

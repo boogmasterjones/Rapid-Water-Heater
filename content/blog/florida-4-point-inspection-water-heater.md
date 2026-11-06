@@ -99,4 +99,4 @@ Every installation follows manufacturer specifications and Florida plumbing code
 
 We can't speak for your insurance carrier, and nothing here is insurance or legal advice — that conversation belongs with your agent. What we can do is get a solid water heater in your home before it becomes the thing holding up your policy.
 
-Call Rapid Water Heater LLC at (941) 876-5900 or [reach out online](/contact) for a free estimate with upfront pricing. Hot water now. No monkey business!
+Call Rapid Water Heater LLC at (941) 393-1313 or [reach out online](/contact) for a free estimate with upfront pricing. Hot water now. No monkey business!

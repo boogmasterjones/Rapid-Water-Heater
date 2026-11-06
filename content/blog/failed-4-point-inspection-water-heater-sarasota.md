@@ -9,7 +9,7 @@ faqs:
   - question: "Can Rapid Water Heater LLC guarantee my insurer will accept the new water heater?"
     answer: "No. We install new water heaters to manufacturer specifications and Florida plumbing code, but only your insurance carrier can decide what it accepts. Ask your agent what documentation they need after the installation."
   - question: "How quickly can you replace a water heater flagged on a 4-point inspection?"
-    answer: "We offer same-day quotes and installation whenever possible, and we typically keep replacement units in stock. Call (941) 876-5900 to check availability."
+    answer: "We offer same-day quotes and installation whenever possible, and we typically keep replacement units in stock. Call (941) 393-1313 to check availability."
   - question: "Do you take away the old water heater?"
     answer: "Yes. Removal and disposal of the old water heater is part of our installation service."
 ---
@@ -85,4 +85,4 @@ Rapid Water Heater LLC is a family-owned, licensed Florida plumbing contractor (
 
 ## Ready for the Next Step?
 
-If your 4-point inspection flagged your water heater, check with your agent, grab a photo of the data plate, and give Rapid Water Heater LLC a call at (941) 876-5900 or [reach out online](/contact) for a free estimate. Hot water now. No monkey business!
+If your 4-point inspection flagged your water heater, check with your agent, grab a photo of the data plate, and give Rapid Water Heater LLC a call at (941) 393-1313 or [reach out online](/contact) for a free estimate. Hot water now. No monkey business!

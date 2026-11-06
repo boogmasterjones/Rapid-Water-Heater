@@ -1,6 +1,6 @@
 ---
 title: "Water Heater Installation in Sarasota, FL | Rapid Water Heater LLC"
-description: "Professional tank, tankless & heat pump water heater installation in Sarasota, Venice & Bradenton. Licensed contractor, same-day quotes. Call 941-876-5900."
+description: "Professional tank, tankless & heat pump water heater installation in Sarasota, Venice & Bradenton. Licensed contractor, same-day quotes. Call 941-393-1313."
 name: "Water Heater Installation"
 heading: "Water Heater Installation in Sarasota, FL"
 summary: "Whether your current water heater has stopped working or you're ready for an upgrade, we provide professional installation designed to keep your home comfortable — tank, tankless, and heat pump…"
@@ -14,7 +14,7 @@ updatedAt: 2026-10-31
       <h1>Water Heater Installation in Sarasota, FL</h1>
       <p>Whether your current water heater has stopped working or you're ready for an upgrade, we provide professional installation designed to keep your home comfortable — tank, tankless, and heat pump systems installed right the first time.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_wh_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_wh_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -115,7 +115,7 @@ updatedAt: 2026-10-31
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do you offer same-day installation?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>Yes, whenever possible. Call or text 941-876-5900 and we'll do our best to get a technician out for a quote and installation the same day.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>Yes, whenever possible. Call 941-393-1313 or text 941-876-5900 and we'll do our best to get a technician out for a quote and installation the same day.</p></div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">What size water heater does my home need?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
@@ -132,7 +132,7 @@ updatedAt: 2026-10-31
           <p>Call or text now for a same-day quote on water heater installation.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_wh_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_wh_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

@@ -1,6 +1,6 @@
 ---
 title: "Emergency Plumbing in Sarasota, FL | Rapid Water Heater LLC"
-description: "Fast emergency plumbing response for burst pipes, leaks & water heater failures in Sarasota, Venice & Bradenton, FL. Call 941-876-5900 now."
+description: "Fast emergency plumbing response for burst pipes, leaks & water heater failures in Sarasota, Venice & Bradenton, FL. Call 941-393-1313 now."
 name: "Emergency Plumbing"
 heading: "Emergency Plumbing in Sarasota, FL"
 summary: "Burst pipes, major leaks, and sudden water heater failures don't wait for business hours. When plumbing problems disrupt your home, our team responds with the urgency the situation calls for."
@@ -13,7 +13,7 @@ order: 5
       <h1>Emergency Plumbing in Sarasota, FL</h1>
       <p>Burst pipes, major leaks, and sudden water heater failures don't wait for business hours. When plumbing problems disrupt your home, our team responds with the urgency the situation calls for.</p>
       <div class="hero-actions" style="margin-top:24px;">
-        <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_emergency_hero_phone_button'})">Call 941-876-5900</a>
+        <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_emergency_hero_phone_button'})">Call 941-393-1313</a>
         <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
       </div>
     </div>
@@ -61,7 +61,7 @@ order: 5
     <div class="container">
       <div class="content-block">
         <h2>Emergency Plumbing Across Southwest Florida</h2>
-        <p>Rapid Water Heater LLC provides emergency plumbing response for homeowners throughout Sarasota, Venice, and Bradenton. If you're dealing with a burst pipe, active leak, or sudden plumbing failure, call or text 941-876-5900 — describe what's happening and we'll advise you on immediate steps while getting a technician to you as quickly as our schedule allows.</p>
+        <p>Rapid Water Heater LLC provides emergency plumbing response for homeowners throughout Sarasota, Venice, and Bradenton. If you're dealing with a burst pipe, active leak, or sudden plumbing failure, call 941-393-1313 or text 941-876-5900 — describe what's happening and we'll advise you on immediate steps while getting a technician to you as quickly as our schedule allows.</p>
         <h3>While You Wait</h3>
         <ul>
           <li>Locate and shut off your home's main water valve if there's active leaking</li>
@@ -96,7 +96,7 @@ order: 5
       <div class="faq-list" style="max-width:820px;margin:0 auto;">
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How fast can you respond to a plumbing emergency?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
-          <div class="faq-a"><div class="faq-a-inner"><p>We prioritize active emergencies and do our best to reach you as quickly as our schedule and location allow. Call or text 941-876-5900 immediately and describe what's happening so we can respond appropriately.</p></div></div>
+          <div class="faq-a"><div class="faq-a-inner"><p>We prioritize active emergencies and do our best to reach you as quickly as our schedule and location allow. Call 941-393-1313 or text 941-876-5900 immediately and describe what's happening so we can respond appropriately.</p></div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do you charge extra for emergency or after-hours calls?<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></button>
@@ -114,10 +114,10 @@ order: 5
       <div class="cta-band">
         <div>
           <h2>Dealing With a Plumbing Emergency?</h2>
-          <p>Call or text 941-876-5900 now — we'll help you take the right first steps.</p>
+          <p>Call 941-393-1313 or text 941-876-5900 now — we'll help you take the right first steps.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_emergency_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'svc_emergency_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

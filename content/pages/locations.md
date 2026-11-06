@@ -106,7 +106,7 @@ path: "/locations"
     <div class="container">
       <div class="content-block" style="max-width:900px;">
         <h2>Don't See Your Community?</h2>
-        <p>Our service area continues to grow. If your city or neighborhood isn't listed above, call or text 941-876-5900 or use our <a href="/contact">contact form</a> to check availability — we're often able to serve homes just outside our standard map.</p>
+        <p>Our service area continues to grow. If your city or neighborhood isn't listed above, call 941-393-1313 or text 941-876-5900 or use our <a href="/contact">contact form</a> to check availability — we're often able to serve homes just outside our standard map.</p>
       </div>
     </div>
   </section>
@@ -118,7 +118,7 @@ path: "/locations"
           <p>Call or text now for a same-day quote in your area.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'areas_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'areas_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="/contact">Request a Free Estimate</a>
         </div>
       </div>

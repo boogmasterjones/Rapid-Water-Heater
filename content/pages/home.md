@@ -1,6 +1,6 @@
 ---
 title: "Rapid Water Heater | Water Heaters & Plumbing in Sarasota, FL"
-description: "Same-day water heater installation, tankless upgrades, drain cleaning & emergency plumbing in Sarasota, FL. Licensed & family-owned. Call 941-876-5900."
+description: "Same-day water heater installation, tankless upgrades, drain cleaning & emergency plumbing in Sarasota, FL. Licensed & family-owned. Call 941-393-1313."
 heading: "Same-Day Water Heater Installation in Sarasota, FL"
 subheading: "We get your hot water back on fast. Tank, tankless and heat pump installs, plus drain cleaning and emergency plumbing across Sarasota, Venice and Bradenton."
 path: "/"
@@ -24,7 +24,7 @@ bodyClass: "home"
           <span class="kicker">Let's Chat</span>
           <h2>Prefer to Talk It Through?</h2>
           <p>Call or text now and we'll walk you through pricing, scheduling, or any questions about the process — no pressure, just honest answers.</p>
-          <a href="tel:+19418765900" class="btn btn-gold" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'home_quote_section_phone_button'})">Call 941-876-5900</a>
+          <a href="tel:+19413931313" class="btn btn-gold" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'home_quote_section_phone_button'})">Call 941-393-1313</a>
           <div class="quote-trust">
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg> Licensed &amp; Family-Owned</span>
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Free, No-Obligation Estimates</span>
@@ -279,7 +279,7 @@ bodyClass: "home"
           <p>Call or text now for a same-day quote — or request a free estimate online and we'll get back to you fast.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-gold" href="tel:+19418765900" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'bottom_cta_phone_button'})">Call 941-876-5900</a>
+          <a class="btn btn-gold" href="tel:+19413931313" onclick="if(typeof gtag==='function')gtag('event','call_click',{'event_category':'engagement','event_label':'bottom_cta_phone_button'})">Call 941-393-1313</a>
           <a class="btn btn-outline-light" href="#quote">Request a Free Estimate</a>
         </div>
       </div>
