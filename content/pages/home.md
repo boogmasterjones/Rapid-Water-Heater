@@ -94,22 +94,6 @@ bodyClass: "home"
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
               </div>
-              <p>"Had one of my drains scoped and my toilet replaced. He was timely and reasonably priced!"</p>
-              <div class="testi-name">
-                <div class="testi-avatar">RA</div>
-                <div><strong>Robert Anderson</strong><span>Google Review</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="review-slide">
-            <div class="testi-card">
-              <div class="stars">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
-              </div>
               <p>"Incredible service! Timely, considerate and excellent work! 10/10 recommend"</p>
               <div class="testi-name">
                 <div class="testi-avatar">MM</div>
