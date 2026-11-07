@@ -53,7 +53,7 @@ path: "/about"
         <div class="card" style="text-align:center;"><h3 style="font-family:var(--font-body);font-weight:700;">Bradford White</h3><p>Tank &amp; commercial-grade water heaters</p></div>
         <div class="card" style="text-align:center;"><h3 style="font-family:var(--font-body);font-weight:700;">Rheem</h3><p>Tank, tankless &amp; heat pump systems</p></div>
         <div class="card" style="text-align:center;"><h3 style="font-family:var(--font-body);font-weight:700;">A.O. Smith</h3><p>Residential water heating solutions</p></div>
-        <div class="card" style="text-align:center;"><h3 style="font-family:var(--font-body);font-weight:700;">Halo</h3><p>Halo products, installed by our team</p></div>
+        <div class="card" style="text-align:center;"><h3 style="font-family:var(--font-body);font-weight:700;">Halo</h3><p>Whole-home water treatment &amp; filtration</p></div>
       </div>
     </div>
   </section>
