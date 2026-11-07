@@ -2,9 +2,9 @@
   "_note": "Copy and photo picks for the Glass Rain homepage pieces (hero and the work-then-family photo carousel and the water heater \"how it works\" section). Every line is a fact the site already states. The rating is the Google listing read on rating.asOf; update both together, never estimate. It is display only: business.rating in site.json stays null so the structured data is unchanged.",
   "rating": {
     "value": "5.0",
-    "count": 16,
+    "count": 20,
     "source": "Google",
-    "asOf": "2026-10-31"
+    "asOf": "2026-11-07"
   },
   "hero": {
     "eyebrow": "Licensed Florida Plumbing Contractor",

@@ -28,7 +28,7 @@ bodyClass: "home"
           <div class="quote-trust">
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg> Licensed &amp; Family-Owned</span>
             <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> Free, No-Obligation Estimates</span>
-            <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L6 21l1.7-7L2.3 9.2l7.1-.6z"></path></svg> Reviews From Local Homeowners</span>
+            <span class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8L6 21l1.7-7L2.3 9.2l7.1-.6z"></path></svg> 5-Star Rated on Google</span>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ bodyClass: "home"
           <div class="stars">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.8L5.7 21.5l1.7-7L2 9.8l7.1-.7L12 2.5z"></path></svg>
           </div>
-          <strong>Reviews on Google</strong>
+          <strong>5-Star Rated on Google</strong>
           <span>from local homeowners</span>
         </div>
       </div>
