@@ -31,8 +31,9 @@ function goToQuoteForm(prefillMessage) {
 var THANKS_URL = "/thanks";
 var THANKS_FLAG = "rwhFormSubmitted";
 
-// Sends the estimate form two ways in the background so the visitor never leaves our domain:
-// the email copy (FormSubmit) and the lead for Jobber (our Netlify function). If either one
+// Sends the estimate form three ways in the background so the visitor never leaves our domain:
+// the email copy (FormSubmit), the lead for Jobber (our Netlify function) and a Netlify Forms copy that
+// Biggify's dashboard records (so every lead is counted and followed up). If any one
 // succeeds we go to /thanks; if both fail, fall back to a normal form post (its _next field also
 // returns to /thanks) so a lead is never lost.
 function submitQuoteForm(form) {
@@ -60,9 +61,19 @@ function submitQuoteForm(form) {
     .then(function (res) { return res.ok; })
     .catch(function () { return false; });
 
-  Promise.all([emailSent, jobberSent]).then(function (sent) {
+  // Netlify Forms copy (the form carries data-netlify, so Netlify knows its fields). Never blocks the others.
+  var copy = new URLSearchParams();
+  copy.append("form-name", form.getAttribute("name") || "estimate-request");
+  data.forEach(function (value, key) { if (key !== "_next" && typeof value === "string") copy.append(key, value); });
+  var dashboardSent = fetch("/", {
+    method: "POST", body: copy.toString(), headers: { "Content-Type": "application/x-www-form-urlencoded" }
+  })
+    .then(function (res) { return res.ok; })
+    .catch(function () { return false; });
+
+  Promise.all([emailSent, jobberSent, dashboardSent]).then(function (sent) {
     markSubmitted();
-    if (sent[0] || sent[1]) {
+    if (sent[0] || sent[1] || sent[2]) {
       window.location.assign(THANKS_URL);
     } else {
       form.submit();
