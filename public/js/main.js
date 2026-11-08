@@ -34,7 +34,7 @@ var THANKS_FLAG = "rwhFormSubmitted";
 // Sends the estimate form three ways in the background so the visitor never leaves our domain:
 // the email copy (FormSubmit), the lead for Jobber (our Netlify function) and a Netlify Forms copy that
 // Biggify's dashboard records (so every lead is counted and followed up). If any one
-// succeeds we go to /thanks; if both fail, fall back to a normal form post (its _next field also
+// succeeds we go to /thanks; if all fail, fall back to a normal form post (to Netlify Forms, which
 // returns to /thanks) so a lead is never lost.
 function submitQuoteForm(form) {
   var btn = form.querySelector('button[type="submit"]');
@@ -49,7 +49,9 @@ function submitQuoteForm(form) {
   var lead = { services: data.getAll("service[]") };
   data.forEach(function (value, key) { if (key !== "service[]" && key !== "_next") lead[key] = value; });
 
-  var emailSent = fetch(form.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+  // The email copy's address sits in data-formsubmit: the form's own action stays on this site so Netlify Forms takes it over.
+  var formsubmitUrl = form.getAttribute("data-formsubmit") || form.getAttribute("action");
+  var emailSent = fetch(formsubmitUrl.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
     method: "POST", body: data, headers: { Accept: "application/json" }
   })
     .then(function (res) { return res.json().then(function (body) { return res.ok && String(body && body.success) === "true"; }); })
