@@ -509,6 +509,6 @@ iframe { max-width: 100%; border-radius: var(--r-lg); }
 .sms-copy .sms-more>summary:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:3px}
 .sms-copy .sms-hide,.sms-copy .sms-more[open] .sms-show,.sms-copy:has(.sms-more[open]) .sms-teaser{display:none}
 .sms-copy .sms-more[open] .sms-hide{display:inline}
-.sms-copy .sms-legal{margin:0 0 6px;padding:0;font:inherit;color:inherit;max-width:none}
+.sms-copy .sms-legal{margin:0 0 6px;padding:0;font:inherit;color:inherit;max-width:none}.sms-copy>.sms-legal{flex:1 0 100%;font-size:.85em;line-height:1.45;opacity:.9}
 .sms-copy .sms-links{display:inline-flex;flex-wrap:wrap;align-items:center;column-gap:.45em;min-height:44px}
 .sms-copy .sms-more[open]+.sms-links{display:none}
